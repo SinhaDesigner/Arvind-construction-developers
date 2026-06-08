@@ -7,7 +7,7 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,700&family=Shrikhand&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Lora:ital,wght@1,700&family=Shrikhand&display=swap" rel="stylesheet">
 
     <style>
         /* Page Background Color */
@@ -16,7 +16,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            color: #222;
+            color: #000000; /* Default text color Dark Black */
         }
 
         .container {
@@ -25,29 +25,20 @@
             padding: 40px 20px;
         }
 
-        /* Responsive Zoomed Banner Styling */
+        /* Reverted Banner Styling to Original Size */
         .banner-container {
             width: 100%;
-            height: 350px; /* Desktop par banner bada dikhane ke liye height badha di hai */
             border-radius: 20px; 
-            overflow: hidden; /* Zoom hone par photo container se baahar nahi aayegi */
+            overflow: hidden;
             box-shadow: 0 6px 15px rgba(74, 4, 4, 0.15); 
             margin-bottom: 30px;
         }
 
         .banner-img {
             width: 100%;
-            height: 100%;
-            object-fit: cover; /* Isse photo khinchegi (stretch) nahi */
-            object-position: center; /* Photo ka center part focus me rahega */
-            transform: scale(1.12); /* Isse banner halka ZOOM ho jayegi (1.12 = 12% Zoom) */
-        }
-
-        /* Mobile screens ke liye banner height auto-adjust */
-        @media (max-width: 768px) {
-            .banner-container {
-                height: 200px; /* Mobile par screen ke hisab se perfect dikhega */
-            }
+            height: auto;
+            display: block;
+            object-fit: cover;
         }
 
         /* Main Header Slogans */
@@ -61,7 +52,7 @@
             font-weight: bold;
             font-style: italic;
             font-size: 1.2rem;
-            color: #444;
+            color: #000000; /* Dark Black */
         }
 
         /* All Section Topics/Headings */
@@ -75,13 +66,14 @@
             margin-bottom: 15px;
         }
 
-        /* Text inside topics (Lora, Bold, Italic) */
+        /* Text inside topics (Lora, Bold, Italic) - Dark Black Color */
         p, ul, li, address {
             font-family: 'Lora', serif;
             font-weight: bold;
             font-style: italic;
             font-size: 1.1rem;
             line-height: 1.6;
+            color: #000000; /* Dark Black */
         }
 
         ul {
@@ -91,6 +83,24 @@
 
         li {
             margin-bottom: 10px;
+        }
+
+        /* Special Styling for Brand Name "Arvind Construction & Developers" */
+        .brand-name-heading {
+            font-family: 'Cinzel Decorative', cursive;
+            font-weight: bold;
+            color: #460020;
+            font-size: 2.1rem; /* Bada Size */
+            margin-bottom: 5px;
+        }
+
+        .brand-name-inline {
+            font-family: 'Cinzel Decorative', cursive;
+            font-weight: bold;
+            color: #460020;
+            font-size: 1.25rem; /* Bada Size */
+            font-style: normal; /* Decorative font ko normal rakhne ke liye */
+            display: inline-block;
         }
 
         /* Services Grid and Rounded Rectangle Boxes */
@@ -124,7 +134,7 @@
 
         /* Hover effect for Desktop & Click effect for Mobile */
         .service-box:hover, .service-box:active {
-            transform: translateY(-6px); /* Box thoda upar uthega */
+            transform: translateY(-6px); 
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.65); /* Dark Blur Shadow */
         }
 
@@ -136,17 +146,9 @@
             padding-top: 30px;
         }
 
-        footer h3 {
-            font-family: 'Shrikhand', cursive;
-            font-style: italic;
-            text-decoration: underline;
-            font-size: 1.8rem;
-            color: #4a0404;
-            margin-bottom: 5px;
-        }
-
         footer p {
             font-size: 1.3rem;
+            color: #000000;
         }
     </style>
 </head>
@@ -159,16 +161,16 @@
         </div>
 
         <header>
-            <p>Building Excellence. Created and Creating Trust.</p>
+            <p style="text-decoration: underline;">Building Excellence. Created and Creating Trust.</p>
             <p>We deliver high-quality construction, real estate development, interior design, renovation, and property solutions with a commitment to excellence, transparency, and customer satisfaction.</p>
-            <p><strong>"Transforming Ideas into Landmarks."</strong></p>
+            <p><strong style="text-decoration: underline;">"Transforming Ideas into Landmarks."</strong></p>
         </header>
 
         <hr style="border: 1px solid #4a0404; opacity: 0.2;">
 
         <section>
             <h2>WHO WE ARE</h2>
-            <p>Arvind Construction & Developers is a trusted name in construction and real estate development. We combine innovation, quality craftsmanship, and modern engineering to create spaces that inspire confidence and deliver lasting value.</p>
+            <p><span class="brand-name-inline">Arvind Construction & Developers</span> is a trusted name in construction and real estate development. We combine innovation, quality craftsmanship, and modern engineering to create spaces that inspire confidence and deliver lasting value.</p>
         </section>
 
         <section>
@@ -237,12 +239,12 @@
         </section>
 
         <footer>
-            <h3>ARVIND CONSTRUCTION & DEVELOPERS</h3>
+            <h3 class="brand-name-heading">ARVIND CONSTRUCTION & DEVELOPERS</h3>
             <p>"Turning Vision Into Reality."</p>
         </footer>
 
     </div>
 
 </body>
-        </html>
-                
+            </html>
+                        
