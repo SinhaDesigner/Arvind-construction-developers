@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Residential Construction - Arvind Construction & Developers</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,700&family=Shrikhand&display=swap" rel="stylesheet">
+
+    <style>
+        /* Same Page Background Color */
+        body {
+            background-color: #fef3d0;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            color: #000000;
+        }
+
+        /* 🌐 DYNAMIC LANGUAGE SWITCHING SYSTEM */
+        .lang-hi { 
+            display: none !important; 
+        } 
+        body.hindi-active .lang-en { 
+            display: none !important; 
+        }
+        body.hindi-active .lang-hi { 
+            display: inline-block !important; 
+        }
+
+        /* FULL WIDTH CONTAINER */
+        .container {
+            width: 100%;
+            max-width: 100%;     
+            margin: 0;           
+            padding: 40px 30px;  
+            position: relative;
+            box-sizing: border-box;
+        }
+
+        /* Language Switcher Styling */
+        .lang-switcher {
+            position: absolute;
+            top: 10px;
+            right: 30px;
+            display: inline-block;
+            z-index: 1000;
+        }
+
+        .lang-btn {
+            background-color: #4a0404;
+            color: #fef3d0;
+            border: none;
+            padding: 8px 16px;
+            font-family: 'Lora', serif;
+            font-weight: bold;
+            font-style: italic;
+            font-size: 0.95rem;
+            border-radius: 20px;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(74, 4, 4, 0.2);
+            transition: background 0.3s ease;
+        }
+
+        .lang-dropdown {
+            display: none;
+            position: absolute;
+            right: 0;
+            background-color: #fef3d0;
+            min-width: 130px;
+            box-shadow: 0px 8px 20px rgba(0,0,0,0.2);
+            border: 2px solid #4a0404;
+            border-radius: 8px;
+            margin-top: 5px;
+            overflow: hidden;
+        }
+
+        .lang-dropdown a {
+            color: #4a0404;
+            padding: 10px 15px;
+            text-decoration: none;
+            display: block;
+            font-family: 'Lora', serif;
+            font-weight: bold;
+            font-style: italic;
+        }
+
+        .lang-dropdown a:hover {
+            background-color: #4a0404;
+            color: #fef3d0;
+        }
+
+        .show-lang {
+            display: block;
+        }
+
+        /* Heading Style Same */
+        h1 {
+            font-family: 'Shrikhand', cursive;
+            font-style: italic;
+            text-decoration: underline;
+            font-size: 2.5rem;
+            color: #4a0404;
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+
+        /* Left-Right Layout Design */
+        .content-layout {
+            display: flex;
+            gap: 15px; 
+            align-items: flex-start;
+            margin-top: 20px;
+            width: 100%;
+        }
+
+        /* Text Side takes all remaining left width */
+        .text-side {
+            flex: 1;          
+        }
+
+        /* Image Side takes more screen share and expands right */
+        .image-side {
+            flex: 2;          
+            text-align: right;
+        }
+
+        .image-side img {
+            width: 100%;      
+            max-width: 800px; 
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 6px 15px rgba(74, 4, 4, 0.2);
+        }
+
+        /* Same Lora Font, Bold, Italic, Dark Black for details */
+        p, ul, li {
+            font-family: 'Lora', serif;
+            font-weight: bold;
+            font-style: italic;
+            font-size: 1.15rem;
+            line-height: 1.7;
+            color: #000000;
+        }
+
+        .description {
+            margin-bottom: 25px;
+            text-align: justify;
+        }
+
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        li {
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Back Button Styling */
+        .back-btn {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 12px 25px;
+            background-color: #4a0404;
+            color: #fef3d0;
+            font-family: 'Lora', serif;
+            font-weight: bold;
+            font-style: italic;
+            text-decoration: none;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .back-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+        }
+
+        /* Mobile Responsive View */
+        @media (max-width: 768px) {
+            .content-layout {
+                flex-direction: column; 
+            }
+            .image-side {
+                width: 100%;
+                text-align: center;
+            }
+            h1 {
+                font-size: 2rem;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <div class="lang-switcher">
+            <button class="lang-btn" onclick="toggleLangDropdown()">🌐 Language / भाषा ▾</button>
+            <div class="lang-dropdown" id="myLangDropdown">
+                <a href="#" onclick="selectLanguage('English')">English</a>
+                <a href="#" onclick="selectLanguage('Hindi')">हिन्दी</a>
+            </div>
+        </div>
+        
+        <h1>
+            <span class="lang-en">Residential Construction</span>
+            <span class="lang-hi">आवासीय निर्माण</span>
+        </h1>
+
+        <div class="content-layout">
+            
+            <div class="text-side">
+                <p class="description">
+                    <span class="lang-en">Construction of independent houses, duplex homes, villas, apartments, residential buildings, and housing projects with a commitment to quality, safety, and excellence.</span>
+                    <span class="lang-hi">गुणवत्ता, सुरक्षा और उत्कृष्टता के प्रति प्रतिबद्धता के साथ स्वतंत्र घरों, डुप्लेक्स घरों, विला, अपार्टमेंट, आवासीय भवनों और आवास परियोजनाओं का निर्माण।</span>
+                </p>
+                
+                <ul>
+                    <li>✔ 
+                        <span class="lang-en">Independent House Construction</span>
+                        <span class="lang-hi">स्वतंत्र घर निर्माण</span>
+                    </li>
+                    <li>✔ 
+                        <span class="lang-en">Duplex House Construction</span>
+                        <span class="lang-hi">डुप्लेक्स घर निर्माण</span>
+                    </li>
+                    <li>✔ 
+                        <span class="lang-en">Villa Construction</span>
+                        <span class="lang-hi">विला निर्माण</span>
+                    </li>
+                    <li>✔ 
+                        <span class="lang-en">Apartment &amp; Flat Construction</span>
+                        <span class="lang-hi">अपार्टमेंट और फ्लैट निर्माण</span>
+                    </li>
+                    <li>✔ 
+                        <span class="lang-en">Multi-Storey Residential Buildings</span>
+                        <span class="lang-hi">बहुमंज़िला आवासीय भवन</span>
+                    </li>
+                    <li>✔ 
+                        <span class="lang-en">Housing Projects</span>
+                        <span class="lang-hi">आवास परियोजनाएं</span>
+                    </li>
+                    <li>✔ 
+                        <span class="lang-en">Home Renovation &amp; Extension Works</span>
+                        <span class="lang-hi">गृह नवीनीकरण और विस्तार कार्य</span>
+                    </li>
+                </ul>
+
+                <a href="index.html" class="back-btn">
+                    <span class="lang-en">⬅ Back to Home</span>
+                    <span class="lang-hi">⬅ मुख्य पृष्ठ पर वापस जाएं</span>
+                </a>
+            </div>
+
+            <div class="image-side">
+                <img src="residential.png" alt="Residential Construction">
+            </div>
+
+        </div>
+
+    </div>
+
+    <script>
+        // Auto Sync from LocalStorage
+        window.onload = function() {
+            var savedLang = localStorage.getItem('selectedLanguage');
+            if (savedLang === 'Hindi') {
+                document.body.classList.add('hindi-active');
+            }
+        };
+
+        function toggleLangDropdown() {
+            document.getElementById("myLangDropdown").classList.toggle("show-lang");
+        }
+
+        window.onclick = function(event) {
+            if (!event.target.matches('.lang-btn')) {
+                var dropdowns = document.getElementsByClassName("lang-dropdown");
+                for (var i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show-lang')) {
+                        openDropdown.classList.remove('show-lang');
+                    }
+                }
+            }
+        }
+
+        function selectLanguage(lang) {
+            if (lang === 'Hindi') {
+                document.body.classList.add('hindi-active');
+                localStorage.setItem('selectedLanguage', 'Hindi');
+            } else {
+                document.body.classList.remove('hindi-active');
+                localStorage.setItem('selectedLanguage', 'English');
+            }
+            document.getElementById("myLangDropdown").classList.remove("show-lang");
+        }
+    </script>
+</body>
+</html>
