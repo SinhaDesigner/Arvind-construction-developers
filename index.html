@@ -25,20 +25,29 @@
             padding: 40px 20px;
         }
 
-        /* Responsive Banner Styling */
+        /* Responsive Zoomed Banner Styling */
         .banner-container {
             width: 100%;
-            border-radius: 20px; /* Theme ke hisab se rounded corners */
-            overflow: hidden;
-            box-shadow: 0 6px 15px rgba(74, 4, 4, 0.15); /* Halaki si shadow */
+            height: 350px; /* Desktop par banner bada dikhane ke liye height badha di hai */
+            border-radius: 20px; 
+            overflow: hidden; /* Zoom hone par photo container se baahar nahi aayegi */
+            box-shadow: 0 6px 15px rgba(74, 4, 4, 0.15); 
             margin-bottom: 30px;
         }
 
         .banner-img {
             width: 100%;
-            height: auto;
-            display: block;
-            object-fit: cover;
+            height: 100%;
+            object-fit: cover; /* Isse photo khinchegi (stretch) nahi */
+            object-position: center; /* Photo ka center part focus me rahega */
+            transform: scale(1.12); /* Isse banner halka ZOOM ho jayegi (1.12 = 12% Zoom) */
+        }
+
+        /* Mobile screens ke liye banner height auto-adjust */
+        @media (max-width: 768px) {
+            .banner-container {
+                height: 200px; /* Mobile par screen ke hisab se perfect dikhega */
+            }
         }
 
         /* Main Header Slogans */
@@ -235,5 +244,5 @@
     </div>
 
 </body>
-      </html>
-  
+        </html>
+                
