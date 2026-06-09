@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interior Design & Execution - Arvind Construction & Developers</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,700&family=Shrikhand&display=swap" rel="stylesheet">
+
+    <style>
+        /* Same Page Background Color */
+        body {
+            background-color: #fef3d0;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            color: #000000;
+            overflow-x: hidden;
+        }
+
+        /* 🌐 DYNAMIC LANGUAGE SWITCHING SYSTEM */
+        .lang-hi { 
+            display: none !important; 
+        } 
+        body.hindi-active .lang-en { 
+            display: none !important; 
+        }
+        body.hindi-active .lang-hi { 
+            display: inline-block !important; 
+        }
+
+        /* FULL WIDTH CONTAINER */
+        .container {
+            width: 100%;
+            max-width: 100%;     
+            margin: 0;           
+            padding: 40px 30px;  
+            position: relative;
+            box-sizing: border-box;
+        }
+
+        /* Language Switcher Styling */
+        .lang-switcher {
+            position: absolute;
+            top: 10px;
+            right: 30px;
+            display: inline-block;
+            z-index: 1000;
+        }
+
+        /* 🌟 MOUSE TRACKING REAL-TIME SHINE FOR LANGUAGE BUTTON */
+        .lang-btn {
+            background-color: #4a0404;
+            color: #fef3d0;
+            border: none;
+            padding: 8px 16px;
+            font-family: 'Lora', serif;
+            font-weight: bold;
+            font-style: italic;
+            font-size: 0.95rem;
+            border-radius: 20px;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(74, 4, 4, 0.2);
+            position: relative;
+            overflow: hidden; 
+            z-index: 1;
+            background-image: radial-gradient(circle 60px at var(--x, -1000px) var(--y, -1000px), rgba(255, 255, 255, 0.45) 0%, transparent 100%);
+            background-color: #4a0404;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .lang-btn:hover {
+            box-shadow: 0 0 15px rgba(74, 4, 4, 0.45);
+        }
+
+        .lang-dropdown {
+            display: none;
+            position: absolute;
+            right: 0;
+            background-color: #fef3d0;
+            min-width: 130px;
+            box-shadow: 0px 8px 20px rgba(0,0,0,0.2);
+            border: 2px solid #4a0404;
+            border-radius: 8px;
+            margin-top: 5px;
+            overflow: hidden;
+        }
+
+        .lang-dropdown a {
+            color: #4a0404;
+            padding: 10px 15px;
+            text-decoration: none;
+            display: block;
+            font-family: 'Lora', serif;
+            font-weight: bold;
+            font-style: italic;
+        }
+
+        .lang-dropdown a:hover {
+            background-color: #4a0404;
+            color: #fef3d0;
+        }
+
+        .show-lang {
+            display: block;
+        }
+
+        /* 🌟 MAIN HEADING WITH CURSOR SHINE INTERACTION */
+        h1 {
+            font-family: 'Shrikhand', cursive;
+            font-style: italic;
+            text-decoration: underline;
+            font-size: 2.5rem;
+            color: #4a0404;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            display: inline-block;
+            position: relative;
+            overflow: hidden;
+            padding: 4px 14px;
+            border-radius: 8px;
+        }
+
+        h1::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: radial-gradient(circle 65px at var(--x, -1000px) var(--y, -1000px), rgba(74, 4, 4, 0.12), transparent 100%);
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        /* Left-Right Layout Design (Image Left, Text Right) */
+        .content-layout {
+            display: flex;
+            gap: 40px; 
+            align-items: flex-start;
+            margin-top: 20px;
+            width: 100%;
+        }
+
+        /* 🖼️ IMAGE SIDE (Left Raised, Right Sloping/Plane Effect) */
+        .image-side {
+            flex: 1.2;          
+            text-align: left;
+            position: relative; 
+            display: inline-block;
+        }
+
+        /* 🔄 PERFECT LEFT-TO-RIGHT SLOPING SHADOW PACK */
+        .image-side::before {
+            content: '';
+            position: absolute;
+            top: -15px;   
+            bottom: -15px;
+            left: -20px;  
+            right: 30px; 
+            border-radius: 15px;
+            background: linear-gradient(to right, rgba(74, 4, 4, 0.5) 0%, rgba(74, 4, 4, 0.22) 35%, transparent 65%);
+            filter: blur(15px); 
+            z-index: -1; 
+        }
+
+        .image-side img {
+            width: 150%;    
+            max-width:740px;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: none; 
+            display: block;
+        }
+
+        /* Text Side takes remaining right width */
+        .text-side {
+            flex: 1.8;          
+        }
+
+        /* Same Lora Font, Bold, Italic, Dark Black for details */
+        p, ul, li {
+            font-family: 'Lora', serif;
+            font-weight: bold;
+            font-style: italic;
+            font-size: 1.15rem;
+            line-height: 1.7;
+            color: #000000;
+        }
+
+        .description {
+            margin-bottom: 25px;
+            text-align: justify;
+        }
+
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        li {
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* 🌟 BACK BUTTON WITH REVOLVING SPOTLIGHT SHINE */
+        .back-btn {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 12px 25px;
+            background-color: #4a0404;
+            color: #fef3d0;
+            font-family: 'Lora', serif;
+            font-weight: bold;
+            font-style: italic;
+            text-decoration: none;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+            position: relative;
+            overflow: hidden;
+            z-index: 10;
+            background-image: radial-gradient(circle 70px at var(--x, -1000px) var(--y, -1000px), rgba(255, 255, 255, 0.45) 0%, transparent 100%);
+            background-color: #4a0404;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .back-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+        }
+
+        /* 🎬 ========================================================
+           🌟 3 SECONDS SYSTEMATIC DIRECTIONAL SCROLL REVEAL TIMING
+           ======================================================== 🎬 */
+        .scroll-reveal {
+            opacity: 0;
+            transition: opacity 3s cubic-bezier(0.15, 1, 0.2, 1), transform 3s cubic-bezier(0.15, 1, 0.2, 1);
+            will-change: transform, opacity;
+        }
+
+        .reveal-left {
+            transform: translateX(-100px) scale(0.97);
+        }
+
+        .reveal-right {
+            transform: translateX(100px) scale(0.97);
+        }
+
+        .reveal-top {
+            transform: translateY(-50px);
+        }
+
+        .scroll-reveal.active-view {
+            opacity: 1;
+            transform: translateX(0) translateY(0) scale(1);
+        }
+
+        /* Mobile Responsive View */
+        @media (max-width: 768px) {
+            .content-layout {
+                flex-direction: column; 
+            }
+            .image-side {
+                width: 100%;
+                text-align: center;
+                order: 1; 
+            }
+            .image-side img {
+                margin: 0 auto;
+            }
+            
+            .image-side::before {
+                top: -12px;
+                bottom: -12px;
+                left: -14px;
+                right: 25px;
+                background: linear-gradient(to right, rgba(74, 4, 4, 0.45) 0%, rgba(74, 4, 4, 0.18) 35%, transparent 65%);
+            }
+            
+            .text-side {
+                order: 2;
+                width: 100%;
+            }
+            h1 {
+                font-size: 2rem;
+                display: block;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <div class="lang-switcher">
+            <button class="lang-btn" onclick="toggleLangDropdown()">🌐 Language / भाषा ▾</button>
+            <div class="lang-dropdown" id="myLangDropdown">
+                <a href="#" onclick="selectLanguage('English')">English</a>
+                <a href="#" onclick="selectLanguage('Hindi')">हिन्दी</a>
+            </div>
+        </div>
+        
+        <h1 class="scroll-reveal reveal-top">
+            <span class="lang-en">Interior Design &amp; Execution</span>
+            <span class="lang-hi">इंटीरियर डिजाइन और निष्पादन</span>
+        </h1>
+
+        <div class="content-layout">
+            
+            <div class="image-side scroll-reveal reveal-left">
+                <img src="interior.png" alt="Interior Design & Execution">
+            </div>
+
+            <div class="text-side scroll-reveal reveal-right">
+                <p class="description">
+                    <span class="lang-en">At Arvind Construction &amp; Developers, we create thoughtfully designed interiors that combine functionality, comfort, and aesthetic excellence. Our Interior Design &amp; Execution services are tailored to transform residential, commercial, and corporate spaces into environments that reflect style, purpose, and individuality.<br><br>From concept development and space planning to material selection, custom furnishings, lighting design, and final execution, we manage every aspect of the project with precision and attention to detail. Our team focuses on creating elegant, practical, and modern interiors that enhance both the visual appeal and usability of every space. Whether it is a luxury residence, office, showroom, retail outlet, apartment, or commercial establishment, we deliver complete turnkey interior solutions that meet the highest standards of quality, craftsmanship, and customer satisfaction.</span>
+                    <span class="lang-hi">अरविंद कंस्ट्रक्शन एंड डेवलपर्स में, हम सोच-समझकर डिजाइन किए गए इंटीरियर बनाते हैं जो कार्यक्षमता, आराम और सौंदर्य उत्कृष्टता को जोड़ते हैं। हमारी इंटीरियर डिजाइन और निष्पादन सेवाएं आवासीय, व्यावसायिक और कॉर्पोरेट स्थानों को ऐसे वातावरण में बदलने के लिए तैयार की गई हैं जो शैली, उद्देश्य और व्यक्तित्व को दर्शाती हैं।<br><br>अवधारणा विकास (concept development) और स्पेस प्लानिंग से लेकर सामग्री चयन, CUSTOM फर्निशिंग, लाइटिंग डिजाइन और अंतिम निष्पादन तक, हम सटीकता और विवरण पर ध्यान देते हुए परियोजना के हर पहलू का प्रबंधन करते हैं। हमारी टीम सुरुचिपूर्ण, व्यावहारिक और आधुनिक इंटीरियर बनाने पर ध्यान केंद्रित करती है जो हर स्थान की दृश्य अपील और उपयोगिता दोनों को बढ़ाती है। चाहे वह एक लक्जरी निवास, कार्यालय, शोरूम, रिटेल आउटलेट, अपार्टमेंट या व्यावसायिक प्रतिष्ठान हो, हम पूर्ण टर्नकी इंटीरियर समाधान प्रदान करते हैं जो गुणवत्ता, शिल्प कौशल और ग्राहक संतुष्टि के उच्चतम मानकों को पूरा करते हैं।</span>
+                </p>
+                
+                <h2 style="font-family: 'Lora', serif; font-size: 1.3rem; font-weight: bold; font-style: italic; color:#4a0404; margin-top:10px; margin-bottom:15px;">
+                    <span class="lang-en">Our Interior Design Services Include:</span>
+                    <span class="lang-hi">हमारी इंटीरियर डिजाइन सेवाओं में शामिल हैं:</span>
+                </h2>
+
+                <ul>
+                    <li>✔ 
+                        <span class="lang-en">Residential Interior Design</span>
+                        <span class="lang-hi">आवासीय इंटीरियर डिजाइन</span>
+                    </li>
+                    <li>✔ 
+                        <span class="lang-en">Commercial &amp; Office Interior Design</span>
+                        <span class="lang-hi">व्यावसायिक और कार्यालय इंटीरियर डिजाइन</span>
+                    </li>
+                    <li>✔ 
+                        <span class="lang-en">Modular Kitchen Design</span>
+                        <span class="lang-hi">मॉड्यूलर किचन डिजाइन</span>
+                    </li>
+                    <li>✔ 
+                        <span class="lang-en">Living Room &amp; Bedroom Design</span>
+                        <span class="lang-hi">लिविंग रूम और बेडरूम डिजाइन</span>
+                    </li>
+                    <li>✔ 
+                        <span class="lang-en">False Ceiling &amp; Lighting Solutions</span>
+                        <span class="lang-hi">फॉल्स सीलिंग और लाइटिंग सॉल्यूशंस</span>
+                    </li>
+                    <li>✔ 
+                        <span class="lang-en">Space Planning &amp; Layout Optimization</span>
+                        <span class="lang-hi">स्पेस प्लानिंग और लेआउट ऑप्टिमाइज़ेशन</span>
+                    </li>
+                    <li>✔ 
+                        <span class="lang-en">Custom Furniture &amp; Woodwork</span>
+                        <span class="lang-hi">कस्टम फर्नीचर और लकड़ी का काम</span>
+                    </li>
+                    <li>✔ 
+                        <span class="lang-en">Flooring &amp; Wall Finishing</span>
+                        <span class="lang-hi">फ्लोरिंग और वाॅल फिनिशिंग</span>
+                    </li>
+                    <li>✔ 
+                        <span class="lang-en">Renovation &amp; Interior Remodeling</span>
+                        <span class="lang-hi">नवीनीकरण और इंटीरियर रीमॉडलिंग</span>
+                    </li>
+                    <li>✔ 
+                        <span class="lang-en">Complete Turnkey Interior Execution</span>
+                        <span class="lang-hi">पूर्ण टर्नकी इंटीरियर निष्पादन</span>
+                    </li>
+                </ul>
+
+                <p style="color:#4a0404; margin-top:25px; font-size:1.2rem;">
+                    <strong>
+                        <span class="lang-en">"Transforming Spaces Into Inspiring Experiences."</span>
+                        <span class="lang-hi">"स्थानों को प्रेरक अनुभवों में बदलना।"</span>
+                    </strong>
+                </p>
+
+                <a href="index.html" class="back-btn">
+                    <span class="lang-en">⬅ Back to Home</span>
+                    <span class="lang-hi">⬅ मुख्य पृष्ठ पर वापस जाएं</span>
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script>
+        // Auto Sync from LocalStorage
+        window.onload = function() {
+            var savedLang = localStorage.getItem('selectedLanguage');
+            if (savedLang === 'Hindi') {
+                document.body.classList.add('hindi-active');
+            }
+            
+            initScrollReveal();
+            initMouseTrackingShine();
+        };
+
+        function toggleLangDropdown() {
+            document.getElementById("myLangDropdown").classList.toggle("show-lang");
+        }
+
+        window.onclick = function(event) {
+            if (!event.target.matches('.lang-btn')) {
+                var dropdowns = document.getElementsByClassName("lang-dropdown");
+                for (var i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show-lang')) {
+                        openDropdown.classList.remove('show-lang');
+                    }
+                }
+            }
+        }
+
+        function selectLanguage(lang) {
+            if (lang === 'Hindi') {
+                document.body.classList.add('hindi-active');
+                localStorage.setItem('selectedLanguage', 'Hindi');
+            } else {
+                document.body.classList.remove('hindi-active');
+                localStorage.setItem('selectedLanguage', 'English');
+            }
+            document.getElementById("myLangDropdown").classList.remove("show-lang");
+        }
+
+        /* 🌟 MOUSE GLOW SPOTLIGHT TRACKING ENGINE */
+        function initMouseTrackingShine() {
+            const elements = document.querySelectorAll('.lang-btn, .back-btn, h1');
+            elements.forEach(el => {
+                el.addEventListener('mousemove', (e) => {
+                    const rect = el.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    el.style.setProperty('--x', `${x}px`);
+                    el.style.setProperty('--y', `${y}px`);
+                });
+                el.addEventListener('mouseleave', () => {
+                    el.style.setProperty('--x', '-1000px');
+                    el.style.setProperty('--y', '-1000px');
+                });
+            });
+        }
+
+        /* 🎬 SCROLL OBSERVER SETTINGS */
+        function initScrollReveal() {
+            const observer = new IntersectionObserver((entries, obs) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active-view');
+                        obs.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.scroll-reveal').forEach(el => observer.observe(el));
+        }
+    </script>
+</body>
+</html>
