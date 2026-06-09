@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Land Purchase &amp; Sale - Arvind Construction &amp; Developers</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&amp;family=Lora:ital,wght@1,700&amp;family=Shrikhand&amp;display=swap" rel="stylesheet">
+
+    <style>
+        /* Cream Theme Background Color */
+        body {
+            background-color: #fef3d0;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            color: #000000;
+            overflow-x: hidden;
+        }
+
+        /* 🌐 DYNAMIC LANGUAGE SWITCHING SYSTEM */
+        .lang-hi { 
+            display: none !important; 
+        } 
+        body.hindi-active .lang-en { 
+            display: none !important; 
+        }
+        body.hindi-active .lang-hi { 
+            display: inline-block !important; 
+        }
+
+        /* FULL WIDTH CONTAINER */
+        .container {
+            width: 100%;
+            max-width: 100%;     
+            margin: 0;           
+            padding: 40px 30px;  
+            position: relative;
+            box-sizing: border-box;
+        }
+
+        /* Language Switcher Styling */
+        .lang-switcher {
+            position: absolute;
+            top: 10px;
+            right: 30px;
+            display: inline-block;
+            z-index: 1000;
+        }
+
+        /* MOUSE TRACKING REAL-TIME SHINE FOR LANGUAGE BUTTON */
+        .lang-btn {
+            background: radial-gradient(circle 60px at var(--x, -1000px) var(--y, -1000px), rgba(255, 255, 255, 0.45) 0%, transparent 100%), linear-gradient(to bottom, #8a0000, #460020);
+            color: #fef3d0;
+            border: none;
+            padding: 8px 16px;
+            font-family: 'Lora', serif;
+            font-weight: bold;
+            font-style: italic;
+            font-size: 0.95rem;
+            border-radius: 20px;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(70, 0, 32, 0.25);
+            position: relative;
+            overflow: hidden; 
+            z-index: 1;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .lang-btn:hover {
+            box-shadow: 0 0 15px rgba(138, 0, 0, 0.45);
+        }
+
+        .lang-dropdown {
+            display: none;
+            position: absolute;
+            right: 0;
+            background-color: #fef3d0;
+            min-width: 130px;
+            box-shadow: 0px 8px 20px rgba(0,0,0,0.2);
+            border: 2px solid #460020;
+            border-radius: 8px;
+            margin-top: 5px;
+            overflow: hidden;
+        }
+
+        .lang-dropdown a {
+            color: #460020;
+            padding: 10px 15px;
+            text-decoration: none;
+            display: block;
+            font-family: 'Lora', serif;
+            font-weight: bold;
+            font-style: italic;
+        }
+
+        .lang-dropdown a:hover {
+            background: linear-gradient(to bottom, #8a0000, #460020);
+            color: #fef3d0;
+        }
+
+        .show-lang {
+            display: block;
+        }
+
+        /* 👑 SIGNATURE ARVIND BRAND STYLING FROM INDEX.HTML */
+        .brand-name-inline {
+            font-family: 'Cinzel Decorative', cursive;
+            font-weight: bold;
+            background: linear-gradient(to bottom, #8a0000, #460020);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-style: normal; 
+            display: inline-block;
+        }
+
+        /* 🌈 H1 TITLE GRADIENT WITH SPOTLIGHT INTERACTION */
+        h1 {
+            font-family: 'Shrikhand', cursive;
+            font-style: italic;
+            text-decoration: underline;
+            font-size: 2.5rem;
+            margin-top: 30px;
+            margin-bottom: 35px;
+            display: inline-block;
+            position: relative;
+            overflow: hidden;
+            padding: 4px 14px;
+            border-radius: 8px;
+            background: linear-gradient(to bottom, #8a0000, #460020);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        h1::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: radial-gradient(circle 65px at var(--x, -1000px) var(--y, -1000px), rgba(70, 0, 32, 0.15), transparent 100%);
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        /* H2 Section Titles */
+        h2 {
+            font-family: 'Lora', serif;
+            font-size: 1.4rem;
+            font-weight: bold;
+            font-style: italic;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            background: linear-gradient(to bottom, #8a0000, #460020);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+        }
+
+        /* 🗺️ CLEAN SIDE-BY-SIDE FLEX ROW SYSTEM */
+        .content-row {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+            width: 100%;
+            margin-bottom: 50px;
+        }
+
+        /* Class to swap side row content (Text Left, Image Right) */
+        .content-row.row-reverse {
+            flex-direction: row-reverse;
+        }
+
+        /* Allocated clean width space for text blocks */
+        .text-block {
+            flex: 5.5;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Allocated clean width space for images */
+        .image-block {
+            flex: 4.5;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Default layout configurations for images */
+        .image-block img {
+            width: 100%;
+            max-width: 580px;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 12px 28px rgba(70, 0, 32, 0.16);
+            display: block;
+        }
+
+        /* Row 1 Banner Configurations */
+        #wipeBanner {
+            flex: 5.2 !important;
+        }
+        #wipeBanner img {
+            max-width: 720px !important;
+        }
+        #wipeBanner + .text-block {
+            flex: 4.8 !important;
+        }
+
+        /* ⚡ FIX: TARGETED SPECIFICALLY TO MAKE LAND.PNG MUCH LARGER WITHOUT BREAKING THE RIGHT-ALIGNED TEXT */
+        #wipeLand {
+            flex: 5.8 !important; /* Image container gets expanded desktop presence */
+        }
+        #wipeLand img {
+            max-width: 850px !important; /* Size boosted from 720px to 850px for majestic look */
+        }
+        #wipeLand + .text-block {
+            flex: 4.2 !important; /* Kept text strictly constrained and tracking on the right side */
+        }
+
+        /* Typography */
+        p, ul, li {
+            font-family: 'Lora', serif;
+            font-weight: bold;
+            font-style: italic;
+            font-size: 1.15rem;
+            line-height: 1.75;
+            color: #000000;
+        }
+
+        .description {
+            margin-bottom: 0;
+            text-align: justify;
+        }
+
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        li {
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* 🌟 BACK TO HOME BUTTON WITH GRADIENT */
+        .back-btn {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 12px 25px;
+            background: radial-gradient(circle 70px at var(--x, -1000px) var(--y, -1000px), rgba(255, 255, 255, 0.45) 0%, transparent 100%), linear-gradient(to bottom, #8a0000, #460020);
+            color: #fef3d0;
+            font-family: 'Lora', serif;
+            font-weight: bold;
+            font-style: italic;
+            text-decoration: none;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(70, 0, 32, 0.2);
+            position: relative;
+            overflow: hidden;
+            z-index: 10;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .back-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(70, 0, 32, 0.4);
+        }
+
+        /* 🎬 ========================================================
+           🌟 4 SECONDS EXTENDED DIRECTIONAL SCROLL REVEAL TIMING
+           ======================================================== 🎬 */
+        .scroll-reveal {
+            opacity: 0;
+            transition: opacity 4s cubic-bezier(0.15, 1, 0.2, 1), transform 4s cubic-bezier(0.15, 1, 0.2, 1);
+            will-change: transform, opacity;
+        }
+
+        .reveal-left {
+            transform: translateX(-80px) scale(0.98);
+        }
+
+        .reveal-right {
+            transform: translateX(80px) scale(0.98);
+        }
+
+        .reveal-top {
+            transform: translateY(-50px);
+        }
+
+        /* 🔥 DYNAMIC 4-SECOND EXTENDED WIPE ANIMATION FOR ALL IMAGES */
+        .reveal-wipe {
+            opacity: 0;
+            clip-path: inset(0 100% 0 0); 
+            transition: opacity 4s cubic-bezier(0.15, 1, 0.2, 1), clip-path 4s cubic-bezier(0.15, 1, 0.2, 1);
+            will-change: clip-path, opacity;
+        }
+
+        .scroll-reveal.active-view {
+            opacity: 1;
+            transform: translateX(0) translateY(0) scale(1);
+        }
+
+        .reveal-wipe.wipe-active {
+            opacity: 1;
+            clip-path: inset(0 0 0 0); 
+        }
+
+        /* 📱 MOBILE RESPONSIVE ENGINE FIXED */
+        @media (max-width: 991px) {
+            .content-row, .content-row.row-reverse {
+                flex-direction: column !important;
+                gap: 25px;
+                margin-bottom: 35px;
+            }
+            .text-block, .image-block {
+                width: 100%;
+                flex: none;
+            }
+            .image-block {
+                text-align: center;
+                order: 1; 
+            }
+            .text-block {
+                order: 2;
+                align-items: flex-start !important;
+                text-align: left !important;
+            }
+            .image-block img {
+                margin: 0 auto;
+                width: 100% !important; 
+                max-width: 100% !important;
+            }
+            h1 {
+                font-size: 2rem;
+                display: block;
+                text-align: center;
+            }
+            .back-btn {
+                display: block !important;
+                width: fit-content !important;
+                margin: 20px auto 0 auto !important;
+                text-align: center;
+            }
+            .text-block p.description {
+                text-align: justify !important;
+            }
+            /* Reset mobile text alignments cleanly */
+            .text-block ul, .text-block li {
+                align-items: flex-start !important;
+                justify-content: flex-start !important;
+                text-align: left !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <div class="lang-switcher">
+            <button class="lang-btn" onclick="toggleLangDropdown()">🌐 Language / भाषा ▾</button>
+            <div class="lang-dropdown" id="myLangDropdown">
+                <a href="#" onclick="selectLanguage('English')">English</a>
+                <a href="#" onclick="selectLanguage('Hindi')">हिन्दी</a>
+            </div>
+        </div>
+        
+        <h1 class="scroll-reveal reveal-top">
+            <span class="lang-en">🌍 Land Purchase &amp; Sale</span>
+            <span class="lang-hi">🌍 भूमि क्रय और विक्रय</span>
+        </h1>
+
+        <div class="content-row">
+            
+            <div class="image-block reveal-wipe" id="wipeBanner">
+                <img src="banner.png" alt="Land Acquisition Banner">
+            </div>
+
+            <div class="text-block scroll-reveal reveal-right">
+                <p class="description">
+                    <span class="lang-en">At <span class="brand-name-inline">Arvind Construction &amp; Developers</span>, we provide trusted and professional land purchase and sale services designed to help individuals, investors, businesses, and developers make informed property decisions with confidence. Whether you are looking to purchase residential plots, commercial land, investment properties, agricultural land, or development sites, our team offers comprehensive support throughout the entire transaction process.<br><br>With a strong understanding of market trends, land valuation, legal compliance, and investment potential, we help our clients identify opportunities that align with their goals and deliver long-term value. Our commitment to transparency, integrity, and professional guidance ensures that every transaction is handled with accuracy, security, and complete peace of mind. We believe that purchasing land is not just an investment in property, but an investment in future growth, financial security, and development opportunities.</span>
+                    <span class="lang-hi"><span class="brand-name-inline">अरविन्द कंस्ट्रक्शन &amp; डेवलपर्स</span> में, हम विश्वसनीय और पेशेवर भूमि क्रय और विक्रय सेवाएं प्रदान करने के लिए प्रतिबद्ध हैं, जो व्यक्तियों, निवेशकों, व्यवसायों और डेवलपर्स को आत्मविश्वास के साथ सूचित संपत्ति निर्णय लेने में मदद करने के लिए डिज़ाइन की गई हैं। चाहे आप आवासीय भूखंड, व्यावसायिक भूमि, निवेश संपत्तियां, कृषि भूमि, या विकास स्थलों को खरीदना चाह रहे हों, हमारी टीम पूरी लेनदेन प्रक्रिया में व्यापक सहायता प्रदान करती है।<br><br>बाजार के रुझानों, भूमि मूल्यांकन, कानूनी अनुपालन और निवेश क्षमता की मजबूत समझ के साथ, हम अपने ग्राहकों को उन अवसरों की पहचान करने में मदद करते हैं जो उनके लक्ष्यों के अनुरूप हैं और दीर्घकालिक मूल्य प्रदान करते हैं। पारदर्शिता, ईमानदारी और पेशेवर मार्गदर्शन के प्रति हमारी प्रतिबद्धता यह सुनिश्चित करती है कि प्रत्येक लेनदेन को सटीकता, सुरक्षा और पूर्ण शांति के साथ संभाला जाए। हमारा मानना है कि भूमि खरीदना केवल संपत्ति में निवेश नहीं है, बल्कि भविष्य के विकास, वित्तीय सुरक्षा और विकास के अवसरों में एक निवेश है।</span>
+                </p>
+            </div>
+
+        </div>
+
+        <div class="content-row row-reverse">
+            
+            <div class="image-block reveal-wipe" id="wipeCard">
+                <img src="card.png" alt="Land Value Property Verification Card">
+            </div>
+
+            <div class="text-block scroll-reveal reveal-left">
+                <p class="description" style="text-align: right;">
+                    <span class="lang-en">From site identification and market analysis to documentation verification, negotiation, and final registration, we provide end-to-end assistance to simplify the buying and selling process. Our experienced team carefully evaluates each property to ensure clear ownership, legal compliance, and development potential, helping clients avoid risks and maximize returns. Whether you are purchasing land for your dream home, expanding your business, or building a real estate portfolio, we are dedicated to helping you make the right decision at the right time.<br><br>We focus on delivering reliable real estate solutions that create lasting value while maintaining the highest standards of professionalism and customer satisfaction. Through strategic planning, market expertise, and personalized service, we help transform land opportunities into successful investments and future developments.</span>
+                    <span class="lang-hi">साइट की पहचान और विश्लेषण से लेकर दस्तावेजों के सत्यापन, बातचीत और अंतिम पंजीकरण तक, हम खरीद और बिक्री प्रक्रिया को सरल बनाने के लिए शुरू से अंत तक सहायता प्रदान करते हैं। हमारी अनुभवी टीम स्पष्ट स्वामित्व, कानूनी अनुपालन और विकास क्षमता सुनिश्चित करने के लिए प्रत्येक संपत्ति का सावधानीपूर्वक मूल्यांकन करती है, जिससे ग्राहकों को जोखिमों से बचने और रिटर्न को अधिकतम करने में मदद मिलती है। चाहे आप अपने सपनों के घर के लिए भूमि खरीद रहे हों, अपने व्यवसाय का विस्तार कर रहे हों, या एक रियल एस्टेट पोर्टफोलियो का निर्माण कर रहे हों, हम आपको सही समय पर सही निर्णय लेने में मदद करने के लिए समर्पित हैं।<br><br>हम व्यावसायिकता और ग्राहक संतुष्टि के उच्चतम मानकों को बनाए रखते हुए विश्वसनीय रियल एस्टेट समाधान देने पर ध्यान केंद्रित करते हैं जो स्थायी मूल्य बनाते हैं। रणनीतिक योजना, बाजार विशेषज्ञता और व्यक्तिगत सेवा के माध्यम से, हम भूमि के अवसरों को सफल निवेश और भविष्य के विकास में बदलने में मदद करते हैं।</span>
+                </p>
+            </div>
+
+        </div>
+
+        <div class="content-row">
+            
+            <div class="image-block reveal-wipe" id="wipeLand">
+                <img src="land.png" alt="Land Survey Plot Blueprint Map">
+            </div>
+
+            <div class="text-block scroll-reveal reveal-right" style="text-align: right; display: flex; flex-direction: column; align-items: flex-end;">
+                
+                <h2>
+                    <span class="lang-en">Our Land Purchase &amp; Sale Services Include</span>
+                    <span class="lang-hi">हमारी भूमि क्रय और विक्रय सेवाओं में शामिल हैं</span>
+                </h2>
+                <ul style="display: flex; flex-direction: column; align-items: flex-end; width: 100%;">
+                    <li style="justify-content: flex-end;">✔ <span class="lang-en">Residential Plot Purchase &amp; Sale</span><span class="lang-hi">आवासीय भूखंड क्रय और विक्रय</span></li>
+                    <li style="justify-content: flex-end;">✔ <span class="lang-en">Commercial Land Acquisition &amp; Disposal</span><span class="lang-hi">व्यावसायिक भूमि अधिग्रहण और निपटान</span></li>
+                    <li style="justify-content: flex-end;">✔ <span class="lang-en">Agricultural &amp; Farm Land Transactions</span><span class="lang-hi">कृषि और फार्म भूमि लेनदेन</span></li>
+                    <li style="justify-content: flex-end;">✔ <span class="lang-en">Investment Property Consultation</span><span class="lang-hi">निवेश संपत्ति परामर्श</span></li>
+                    <li style="justify-content: flex-end;">✔ <span class="lang-en">Land Valuation &amp; Market Analysis</span><span class="lang-hi">भूमि मूल्यांकन और बाजार विश्लेषण</span></li>
+                    <li style="justify-content: flex-end;">✔ <span class="lang-en">Property Documentation Verification</span><span class="lang-hi">संपत्ति दस्तावेज सत्यापन</span></li>
+                    <li style="justify-content: flex-end;">✔ <span class="lang-en">Legal &amp; Regulatory Assistance</span><span class="lang-hi">कानूनी और नियामक सहायता</span></li>
+                    <li style="justify-content: flex-end;">✔ <span class="lang-en">Site Inspection &amp; Due Diligence</span><span class="lang-hi">साइट निरीक्षण और उचित परिश्रम</span></li>
+                    <li style="justify-content: flex-end;">✔ <span class="lang-en">Property Registration Support</span><span class="lang-hi">संपत्ति पंजीकरण सहायता</span></li>
+                    <li style="justify-content: flex-end;">✔ <span class="lang-en">Development Land Acquisition</span><span class="lang-hi">विकास भूमि अधिग्रहण</span></li>
+                    <li style="justify-content: flex-end;">✔ <span class="lang-en">Investment Strategy &amp; Advisory Services</span><span class="lang-hi">निवेश रणनीति और सलाहकार सेवाएं</span></li>
+                    <li style="justify-content: flex-end;">✔ <span class="lang-en">End-to-End Transaction Management</span><span class="lang-hi">शुरू से अंत तक लेनदेन प्रबंधन</span></li>
+                </ul>
+
+                <h2>
+                    <span class="lang-en">Why Choose Our Land Purchase &amp; Sale Services?</span>
+                    <span class="lang-hi">हमारी भूमि क्रय और विक्रय सेवाओं को क्यों चुनें?</span>
+                </h2>
+                <ul style="display: flex; flex-direction: column; align-items: flex-end; width: 100%;">
+                    <li style="justify-content: flex-end;">✔ <span class="lang-en">Transparent &amp; Secure Transactions</span><span class="lang-hi">पारदर्शी और सुरक्षित लेनदेन</span></li>
+                    <li style="justify-content: flex-end;">✔ <span class="lang-en">Verified Property Documentation</span><span class="lang-hi">सत्यापित संपत्ति दस्तावेज</span></li>
+                    <li style="justify-content: flex-end;">✔ <span class="lang-en">Professional Market Insights</span><span class="lang-hi">पेशेवर बाजार अंतर्दृष्टि</span></li>
+                    <li style="justify-content: flex-end;">✔ <span class="lang-en">Strategic Investment Guidance</span><span class="lang-hi">रणनीतिक निवेश मार्गदर्शन</span></li>
+                    <li style="justify-content: flex-end;">✔ <span class="lang-en">Trusted Real Estate Expertise</span><span class="lang-hi">विश्वसनीय रियल एस्टेट विशेषज्ञता</span></li>
+                    <li style="justify-content: flex-end;">✔ <span class="lang-en">Competitive Property Opportunities</span><span class="lang-hi">प्रतिस्पर्धी संपत्ति के अवसर</span></li>
+                    <li style="justify-content: flex-end;">✔ <span class="lang-en">End-to-End Client Support</span><span class="lang-hi">शुरू से अंत तक क्लाइंट सहायता</span></li>
+                    <li style="justify-content: flex-end;">✔ <span class="lang-en">Long-Term Value Creation</span><span class="lang-hi">दीर्घकालिक मूल्य सृजन</span></li>
+                </ul>
+
+                <a href="index.html" class="back-btn">
+                    <span class="lang-en">⬅ Back to Home</span>
+                    <span class="lang-hi">⬅ मुख्य पृष्ठ पर वापस जाएं</span>
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script>
+        // Auto Sync Language settings from LocalStorage
+        window.onload = function() {
+            var savedLang = localStorage.getItem('selectedLanguage');
+            if (savedLang === 'Hindi') {
+                document.body.classList.add('hindi-active');
+            }
+            
+            initScrollReveal();
+            initMouseTrackingShine();
+            
+            // ⚡ 4-SECOND WIPE TIMING TRIGGER ON PAGE LOAD FOR BANNER, CARD, LAND IMAGES
+            setTimeout(function() {
+                var banner = document.getElementById('wipeBanner');
+                var card = document.getElementById('wipeCard');
+                var land = document.getElementById('wipeLand');
+                if(banner) banner.classList.add('wipe-active');
+                if(card) card.classList.add('wipe-active');
+                if(land) land.classList.add('wipe-active');
+            }, 150); 
+        };
+
+        function toggleLangDropdown() {
+            document.getElementById("myLangDropdown").classList.toggle("show-lang");
+        }
+
+        window.onclick = function(event) {
+            if (!event.target.matches('.lang-btn')) {
+                var dropdowns = document.getElementsByClassName("lang-dropdown");
+                for (var i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show-lang')) {
+                        openDropdown.classList.remove('show-lang');
+                    }
+                }
+            }
+        }
+
+        function selectLanguage(lang) {
+            if (lang === 'Hindi') {
+                document.body.classList.add('hindi-active');
+                localStorage.setItem('selectedLanguage', 'Hindi');
+            } else {
+                document.body.classList.remove('hindi-active');
+                localStorage.setItem('selectedLanguage', 'English');
+            }
+            document.getElementById("myLangDropdown").classList.remove("show-lang");
+        }
+
+        /* 🌟 MOUSE GLOW SPOTLIGHT TRACKING CORE LOGIC */
+        function initMouseTrackingShine() {
+            const elements = document.querySelectorAll('.lang-btn, .back-btn, h1');
+            elements.forEach(el => {
+                el.addEventListener('mousemove', (e) => {
+                    const rect = el.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    el.style.setProperty('--x', `${x}px`);
+                    el.style.setProperty('--y', `${y}px`);
+                });
+                el.addEventListener('mouseleave', () => {
+                    el.style.setProperty('--x', '-1000px');
+                    el.style.setProperty('--y', '-1000px');
+                });
+            });
+        }
+
+        /* 🎬 SCROLL OBSERVER SETTINGS */
+        function initScrollReveal() {
+            const observer = new IntersectionObserver((entries, obs) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active-view');
+                        obs.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.05 });
+
+            document.querySelectorAll('.scroll-reveal').forEach(el => observer.observe(el));
+        }
+    </script>
+</body>
+</html>

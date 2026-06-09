@@ -53,7 +53,7 @@
 
         /* 🌟 MOUSE TRACKING SPOTLIGHT SHINE FOR LANGUAGE BUTTON */
         .lang-btn {
-            background-color: #4a0404;
+            background: radial-gradient(circle 60px at var(--x, -1000px) var(--y, -1000px), rgba(255, 255, 255, 0.45) 0%, transparent 100%), linear-gradient(to bottom, #8a0000, #460020);
             color: #fef3d0;
             border: none;
             padding: 8px 16px;
@@ -63,17 +63,15 @@
             font-size: 0.95rem;
             border-radius: 20px;
             cursor: pointer;
-            box-shadow: 0 4px 10px rgba(74, 4, 4, 0.2);
+            box-shadow: 0 4px 10px rgba(70, 0, 32, 0.25);
             position: relative;
             overflow: hidden;
             z-index: 1;
-            background-image: radial-gradient(circle 60px at var(--x, -1000px) var(--y, -1000px), rgba(255, 255, 255, 0.45) 0%, transparent 100%);
-            background-color: #4a0404;
             transition: box-shadow 0.3s ease;
         }
 
         .lang-btn:hover {
-            box-shadow: 0 0 15px rgba(74, 4, 4, 0.45);
+            box-shadow: 0 0 15px rgba(138, 0, 0, 0.45);
         }
 
         .lang-dropdown {
@@ -83,14 +81,14 @@
             background-color: #fef3d0;
             min-width: 130px;
             box-shadow: 0px 8px 20px rgba(0,0,0,0.2);
-            border: 2px solid #4a0404;
+            border: 2px solid #460020;
             border-radius: 8px;
             margin-top: 5px;
             overflow: hidden;
         }
 
         .lang-dropdown a {
-            color: #4a0404;
+            color: #460020;
             padding: 10px 15px;
             text-decoration: none;
             display: block;
@@ -100,7 +98,7 @@
         }
 
         .lang-dropdown a:hover {
-            background-color: #4a0404;
+            background: linear-gradient(to bottom, #8a0000, #460020);
             color: #fef3d0;
         }
 
@@ -108,13 +106,12 @@
             display: block;
         }
 
-        /* 🌟 MAIN HEADING WITH CURSOR GLOW OVERLAY */
+        /* 🌈 MAIN HEADING WITH CURSOR GLOW OVERLAY & TEXT GRADIENT */
         h1 {
             font-family: 'Shrikhand', cursive;
             font-style: italic;
             text-decoration: underline;
             font-size: 2.5rem;
-            color: #4a0404;
             margin-top: 30px;
             margin-bottom: 30px;
             display: inline-block;
@@ -122,13 +119,16 @@
             overflow: hidden;
             padding: 4px 14px;
             border-radius: 8px;
+            background: linear-gradient(to bottom, #8a0000, #460020);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
         
         h1::before {
             content: '';
             position: absolute;
             top: 0; left: 0; right: 0; bottom: 0;
-            background: radial-gradient(circle 65px at var(--x, -1000px) var(--y, -1000px), rgba(74, 4, 4, 0.12), transparent 100%);
+            background: radial-gradient(circle 65px at var(--x, -1000px) var(--y, -1000px), rgba(70, 0, 32, 0.15), transparent 100%);
             pointer-events: none;
             z-index: 2;
         }
@@ -144,23 +144,24 @@
 
         /* 🖼️ LEFT SIDE IMAGE CONTAINER WITH 4-SIDE RAISED SHADOW */
         .image-left-side {
-            flex: 1.2;          
+            flex: 4.2;          
             text-align: left;
-            display: inline-block;
+            position: relative;
         }
 
+        /* ⚡ FIX: Sized image strictly within bounds to eliminate clipping animations completely */
         .image-left-side img {
             width: 100%;      
-            max-width: 480px; 
+            max-width: 555px; 
             height: auto;
             border-radius: 15px;
             display: block;
-            box-shadow: 0 15px 35px rgba(74, 4, 4, 0.28); 
+            box-shadow: 0 15px 35px rgba(70, 0, 32, 0.28); 
         }
 
         /* Right Side Description Text area width allocation */
         .text-description-area {
-            flex: 1.8;
+            flex: 5.8;
             position: relative;
             z-index: 5;
         }
@@ -200,30 +201,28 @@
             gap: 10px;
         }
 
-        /* 🌟 BACK BUTTON WITH TRACKING MOUSE SHINE PACK */
+        /* Back button background styling */
         .back-btn {
             display: inline-block;
             margin-top: 30px;
             padding: 12px 25px;
-            background-color: #4a0404;
+            background: radial-gradient(circle 70px at var(--x, -1000px) var(--y, -1000px), rgba(255, 255, 255, 0.45) 0%, transparent 100%), linear-gradient(to bottom, #8a0000, #460020);
             color: #fef3d0;
             font-family: 'Lora', serif;
             font-weight: bold;
             font-style: italic;
             text-decoration: none;
             border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+            box-shadow: 0 4px 12px rgba(70, 0, 32, 0.2);
             position: relative;
             overflow: hidden;
             z-index: 10;
-            background-image: radial-gradient(circle 70px at var(--x, -1000px) var(--y, -1000px), rgba(255, 255, 255, 0.45) 0%, transparent 100%);
-            background-color: #4a0404;
             transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
 
         .back-btn:hover {
             transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+            box-shadow: 0 8px 20px rgba(70, 0, 32, 0.4);
         }
 
         /* 💻 RIGHT CORNER IMAGE VIEW WITH 4-SIDE RAISED SHADOW */
@@ -231,19 +230,19 @@
             position: absolute;
             bottom: 0;
             right: 0;
-            max-width: 600px; 
-            width: 40%;
+            max-width: 800px; 
+            width: 59%;
             height: auto;
             display: block;
             z-index: 1;
             pointer-events: none; 
-            box-shadow: 0 15px 35px rgba(74, 4, 4, 0.28);
+            box-shadow: 0 15px 35px rgba(70, 0, 32, 0.28);
             border-radius: 15px;
         }
 
         /* 🎬 ========================================================
-           🌟 3 SECONDS SYSTEMATIC DIRECTIONAL SCROLL REVEAL TIMING
-           ======================================================== 🎬 */
+            🌟 3 SECONDS SYSTEMATIC DIRECTIONAL SCROLL REVEAL TIMING
+            ======================================================== 🎬 */
         .scroll-reveal {
             opacity: 0;
             transition: opacity 3s cubic-bezier(0.15, 1, 0.2, 1), transform 3s cubic-bezier(0.15, 1, 0.2, 1);
@@ -269,7 +268,7 @@
         /* 🔥 DYNAMIC 3-SECOND WIPE ANIMATION FOR BOTH IMAGES */
         .reveal-wipe {
             opacity: 0;
-            clip-path: inset(0 100% 0 0); /* Right to Left mask layout */
+            clip-path: inset(0 100% 0 0); 
             transition: opacity 3s cubic-bezier(0.15, 1, 0.2, 1), clip-path 3s cubic-bezier(0.15, 1, 0.2, 1);
             will-change: clip-path, opacity;
         }
@@ -285,20 +284,22 @@
             clip-path: inset(0 0 0 0); 
         }
 
-        /* 📱 MOBILE RESPONSIVE VIEW FIXED (SCREEN COMPATIBILITY ENGINE) */
-        @media (max-width: 768px) {
+        /* 📱 MOBILE RESPONSIVE VIEW FIXED */
+        @media (max-width: 991px) {
             .upper-content-layout {
                 flex-direction: column;
             }
             .image-left-side {
                 width: 100%;
                 text-align: center;
+                flex: none;
             }
             .image-left-side img {
                 margin: 0 auto;
             }
             .text-description-area {
                 width: 100%;
+                flex: none;
             }
             .services-left-section {
                 max-width: 100%; 
@@ -310,7 +311,6 @@
                 text-align: center;
             }
             
-            /* ⚡ FIX: Photo Background Se Hat Kar 100% Mobile Width Ki Ho Gayi */
             .bottom-right-image {
                 position: relative !important;   
                 width: 100% !important;     
@@ -320,10 +320,9 @@
                 margin: 30px auto 10px auto !important;
                 z-index: 5 !important;                
                 opacity: 1 !important;     
-                box-shadow: 0 15px 35px rgba(74, 4, 4, 0.25) !important;
+                box-shadow: 0 15px 35px rgba(70, 0, 32, 0.25) !important;
             }
             
-            /* ⚡ FIX: Button Ab Mobile Me Photo Ke Niche Perfectly Set Hoga */
             .back-btn {
                 display: block !important;
                 width: fit-content !important;
@@ -332,7 +331,7 @@
             }
             
             .container {
-                padding-bottom: 40px; /* Reduced huge empty spacing glitch */
+                padding-bottom: 40px; 
             }
         }
     </style>
@@ -363,14 +362,14 @@
             <div class="text-description-area scroll-reveal reveal-right">
                 <p class="description">
                     <span class="lang-en">At Arvind Construction &amp; Developers, we specialize in transforming outdated, damaged, and underutilized spaces into modern, functional, and visually appealing environments. Whether it is a residential property, commercial establishment, office space, apartment, villa, or retail outlet, our renovation and remodeling services are designed to enhance both the value and functionality of your property. We carefully analyze the existing structure and develop customized solutions that align with your vision, lifestyle, and budget.<br><br>Our team manages every aspect of the renovation process, including structural modifications, space optimization, flooring upgrades, false ceiling installation, electrical and plumbing improvements, painting, lighting solutions, kitchen remodeling, bathroom modernization, and premium interior enhancements. By combining innovative design concepts with high-quality materials and skilled craftsmanship, we ensure that every project achieves a perfect balance between aesthetics, comfort, and durability. From minor upgrades to complete property transformations, we are committed to delivering renovation solutions that exceed expectations. Our focus on quality workmanship, timely execution, transparent communication, and attention to detail allows us to create spaces that not only look exceptional but also provide long-term value and functionality. Whether you are modernizing an existing property or giving a completely new identity to your space, we help turn your ideas into reality with professionalism and precision.</span>
-                    <span class="lang-hi">अरविंद कंस्ट्रक्शन एंड डेवलपर्स में, हम पुराने, क्षतिग्रस्त और कम उपयोग किए गए स्थानों को आधुनिक, कार्यात्मक और सुंदर वातावरण में बदलने में विशेषज्ञता रखते हैं। चाहे वह आवासीय संपत्ति हो, व्यावसायिक प्रतिष्ठान, कार्यालय स्थान, अपार्टमेंट, विला या रिटेल आउटलेट हो, हमारी नवीनीकरण (renovation) और रीमॉडलिंग सेवाएं आपकी संपत्ति के मूल्य और कार्यख्ता दोनों को बढ़ाने के लिए डिज़ाइन की गई हैं। हम मौजूदा संरचना का सावधानीपूर्वक विश्लेषण करते हैं और अनुकूलित समाधान विकसित करते हैं जो आपकी दृष्टि, जीवनशैली और बजट के अनुरूप हों।<br><br>हमारी टीम नवीनीकरण प्रक्रिया के हर पहलू का प्रबंधन करती है, जिसमें संरचनात्मक संशोधन, स्पेस ऑप्टिमाइज़ेशन, फ़्लोरिंग अपग्रेड, फॉल्स सीलिंग इंस्टॉलेशन, इलेक्ट्रिकल और कमरा सुधार, पेंटिंग, लाइटिंग सॉल्यूशंस, किचन रीमॉडलिंग, बाथरूम का आधुनिकीकरण और प्रीमियम इंटीरियर संवर्द्धन शामिल हैं। अभिनv डिज़ाईन अवधारणाओं को उच्च गुणवत्ता वाली सामग्री और कुशल शिल्प कौशल के साथ जोड़कर, हम यह सुनिश्चित करते हैं कि हर परियोजना सौंदर्यशास्त्र, आराम और स्थायित्व के बीच एक सही संतुलन प्राप्त करे। छोटे अपग्रेड से लेकर पूरी संपत्ति के बदलाव तक, हम ऐसी नवीनीकरण सेवाएं देने के लिए प्रतिबद्ध हैं जो अपेक्षाओं से परे हों। गुणवत्तापूर्ण काम, समय पर निष्पादन, पारदर्शी संचार और विवरणों पर ध्यान देने से हमें ऐसे स्थान बनाने में मदद मिलती है जो न केवल असाधारण दिखते हैं बल्कि दीर्घकालिक मूल्य और कार्यख्ता भी प्रदान करते हैं। चाहे आप किसी मौजूदा संपत्ति का आधुनिकीकरण कर रहे हों या अपने स्थान को पूरी तरह से नई पहचान दे रहे हों, हम पेशेवर और सटीकता के साथ आपके विचारों को वास्तविकता में बदलने में मदद करते हैं।</span>
+                    <span class="lang-hi">अरविंद कंस्ट्रक्शन एंड डेवलपर्स में, हम पुराने, क्षतिग्रस्त और कम उपयोग किए गए स्थानों को आधुनिक, कार्यात्मक और सुंदर वातावरण में बदलने में विशेषज्ञता रखते हैं। चाहे वह आवासीय संपत्ति हो, व्यावसायिक प्रतिष्ठान, कार्यालय स्थान, अपार्टमेंट, विला या रिटेल आउटलेट हो, हमारी नवीनीकरण (renovation) और रीमॉडलिंग सेवाएं आपकी संपत्ति के मूल्य और कार्यख्ता दोनों को बढ़ाने के लिए डिज़ाइन की गई हैं। हम मौजूदा संरचना का सावधानीपूर्वक विश्लेषण करते हैं और अनुकूलित समाधान विकसित करते हैं जो आपकी दृष्टि, जीवनशैली और बजट के अनुरूप हों।<br><br>हमारी टीम नवीनीकरण प्रक्रिया के हर पहलू का प्रबंधन करती है, जिसमें संरचनात्मक संशोधन, स्पेस ऑप्टिमाइज़ेशन, फ़्लोरिंग अपग्रेड, फॉल्स सीलिंग इंस्टॉलेशन, इलेक्ट्रिकल और प्लंबिंग सुधार, पेंटिंग, लाइटिंग सॉल्यूशंस, kitchen रीमॉडलिंग, बाथरूम का आधुनिकीकरण और प्रीमियम इंटीरियर संवर्द्धन शामिल हैं। अभिनव डिज़ाईन अवधारणाओं को उच्च गुणवत्ता वाली सामग्री और कुशल शिल्प कौशल के साथ जोड़कर, हम यह सुनिश्चित करते हैं कि हर परियोजना सौंदर्यशास्त्र, आराम और स्थायित्व के बीच एक सही संतुलन प्राप्त करे। छोटे अपग्रेड से लेकर पूरी संपत्ति के बदलाव तक, हम ऐसी नवीनीकरण सेवाएं देने के लिए प्रतिबद्ध हैं जो अपेक्षाओं से परे हों। गुणवत्तापूर्ण काम, समय पर निष्पादन, पारदर्शी संचार और विवरणों पर ध्यान देने से हमें ऐसे स्थान बनाने में मदद मिलती है जो न केवल असाधारण दिखते हैं बल्कि दीर्घकालिक मूल्य और कार्यख्ता भी प्रदान करते हैं। चाहे आप किसी मौजूदा संपत्ति का आधुनिकीकरण कर रहे हों या अपने स्थान को पूरी तरह से नई पहचान दे रहे हों, हम पेशेवर और सटीकता के साथ आपके विचारों को वास्तविकता में बदलने में मदद करते हैं।</span>
                 </p>
             </div>
 
         </div>
 
         <div class="services-left-section scroll-reveal reveal-bottom">
-            <h2 style="font-family: 'Lora', serif; font-size: 1.4rem; font-weight: bold; font-style: italic; color:#4a0404; margin-bottom: 20px;">
+            <h2 style="font-family: 'Lora', serif; font-size: 1.4rem; font-weight: bold; font-style: italic; margin-bottom: 20px; background: linear-gradient(to bottom, #8a0000, #460020); -webkit-background-clip: text; -webkit-text-fill-color: transparent; display: inline-block;">
                 <span class="lang-en">Our Renovation &amp; Remodeling Services Include:</span>
                 <span class="lang-hi">हमारी नवीनीकरण और रीमॉडलिंग सेवाओं में शामिल हैं:</span>
             </h2>
@@ -422,7 +421,7 @@
                 </li>
             </ul>
 
-            <p style="color:#4a0404; margin-top:25px; font-size:1.2rem;">
+            <p style="margin-top:25px; font-size:1.2rem; background: linear-gradient(to bottom, #8a0000, #460020); -webkit-background-clip: text; -webkit-text-fill-color: transparent; display: inline-block;">
                 <strong>
                     <span class="lang-en">Transforming Existing Spaces Into Modern Living &amp; Working Environments. 🏢✨🔨</span>
                     <span class="lang-hi">मौजूदा स्थानों को आधुनिक लिविंग और वर्किंग वातावरण में बदलना। 🏢✨🔨</span>

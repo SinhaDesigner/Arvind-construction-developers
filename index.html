@@ -50,9 +50,9 @@
             z-index: 1000;
         }
 
-        /* 🌟 MOUSE TRACKING REAL-TIME SHINE FOR LANGUAGE BUTTON */
+        /* ⚡ FIX: Combined both gradients in a single property so the wine-red color doesn't get wiped out */
         .lang-btn {
-            background-color: #4a0404;
+            background: radial-gradient(circle 60px at var(--x, -1000px) var(--y, -1000px), rgba(255, 255, 255, 0.45) 0%, transparent 100%), linear-gradient(to bottom, #8a0000, #460020);
             color: #fef3d0;
             border: none;
             padding: 8px 16px;
@@ -62,17 +62,15 @@
             font-size: 0.95rem;
             border-radius: 20px;
             cursor: pointer;
-            box-shadow: 0 4px 10px rgba(74, 4, 4, 0.2);
+            box-shadow: 0 4px 10px rgba(70, 0, 32, 0.2);
             position: relative;
             overflow: hidden; 
             z-index: 1;
-            background-image: radial-gradient(circle 60px at var(--x, -1000px) var(--y, -1000px), rgba(255, 255, 255, 0.45) 0%, transparent 100%);
-            background-color: #4a0404;
             transition: box-shadow 0.3s ease;
         }
 
         .lang-btn:hover {
-            box-shadow: 0 0 15px rgba(74, 4, 4, 0.45);
+            box-shadow: 0 0 15px rgba(138, 0, 0, 0.45);
         }
 
         .lang-dropdown {
@@ -82,14 +80,14 @@
             background-color: #fef3d0;
             min-width: 130px;
             box-shadow: 0px 8px 20px rgba(0,0,0,0.2);
-            border: 2px solid #4a0404;
+            border: 2px solid #460020;
             border-radius: 8px;
             margin-top: 5px;
             overflow: hidden;
         }
 
         .lang-dropdown a {
-            color: #4a0404;
+            color: #460020;
             padding: 10px 15px;
             text-decoration: none;
             display: block;
@@ -99,7 +97,7 @@
         }
 
         .lang-dropdown a:hover {
-            background-color: #4a0404;
+            background: linear-gradient(to bottom, #8a0000, #460020);
             color: #fef3d0;
         }
 
@@ -114,7 +112,7 @@
             margin: 30px auto; 
             border-radius: 20px; 
             overflow: hidden;
-            box-shadow: 0 6px 15px rgba(74, 4, 4, 0.15); 
+            box-shadow: 0 6px 15px rgba(70, 0, 32, 0.15); 
             position: relative; 
         }
 
@@ -130,7 +128,7 @@
             bottom: 8%;
             left: 5%;
             background-color: #ffd700; 
-            color: #4a0404; 
+            color: #460020; 
             padding: 6px 14px;
             border-radius: 25px; 
             font-family: 'Lora', serif;
@@ -152,41 +150,35 @@
             box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
         }
 
-        /* 🔴 FIXED RESPONSIVE TEXT POSITIONING 🔴 */
-        .banner-text-arvind {
+        /* 🔴 FIXED RESPONSIVE TEXT POSITIONING WITH LINEAR GRADIENT 🔴 */
+        .banner-text-arvind, .banner-text-construction, .banner-text-developers {
             position: absolute;
-            top: 23%;
-            left: 47%;
             font-family: 'Cinzel Decorative', cursive;
-            font-size: 4vw; 
-            color: #4a0404;
             margin: 0;
             font-weight: bold;
-            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.65);
+            background: linear-gradient(to bottom, #8a0000, #460020);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            /* Using drop-shadow filter for gradient text compatibility instead of text-shadow */
+            filter: drop-shadow(3px 3px 4px rgba(0, 0, 0, 0.65));
+        }
+
+        .banner-text-arvind {
+            top: 23%;
+            left: 47%;
+            font-size: 4vw; 
         }
 
         .banner-text-construction {
-            position: absolute;
             top: 35%; 
             left: 35%;
-            font-family: 'Cinzel Decorative', cursive;
             font-size: 4.6vw;
-            color: #4a0404;
-            margin: 0;
-            font-weight: bold;
-            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.65);
         }
 
         .banner-text-developers {
-            position: absolute;
             top: 50%; 
             left: 60%; 
-            font-family: 'Cinzel Decorative', cursive;
             font-size: 3.2vw; 
-            color: #4a0404;
-            margin: 0;
-            font-weight: bold;
-            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.65);
         }
 
         /* Mobile screens responsive view updates */
@@ -203,7 +195,7 @@
         .toast-notification {
             visibility: hidden;
             min-width: 250px;
-            background-color: #4a0404;
+            background: linear-gradient(to bottom, #8a0000, #460020);
             color: #fef3d0;
             text-align: center;
             border-radius: 8px;
@@ -226,7 +218,7 @@
             opacity: 1;
         }
 
-        /* Main Header Slogans */
+        /* Main Vacation Slogans */
         header {
             text-align: center;
             margin-bottom: 50px;
@@ -240,13 +232,12 @@
             color: #000000; 
         }
 
-        /* 🌟 ALL TOPIC HEADINGS WITH DYNAMIC SPOTLIGHT MOUSE SHINE */
+        /* 🌟 ALL TOPIC HEADINGS WITH DYNAMIC SPOTLIGHT & GRADIENT TEXT */
         h2 {
             font-family: 'Shrikhand', cursive;
             font-style: italic;
             text-decoration: underline;
             font-size: 2rem;
-            color: #4a0404;
             margin-top: 40px;
             margin-bottom: 15px;
             display: inline-block; 
@@ -254,11 +245,14 @@
             overflow: hidden; 
             padding: 4px 14px;
             border-radius: 8px;
-            transition: text-shadow 0.3s ease;
+            background: linear-gradient(to bottom, #8a0000, #460020);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            transition: filter 0.3s ease;
         }
         
         h2:hover {
-            text-shadow: 2px 2px 8px rgba(74, 4, 4, 0.25);
+            filter: drop-shadow(2px 2px 4px rgba(70, 0, 32, 0.25));
         }
         
         /* Dynamic Spotlight overlay structure on headings */
@@ -266,7 +260,7 @@
             content: '';
             position: absolute;
             top: 0; left: 0; right: 0; bottom: 0;
-            background: radial-gradient(circle 55px at var(--x, -1000px) var(--y, -1000px), rgba(74, 4, 4, 0.12), transparent 100%);
+            background: radial-gradient(circle 55px at var(--x, -1000px) var(--y, -1000px), rgba(70, 0, 32, 0.15), transparent 100%);
             pointer-events: none; 
             z-index: 2;
         }
@@ -289,13 +283,16 @@
             margin-bottom: 10px;
         }
 
-        /* Brand Name Inline Styling */
+        /* Brand Name Inline/Heading Styling with Signature Gradient */
         .brand-name-heading {
             font-family: 'Cinzel Decorative', cursive;
             font-weight: bold;
-            color: #460020;
             font-size: 2.1rem; 
             margin-bottom: 5px;
+            background: linear-gradient(to bottom, #8a0000, #460020);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
         }
 
         .brand-name-inline {
@@ -305,9 +302,12 @@
             font-size: 1.25rem; 
             font-style: normal; 
             display: inline-block;
+            background: linear-gradient(to bottom, #8a0000, #460020);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
-        /* Services Grid and Rounded Rectangle Boxes */
+        /* Services Grid and Rounded Rectangle Boxes with Gradient Background */
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -316,7 +316,7 @@
         }
 
         .service-box {
-            background-color: #4a0404; 
+            background: linear-gradient(to bottom, #8a0000, #460020); 
             padding: 20px 25px;
             border-radius: 15px; 
             text-decoration: none; 
@@ -328,10 +328,9 @@
             gap: 15px;
             text-align: left;
             
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 4px 8px rgba(70, 0, 32, 0.15);
             cursor: pointer;
             -webkit-tap-highlight-color: transparent;
-            /* Wapas smooth 0.3s transition on leave taaki aram se box neeche aaye */
             transition: transform 0.3s ease, box-shadow 0.3s ease; 
         }
 
@@ -340,39 +339,37 @@
         }
 
         /* 🎬 ========================================================
-           🌟 DIRECTIONAL SCROLL REVEAL ENGINE (3 SECONDS SYSTEM TIME)
-           ======================================================== 🎬 */
+            🌟 DIRECTIONAL SCROLL REVEAL ENGINE (3 SECONDS SYSTEM TIME)
+            ======================================================== 🎬 */
         .scroll-reveal {
             opacity: 0;
-            /* Transition set to 3s for an ultra-smooth cinematic entry */
             transition: opacity 3s cubic-bezier(0.15, 1, 0.2, 1), transform 3s cubic-bezier(0.15, 1, 0.2, 1);
             will-change: transform, opacity;
         }
 
-        /* ⬅️ Left to Right Slide + Subtle Lift */
+        /* Left to Right Slide */
         .reveal-left {
             transform: translateX(-100px) scale(0.96);
         }
 
-        /* ➡️ Right to Left Slide + Subtle Lift */
+        /* Right to Left Slide */
         .reveal-right {
             transform: translateX(100px) scale(0.96);
         }
 
-        /* ⬆️ Premium Lift-Scale from Bottom */
+        /* Premium Lift-Scale from Bottom */
         .reveal-bottom {
             transform: translateY(80px) scale(0.97);
         }
 
-        /* ⬇️ Top to Bottom Slow Slide */
+        /* Top to Bottom Slow Slide */
         .reveal-top {
             transform: translateY(-60px);
         }
 
-        /* 🌟 NEW REVEAL POPUP FOR SERVICES GRID ITEMS (ONE BY ONE BOUNCE) */
+        /* Services grid zoom transitions */
         .reveal-popup {
             transform: scale(0.4) translateY(60px);
-            /* Snappy cubic-bezier curve for a premium software popup feeling */
             transition: opacity 0.8s cubic-bezier(0.34, 1.56, 0.64, 1), transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
         }
 
@@ -382,7 +379,7 @@
             transform: translateX(0) translateY(0) scale(1);
         }
 
-        /* ⏱️ STAGGERED REVEAL DELAY PACK FOR SERVICES GRID */
+        /* STAGGERED REVEAL DELAY PACK FOR SERVICES GRID */
         .services-grid .service-box:nth-child(1) { transition-delay: 0.05s; }
         .services-grid .service-box:nth-child(2) { transition-delay: 0.15s; }
         .services-grid .service-box:nth-child(3) { transition-delay: 0.25s; }
@@ -392,19 +389,18 @@
         .services-grid .service-box:nth-child(7) { transition-delay: 0.65s; }
         .services-grid .service-box:nth-child(8) { transition-delay: 0.75s; }
 
-        /* Hover animation separated from trigger framework (Aram se uthne wala smooth transition) */
         .service-box:hover, .service-box:active {
             transform: translateY(-6px) scale(1.02); 
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.65); 
+            box-shadow: 0 15px 35px rgba(70, 0, 32, 0.5); 
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            transition-delay: 0s !important; /* Instant lift on hover, clears entrance stagger block */
+            transition-delay: 0s !important; 
         }
 
         /* Footer Styling */
         footer {
             margin-top: 60px;
             text-align: center;
-            border-top: 2px dashed #4a0404;
+            border-top: 2px dashed #460020;
             padding-top: 30px;
         }
 
@@ -466,7 +462,7 @@
             </p>
         </header>
 
-        <hr style="border: 1px solid #4a0404; opacity: 0.2;">
+        <hr style="border: 1px solid #460020; opacity: 0.15;">
 
         <section class="scroll-reveal reveal-left">
             <h2>
@@ -476,7 +472,7 @@
             <p>
                 <span class="brand-name-inline">Arvind Construction &amp; Developers</span> 
                 <span class="lang-en">is a trusted name in the construction and real estate industry, dedicated to delivering projects that combine architectural excellence, structural strength, and modern innovation. With a strong focus on quality workmanship, professional project management, and client satisfaction, we create residential and commercial spaces that stand the test of time.<br><br><strong><u>Our mission is to provide reliable, cost-effective, and high-quality construction solutions while maintaining the highest standards of integrity, safety, and professionalism.</u></strong></span>
-                <span class="lang-hi"><strong>अरविन्द कंस्ट्रक्शन &amp; डेवलपर्स</strong> निर्माण patterns और रियल एस्टेट उद्योग में एक विश्वसनीय नाम है, जो ऐसी परियोजनाओं को पूरा करने के लिए समर्पित है जो वास्तुकला की उत्कृष्टता, संरचनात्मक मजबूती और आधुनिक नवाचार का एक बेहतरीन संयोजन हैं। गुणवत्तापूर्ण कारीगरी, पेशेवर प्रोजेक्ट मैनेजमेंट और ग्राहक संतुष्टि पर विशेष ध्यान देते हुए, हम ऐसे आवासीय और व्यावसायिक स्थानों का निर्माण करते हैं जो समय की कसौटी पर खरे उतरते हैं।<br><br><strong><u>हमारा मिशन ईमानदारी, सुरक्षा और व्यावसायिकता के उच्चतम मानकों को बनाए रखते हुए विश्वसनीय, लागत प्रभावी और उच्च गुणवत्ता वाले निर्माण समाधान प्रदान करना है।</u></strong></span>
+                <span class="lang-hi"><strong>अरविन्द कंस्ट्रक्शन &amp; डेवलपर्स</strong> निर्माण और Real Estate उद्योग में एक विश्वसनीय name है, जो ऐसी परियोजनाओं को पूरा करने के लिए समर्पित है जो वास्तुकला की उत्कृष्टता, संरचनात्मक मजबूती और आधुनिक नवाचार का एक बेहतरीन संयोजन हैं। गुणवत्तापूर्ण कारीगरी, पेशेवर प्रोजेक्ट मैनेजमेंट और ग्राहक संतुष्टि पर विशेष ध्यान देते हुए, हम ऐसे आवासीय और व्यावसायिक स्थानों का निर्माण करते हैं जो समय की कसौटी पर खरे उतरते हैं।<br><br><strong><u>हमारा मिशन ईमानदारी, सुरक्षा और व्यावसायिकता के उच्चतम मानकों को बनाए रखते हुए विश्वसनीय, लागत प्रभावी और उच्च गुणवत्ता वाले निर्माण समाधान प्रदान करना है।</u></strong></span>
             </p>
         </section>
 
@@ -611,7 +607,7 @@
         </section>
 
         <footer>
-            <h3 class="brand-name-heading">ARVIND CONSTRUCTION &amp; DEVELOPERS</h3>
+            <div class="brand-name-heading">ARVIND CONSTRUCTION &amp; DEVELOPERS</div>
             <p>
                 <span class="lang-en">"Turning Vision Into Reality."</span>
                 <span class="lang-hi">"दृष्टिकोण को वास्तविकता में बदलना।"</span>
@@ -675,7 +671,7 @@
             }
         }
 
-        /* 🎬 JAVASCRIPT FOR DYNAMIC MOUSE TRACKING SPOTLIGHT SHINE */
+        /* 🌟 JAVASCRIPT FOR DYNAMIC MOUSE TRACKING SPOTLIGHT SHINE */
         function initMouseTrackingShine() {
             const shineElements = document.querySelectorAll('.lang-btn, h2');
             
@@ -696,7 +692,7 @@
             });
         }
 
-        /* 🎬 STRICT ONE-WAY SCROLL ENGINE (ANIMATES ONCE ON SCROLL DOWN ONLY) */
+        /* 🎬 STRICT ONE-WAY SCROLL ENGINE */
         function initScrollReveal() {
             const options = {
                 root: null,

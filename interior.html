@@ -50,9 +50,9 @@
             z-index: 1000;
         }
 
-        /* 🌟 MOUSE TRACKING REAL-TIME SHINE FOR LANGUAGE BUTTON */
+        /* 🌟 MOUSE TRACKING REAL-TIME SHINE FOR LANGUAGE BUTTON WITH GRADIENT */
         .lang-btn {
-            background-color: #4a0404;
+            background: radial-gradient(circle 60px at var(--x, -1000px) var(--y, -1000px), rgba(255, 255, 255, 0.45) 0%, transparent 100%), linear-gradient(to bottom, #8a0000, #460020);
             color: #fef3d0;
             border: none;
             padding: 8px 16px;
@@ -62,17 +62,15 @@
             font-size: 0.95rem;
             border-radius: 20px;
             cursor: pointer;
-            box-shadow: 0 4px 10px rgba(74, 4, 4, 0.2);
+            box-shadow: 0 4px 10px rgba(70, 0, 32, 0.25);
             position: relative;
             overflow: hidden; 
             z-index: 1;
-            background-image: radial-gradient(circle 60px at var(--x, -1000px) var(--y, -1000px), rgba(255, 255, 255, 0.45) 0%, transparent 100%);
-            background-color: #4a0404;
             transition: box-shadow 0.3s ease;
         }
 
         .lang-btn:hover {
-            box-shadow: 0 0 15px rgba(74, 4, 4, 0.45);
+            box-shadow: 0 0 15px rgba(138, 0, 0, 0.45);
         }
 
         .lang-dropdown {
@@ -82,14 +80,14 @@
             background-color: #fef3d0;
             min-width: 130px;
             box-shadow: 0px 8px 20px rgba(0,0,0,0.2);
-            border: 2px solid #4a0404;
+            border: 2px solid #460020;
             border-radius: 8px;
             margin-top: 5px;
             overflow: hidden;
         }
 
         .lang-dropdown a {
-            color: #4a0404;
+            color: #460020;
             padding: 10px 15px;
             text-decoration: none;
             display: block;
@@ -99,7 +97,7 @@
         }
 
         .lang-dropdown a:hover {
-            background-color: #4a0404;
+            background: linear-gradient(to bottom, #8a0000, #460020);
             color: #fef3d0;
         }
 
@@ -107,13 +105,12 @@
             display: block;
         }
 
-        /* 🌟 MAIN HEADING WITH CURSOR SHINE INTERACTION */
+        /* 🌈 MAIN HEADING WITH CURSOR SHINE INTERACTION & TEXT GRADIENT */
         h1 {
             font-family: 'Shrikhand', cursive;
             font-style: italic;
             text-decoration: underline;
             font-size: 2.5rem;
-            color: #4a0404;
             margin-top: 30px;
             margin-bottom: 30px;
             display: inline-block;
@@ -121,13 +118,16 @@
             overflow: hidden;
             padding: 4px 14px;
             border-radius: 8px;
+            background: linear-gradient(to bottom, #8a0000, #460020);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         h1::before {
             content: '';
             position: absolute;
             top: 0; left: 0; right: 0; bottom: 0;
-            background: radial-gradient(circle 65px at var(--x, -1000px) var(--y, -1000px), rgba(74, 4, 4, 0.12), transparent 100%);
+            background: radial-gradient(circle 65px at var(--x, -1000px) var(--y, -1000px), rgba(70, 0, 32, 0.15), transparent 100%);
             pointer-events: none;
             z-index: 2;
         }
@@ -143,7 +143,7 @@
 
         /* 🖼️ IMAGE SIDE (Left Raised, Right Sloping/Plane Effect) */
         .image-side {
-            flex: 2;
+            flex: 4.5; /* ⚡ FIX: Space allocation increased from 1 to 4.5 to make image bigger */
             text-align: left;
             position: relative;
             display: inline-block;
@@ -164,10 +164,10 @@
             z-index: -1; 
         }
 
-        /* AAPKA ORIGINAL SIZE PRESERVED */
+        /* AAPKA ORIGINAL LOOK PRESERVED AND ENLARGED SAFELY */
         .image-side img {
             width: 100%;    
-            max-width:850px;
+            max-width: 600px; /* ⚡ FIX: Max-width stabilized to make it clean and bigger */
             height: auto;
             border-radius: 15px;
             box-shadow: none; 
@@ -176,10 +176,10 @@
 
         /* Text Side takes remaining right width */
         .text-side {
-            flex: 1.8; 
+            flex: 5.5; /* ⚡ FIX: Adjusted flex ratio for a clean side-by-side view */
             position: relative;    
-            z-index: 10;           /* Taaki text photo ke upar float kare */
-            margin-left: -170px;         
+            z-index: 10;
+            margin-left: -150px; /* ⚡ FIX: Removed -150px negative margin so text pushes back naturally */
         }
 
         /* Same Lora Font, Bold, Italic, Dark Black for details */
@@ -209,35 +209,33 @@
             gap: 10px;
         }
 
-        /* 🌟 BACK BUTTON WITH REVOLVING SPOTLIGHT SHINE */
+        /* 🌟 BACK BUTTON WITH REVOLVING SPOTLIGHT SHINE & GRADIENT PACK */
         .back-btn {
             display: inline-block;
             margin-top: 30px;
             padding: 12px 25px;
-            background-color: #4a0404;
+            background: radial-gradient(circle 70px at var(--x, -1000px) var(--y, -1000px), rgba(255, 255, 255, 0.45) 0%, transparent 100%), linear-gradient(to bottom, #8a0000, #460020);
             color: #fef3d0;
             font-family: 'Lora', serif;
             font-weight: bold;
             font-style: italic;
             text-decoration: none;
             border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+            box-shadow: 0 4px 12px rgba(70, 0, 32, 0.2);
             position: relative;
             overflow: hidden;
             z-index: 10;
-            background-image: radial-gradient(circle 70px at var(--x, -1000px) var(--y, -1000px), rgba(255, 255, 255, 0.45) 0%, transparent 100%);
-            background-color: #4a0404;
             transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
 
         .back-btn:hover {
             transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+            box-shadow: 0 8px 20px rgba(70, 0, 32, 0.4);
         }
 
         /* 🎬 ========================================================
-           🌟 3 SECONDS SYSTEMATIC DIRECTIONAL SCROLL REVEAL TIMING
-           ======================================================== 🎬 */
+            🌟 3 SECONDS SYSTEMATIC DIRECTIONAL SCROLL REVEAL TIMING
+            ======================================================== 🎬 */
         .scroll-reveal {
             opacity: 0;
             transition: opacity 3s cubic-bezier(0.15, 1, 0.2, 1), transform 3s cubic-bezier(0.15, 1, 0.2, 1);
@@ -255,7 +253,7 @@
         /* 🔥 DYNAMIC 3-SECOND WIPE ANIMATION FOR IMAGE CONTAINER */
         .reveal-wipe {
             opacity: 0;
-            clip-path: inset(0 100% 0 0); /* Right to Left curtain clip framework */
+            clip-path: inset(0 100% 0 0); 
             transition: opacity 3s cubic-bezier(0.15, 1, 0.2, 1), clip-path 3s cubic-bezier(0.15, 1, 0.2, 1);
             will-change: clip-path, opacity;
         }
@@ -265,7 +263,7 @@
             transform: translateX(0) translateY(0) scale(1);
         }
 
-        /* 🔥 ACTIVE VIEW FOR IMAGE WIPE (Page Load par parda khulega) */
+        /* 🔥 ACTIVE VIEW FOR IMAGE WIPE */
         .reveal-wipe.wipe-active {
             opacity: 1;
             clip-path: inset(0 0 0 0);
@@ -279,11 +277,12 @@
             .image-side {
                 width: 100%;
                 text-align: center;
+                flex: none;
                 order: 1; 
             }
             .image-side img {
                 margin: 0 auto;
-                width: 100%; /* Resets largedesktop stretch safely on mobile phones */
+                width: 100%; 
             }
             
             .image-side::before {
@@ -297,6 +296,7 @@
             .text-side {
                 order: 2;
                 width: 100%;
+                flex: none;
             }
             h1 {
                 font-size: 2rem;
@@ -332,10 +332,10 @@
             <div class="text-side scroll-reveal reveal-right">
                 <p class="description">
                     <span class="lang-en">At Arvind Construction &amp; Developers, we create thoughtfully designed interiors that combine functionality, comfort, and aesthetic excellence. Our Interior Design &amp; Execution services are tailored to transform residential, commercial, and corporate spaces into environments that reflect style, purpose, and individuality.<br><br>From concept development and space planning to material selection, custom furnishings, lighting design, and final execution, we manage every aspect of the project with precision and attention to detail. Our team focuses on creating elegant, practical, and modern interiors that enhance both the visual appeal and usability of every space. Whether it is a luxury residence, office, showroom, retail outlet, apartment, or commercial establishment, we deliver complete turnkey interior solutions that meet the highest standards of quality, craftsmanship, and customer satisfaction.</span>
-                    <span class="lang-hi">अरविंद कंस्ट्रक्शन एंड डेवलपर्स में, हम सोच-समझकर डिजाइन किए गए इंटीरियर बनाते हैं जो कार्यक्षमता, आराम और सौंदर्य उत्कृष्टता को जोड़ते हैं। हमारी इंटीरियर डिजाइन और निष्पादन सेवाएं आवासीय, व्यावसायिक और कॉर्पोरेट स्थानों को ऐसे वातावरण में बदलने के लिए तैयार की गई हैं जो शैली, उद्देश्य और व्यक्तित्व को दर्शाती हैं।<br><br>अवधारणा विकास (concept development) और स्पेस प्लानिंग से लेकर सामग्री चयन, CUSTOM फर्निशिंग, लाइटिंग डिजाइन और अंतिम निष्पादन तक, हम सटीकता और विवरण पर ध्यान देते हुए परियोजना के हर पहलू का प्रबंधन करते हैं। हमारी टीम सुरुचिपूर्ण, व्यावहारिक और आधुनिक इंटीरियर बनाने पर ध्यान केंद्रित करती है जो हर स्थान की दृश्य अपील और उपयोगिता दोनों को बढ़ाती है। चाहे वह एक लक्जरी निवास, कार्यालय, शोरूम, रिटेल आउटलेट, अपार्टमेंट या व्यावसायिक प्रतिष्ठान हो, हम पूर्ण टर्नकी इंटीरियर समाधान प्रदान करते हैं जो गुणवत्ता, शिल्प कौशल और ग्राहक संतुष्टि के उच्चतम मानकों को पूरा करते हैं।</span>
+                    <span class="lang-hi">अरविंद कंस्ट्रक्शन एंड डेवलपर्स में, हम सोच-समझकर डिजाइन किए गए इंटीरियर बनाते हैं जो कार्यक्षमता, आरामและ सौंदर्य उत्कृष्टता को जोड़ते हैं। हमारी इंटीरियर डिजाइन और निष्पादन सेवाएं आवासीय, व्यावसायिक और कॉर्पोरेट स्थानों को ऐसे वातावरण में बदलने के लिए तैयार की गई हैं जो शैली, उद्देश्य और व्यक्तित्व को दर्शाती हैं।<br><br>अवधारणा विकास (concept development) और स्पेस प्लानिंग से लेकर सामग्री चयन, CUSTOM फर्निशिंग, लाइटिंग डिजाइन और अंतिम निष्पादन तक, हम सटीकता और विवरण पर ध्यान देते हुए परियोजना के हर पहलू का प्रबंधन करते हैं। हमारी टीम सुरुचिपूर्ण, व्यावहारिक và आधुनिक इंटीरियर बनाने पर ध्यान केंद्रित करती है जो हर स्थान की दृश्य अपील और उपयोगिता दोनों को बढ़ाती है। चाहे वह एक लक्जरी निवास, कार्यालय, शोरूम, रिटेल आउटलेट, apartment या व्यावसायिक प्रतिष्ठान हो, हम पूर्ण टर्नकी इंटीरियर समाधान प्रदान करते हैं जो गुणवत्ता, शिल्प कौशल और ग्राहक संतुष्टि के उच्चतम मानकों को पूरा करते हैं।</span>
                 </p>
                 
-                <h2 style="font-family: 'Lora', serif; font-size: 1.3rem; font-weight: bold; font-style: italic; color:#4a0404; margin-top:10px; margin-bottom:15px;">
+                <h2 style="font-family: 'Lora', serif; font-size: 1.3rem; font-weight: bold; font-style: italic; margin-top:10px; margin-bottom:15px; background: linear-gradient(to bottom, #8a0000, #460020); -webkit-background-clip: text; -webkit-text-fill-color: transparent; display: inline-block;">
                     <span class="lang-en">Our Interior Design Services Include:</span>
                     <span class="lang-hi">हमारी इंटीरियर डिजाइन सेवाओं में शामिल हैं:</span>
                 </h2>
@@ -383,7 +383,7 @@
                     </li>
                 </ul>
 
-                <p style="color:#4a0404; margin-top:25px; font-size:1.2rem;">
+                <p style="margin-top:25px; font-size:1.2rem; background: linear-gradient(to bottom, #8a0000, #460020); -webkit-background-clip: text; -webkit-text-fill-color: transparent; display: inline-block;">
                     <strong>
                         <span class="lang-en">"Transforming Spaces Into Inspiring Experiences."</span>
                         <span class="lang-hi">"स्थानों को प्रेरक अनुभवों में बदलना।"</span>

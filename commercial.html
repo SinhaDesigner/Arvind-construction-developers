@@ -51,9 +51,9 @@
             z-index: 1000;
         }
 
-        /* 🌟 MOUSE TRACKING SPOTLIGHT SHINE FOR LANGUAGE BUTTON */
+        /* 🌟 MOUSE TRACKING SPOTLIGHT SHINE FOR LANGUAGE BUTTON WITH GRADIENT */
         .lang-btn {
-            background-color: #4a0404;
+            background: radial-gradient(circle 60px at var(--x, -1000px) var(--y, -1000px), rgba(255, 255, 255, 0.45) 0%, transparent 100%), linear-gradient(to bottom, #8a0000, #460020);
             color: #fef3d0;
             border: none;
             padding: 8px 16px;
@@ -63,17 +63,15 @@
             font-size: 0.95rem;
             border-radius: 20px;
             cursor: pointer;
-            box-shadow: 0 4px 10px rgba(74, 4, 4, 0.2);
+            box-shadow: 0 4px 10px rgba(70, 0, 32, 0.25);
             position: relative;
             overflow: hidden;
             z-index: 1;
-            background-image: radial-gradient(circle 60px at var(--x, -1000px) var(--y, -1000px), rgba(255, 255, 255, 0.45) 0%, transparent 100%);
-            background-color: #4a0404;
             transition: box-shadow 0.3s ease;
         }
 
         .lang-btn:hover {
-            box-shadow: 0 0 15px rgba(74, 4, 4, 0.45);
+            box-shadow: 0 0 15px rgba(138, 0, 0, 0.45);
         }
 
         .lang-dropdown {
@@ -83,14 +81,14 @@
             background-color: #fef3d0;
             min-width: 130px;
             box-shadow: 0px 8px 20px rgba(0,0,0,0.2);
-            border: 2px solid #4a0404;
+            border: 2px solid #460020;
             border-radius: 8px;
             margin-top: 5px;
             overflow: hidden;
         }
 
         .lang-dropdown a {
-            color: #4a0404;
+            color: #460020;
             padding: 10px 15px;
             text-decoration: none;
             display: block;
@@ -100,7 +98,7 @@
         }
 
         .lang-dropdown a:hover {
-            background-color: #4a0404;
+            background: linear-gradient(to bottom, #8a0000, #460020);
             color: #fef3d0;
         }
 
@@ -108,13 +106,12 @@
             display: block;
         }
 
-        /* 🌟 MAIN HEADING WITH CURSOR GLOW OVERLAY */
+        /* 🌈 MAIN HEADING WITH CURSOR GLOW OVERLAY & TEXT GRADIENT */
         h1 {
             font-family: 'Shrikhand', cursive;
             font-style: italic;
             text-decoration: underline;
             font-size: 2.5rem;
-            color: #4a0404;
             margin-top: 30px;
             margin-bottom: 30px;
             display: inline-block;
@@ -122,13 +119,16 @@
             overflow: hidden;
             padding: 4px 14px;
             border-radius: 8px;
+            background: linear-gradient(to bottom, #8a0000, #460020);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
         
         h1::before {
             content: '';
             position: absolute;
             top: 0; left: 0; right: 0; bottom: 0;
-            background: radial-gradient(circle 65px at var(--x, -1000px) var(--y, -1000px), rgba(74, 4, 4, 0.12), transparent 100%);
+            background: radial-gradient(circle 65px at var(--x, -1000px) var(--y, -1000px), rgba(70, 0, 32, 0.15), transparent 100%);
             pointer-events: none;
             z-index: 2;
         }
@@ -167,38 +167,36 @@
             gap: 10px;
         }
 
-        /* 🌟 BACK BUTTON WITH TRACKING MOUSE SHINE PACK */
+        /* 🌟 BACK BUTTON WITH TRACKING MOUSE SHINE & GRADIENT PACK */
         .back-btn {
             display: inline-block;
             margin-top: 30px;
             padding: 12px 25px;
-            background-color: #4a0404;
+            background: radial-gradient(circle 70px at var(--x, -1000px) var(--y, -1000px), rgba(255, 255, 255, 0.45) 0%, transparent 100%), linear-gradient(to bottom, #8a0000, #460020);
             color: #fef3d0;
             font-family: 'Lora', serif;
             font-weight: bold;
             font-style: italic;
             text-decoration: none;
             border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+            box-shadow: 0 4px 12px rgba(70, 0, 32, 0.2);
             position: relative;
             overflow: hidden;
             z-index: 10;
-            background-image: radial-gradient(circle 70px at var(--x, -1000px) var(--y, -1000px), rgba(255, 255, 255, 0.45) 0%, transparent 100%);
-            background-color: #4a0404;
             transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
 
         .back-btn:hover {
             transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+            box-shadow: 0 8px 20px rgba(70, 0, 32, 0.4);
         }
 
-        /* 💻 DESKTOP IMAGE VIEW Framework */
+        /* 💻 DESKTOP IMAGE VIEW Framework (AAPKA ORIGINAL SIZE BILKUL WAISE HI RETAINED) */
         .bottom-corner-image {
             position: absolute;
             bottom: 0;
             right: 0;
-            max-width: 900px; 
+            max-width: 1000px; 
             width: 200%;
             height: auto;
             display: block;
@@ -226,7 +224,7 @@
         /* 🔥 DYNAMIC 3-SECOND WIPE ANIMATION FOR IMAGE */
         .reveal-wipe {
             opacity: 0;
-            clip-path: inset(0 100% 0 0); /* Right to Left curtain lock */
+            clip-path: inset(0 100% 0 0); 
             transition: opacity 3s cubic-bezier(0.15, 1, 0.2, 1), clip-path 3s cubic-bezier(0.15, 1, 0.2, 1);
             will-change: clip-path, opacity;
         }
@@ -237,10 +235,10 @@
             transform: translateX(0) translateY(0) scale(1);
         }
 
-        /* 🔥 ACTIVE VIEW FOR IMAGE WIPE (Fires cleanly on Page Render) */
+        /* 🔥 ACTIVE VIEW FOR IMAGE WIPE */
         .reveal-wipe.wipe-active {
             opacity: 1;
-            clip-path: inset(0 0 0 0); /* Spreads completely left-to-right */
+            clip-path: inset(0 0 0 0); 
         }
 
         /* 📱 MOBILE RESPONSIVE VIEW FIXED */
@@ -294,7 +292,7 @@
                 <span class="lang-hi">हम व्यावसायिक आवश्यकताओं के अनुरूप आधुनिक, कार्यात्मक और उच्च गुणवत्ता वाले स्थान प्रदान करते हुए व्यापक व्यावसायिक निर्माण सेवाएं प्रदान करते हैं। हमारी विशेषज्ञता में गुणवत्ता, सुरक्षा और समय पर परियोजना वितरण पर ध्यान देने के साथ कार्यालय भवनों, खुदरा स्थानों, वाणिज्यिक परिसरों, शोरूम और संस्थागत सुविधाओं का निर्माण शामिल है।</span>
             </p>
             
-            <h2 style="font-family: 'Lora', serif; font-size: 1.4rem; font-weight: bold; font-style: italic; color:#4a0404; margin-top:30px;">
+            <h2 style="font-family: 'Lora', serif; font-size: 1.4rem; font-weight: bold; font-style: italic; margin-top:30px; background: linear-gradient(to bottom, #8a0000, #460020); -webkit-background-clip: text; -webkit-text-fill-color: transparent; display: inline-block;">
                 <span class="lang-en">Services Include:</span>
                 <span class="lang-hi">सेवाओं में शामिल हैं:</span>
             </h2>
@@ -361,7 +359,7 @@
                 if(img) {
                     img.classList.add('wipe-active');
                 }
-            }, 150); // Small standard delay for browser stabilization
+            }, 150); 
         };
 
         function toggleLangDropdown() {

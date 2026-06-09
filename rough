@@ -55,9 +55,9 @@
             z-index: 1000;
         }
 
-        /* ⚡ FIX: Added premium red linear gradient with mouse tracking shine support for Language Button */
+        /* MOUSE TRACKING REAL-TIME SHINE FOR LANGUAGE BUTTON */
         .lang-btn {
-            background: radial-gradient(circle 60px at var(--x, -1000px) var(--y, -1000px), rgba(255, 255, 255, 0.4) 0%, transparent 100%), linear-gradient(to bottom, #8a0000, #460020);
+            background-color: #4a0404;
             color: #fef3d0;
             border: none;
             padding: 8px 16px;
@@ -71,6 +71,7 @@
             position: relative;
             overflow: hidden; 
             z-index: 1;
+            background-image: radial-gradient(circle 60px at var(--x, -1000px) var(--y, -1000px), rgba(255, 255, 255, 0.4) 0%, transparent 100%);
             transition: box-shadow 0.3s ease;
         }
 
@@ -244,12 +245,12 @@
             display: block;
         }
 
-        /* ⚡ FIX: Added premium red linear gradient layer and glow properties for Back Button */
+        /* 🌟 BACK BUTTON WITH SPARKLE CYAN GLOW HOVER */
         .back-btn {
             display: inline-block;
             margin-top: 35px;
             padding: 12px 28px;
-            background: radial-gradient(circle 70px at var(--x, -1000px) var(--y, -1000px), rgba(255, 255, 255, 0.4) 0%, transparent 100%), linear-gradient(to bottom, #8a0000, #460020);
+            background-color: #4a0404;
             color: #fef3d0;
             font-family: 'Lora', serif;
             font-weight: bold;
@@ -260,12 +261,13 @@
             position: relative;
             overflow: hidden;
             z-index: 10;
+            background-image: radial-gradient(circle 70px at var(--x, -1000px) var(--y, -1000px), rgba(255, 255, 255, 0.4) 0%, transparent 100%);
             transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
 
         .back-btn:hover {
             transform: translateY(-3px);
-            box-shadow: 0 0 20px rgba(138, 0, 0, 0.45);
+            box-shadow: 0 0 20px rgba(56, 189, 248, 0.45);
         }
 
         /* 🎬 ========================================================
@@ -345,7 +347,7 @@
             <div class="text-side scroll-reveal reveal-left">
                 <p class="description">
                     <span class="lang-en">At <span class="brand-name-inline"><strong><u>Arvind Construction &amp; Developers</u></strong></span>, we are committed to creating high-value real estate developments that combine strategic planning, modern infrastructure, and long-term investment potential. Our approach to real estate development focuses on transforming land and property opportunities into well-designed residential, commercial, and mixed-use projects that enhance communities and deliver lasting value.<br><br>From land acquisition and project planning to design, construction, and final delivery, we manage every stage of the development process with professionalism and attention to detail. Our team works closely with architects, engineers, consultants, and stakeholders to ensure that each project meets the highest standards of quality, functionality, sustainability, and market demand. We believe that successful real estate development is not just about constructing buildings, but about creating environments where people can live, work, invest, and grow with confidence.<br><br>With a strong commitment to transparency, innovation, and customer satisfaction, we strive to develop properties that offer both immediate value and long-term appreciation. Whether it is residential communities, commercial complexes, apartment developments, plotted projects, investment properties, or mixed-use developments, our goal is to deliver projects that reflect excellence in design, structural integrity, and modern living standards.<br><br>Our comprehensive real estate development solutions are designed to maximize the potential of every project while ensuring efficiency, compliance, and sustainable growth. Through careful planning, quality execution, and a customer-focused approach, we continue to build developments that contribute positively to the future of urban and residential infrastructure.</span>
-                    <span class="lang-hi"><span class="brand-name-inline">अरविन्द कंस्ट्रक्शन &amp; डेवलपर्स</span> में, हम उच्च मूल्य वाले रियल एस्टेट विकास को बनाने के लिए प्रतिबद्ध हैं जो रणनीतिक योजना, आधुनिक बुनियादी ढांचे और दीर्घकालिक निवेश क्षमता को जोड़ते हैं। रियल एस्टेट विकास के प्रति हमारा दृष्टिकोण भूमि और संपत्ति के अवसरों को अच्छी तरह से डिज़ाइन की गई आवासीय, व्यावसायिक और मिश्रित उपयोग वाली परियोजनाओं में बदलने पर केंद्रित है जो समुदायों को बढ़ाते हैं और स्थायी मूल्य प्रदान करते हैं।<br><br>भूमि अधिग्रहण और परियोजना योजना से लेकर डिज़ाइन, निर्माण और अंतिम डिलीवरी तक, हम विकास प्रक्रिया के हर चरण को व्यावसायिकता और विवरण पर ध्यान देते हुएप्रबंधित करते हैं। हमारी टीम वास्तुकारों, इंजीनियरों, परामर्शदाताओं और हितधारकों के साथ मिलकर काम करती है ताकि यह सुनिश्चित किया जा सके कि प्रत्येक परियोजना गुणवत्ता, कार्यख्ता, स्थिरता और बाजार की मांग के उच्चतम मानकों को पूरा करती है। हमारा मानना है कि सफल रियल एस्टेट विकास केवल इमारतों के निर्माण के बारे में नहीं है, बल्कि ऐसा वातावरण बनाने के बारे में है जहां लोग आत्मविश्वास के साथ रह सकें, काम कर सकें, निवेश कर सकें और बढ़ सकें।<br><br>पारदर्शिता, नवाचार और ग्राहक संतुष्टि के प्रति मजबूत प्रतिबद्धता के साथ, हम ऐसी संपत्तियां विकसित करने का प्रयास करते हैं जो तत्काल मूल्य और दीर्घकालिक प्रशंसा दोनों प्रदान करती हैं। चाहे वह आवासीय समुदाय हों, व्यावसायिक परिसर, अपार्टमेंट विकास, प्लॉट की परियोजनाएं, निवेश संपत्तियां या मिश्रित उपयोग वाले विकास हों, हमारा लक्ष्य ऐसी परियोजनाएं प्रदान करना है जो उत्कृष्ट डिज़ाइन, संरचनात्मक अखंडता और आधुनिक जीवन स्तर को दर्शाती हैं।<br><br>हमारे व्यापक रियल एस्टेट विकास समाधान प्रत्येक परियोजना की क्षमता को अधिकतम करने के साथ-साथ दक्षता, अनुपालन और टिकाऊ विकास सुनिश्चित करने के लिए डिज़ाइन किए गए हैं। सावधानीपूर्वक योजना, गुणवत्तापूर्ण निष्पादन और ग्राहक-केंद्रित दृष्टिकोण के माध्यम से, हम ऐसे विकास का निर्माण जारी रखते हैं जो शहरी और आवासीय बुनियादी ढांचे के भविष्य में सकारात्मक योगदान देते हैं।</span>
+                    <span class="lang-hi"><span class="brand-name-inline">अरविन्द कंस्ट्रक्शन &amp; डेवलपर्स</span> में, हम उच्च मूल्य वाले रियल एस्टेट विकास को बनाने के लिए प्रतिबद्ध हैं जो रणनीतिक योजना, आधुनिक बुनियादी ढांचे और दीर्घकालिक निवेश क्षमता को जोड़ते हैं। रियल एस्टेट विकास के प्रति हमारा दृष्टिकोण भूमि और संपत्ति के अवसरों को अच्छी तरह से डिज़ाइन की गई आवासीय, व्यावसायिक और मिश्रित उपयोग वाली परियोजनाओं में बदलने पर केंद्रित है जो समुदायों को बढ़ाते हैं और स्थायी मूल्य प्रदान करते हैं।<br><br>भूमि अधिग्रहण और परियोजना योजना से लेकर डिज़ाइन, निर्माण और अंतिम डिलीवरी तक, हम विकास प्रक्रिया के हर चरण को व्यावसायिकता और विवरण पर ध्यान देते हुए प्रबंधित करते हैं। हमारी टीम वास्तुकारों, इंजीनियरों, परामर्शदाताओं और हितधारकों के साथ मिलकर काम करती है ताकि यह सुनिश्चित किया जा सके कि प्रत्येक परियोजना गुणवत्ता, कार्यख्ता, स्थिरता और बाजार की मांग के उच्चतम मानकों को पूरा करती है। हमारा मानना है कि सफल रियल एस्टेट विकास केवल इमारतों के निर्माण के बारे में नहीं है, बल्कि ऐसा वातावरण बनाने के बारे में है जहां लोग आत्मविश्वास के साथ रह सकें, काम कर सकें, निवेश कर सकें और बढ़ सकें।<br><br>पारदर्शिता, नवाचार और ग्राहक संतुष्टि के प्रति मजबूत प्रतिबद्धता के साथ, हम ऐसी संपत्तियां विकसित करने का प्रयास करते हैं जो तत्काल मूल्य और दीर्घकालिक प्रशंसा दोनों प्रदान करती हैं। चाहे वह आवासीय समुदाय हों, व्यावसायिक परिसर, अपार्टमेंट विकास, प्लॉट की परियोजनाएं, निवेश संपत्तियां या मिश्रित उपयोग वाले विकास हों, हमारा लक्ष्य ऐसी परियोजनाएं प्रदान करना है जो उत्कृष्ट डिज़ाइन, संरचनात्मक अखंडता और आधुनिक जीवन स्तर को दर्शाती हैं।<br><br>हमारे व्यापक रियल एस्टेट विकास समाधान प्रत्येक परियोजना की क्षमता को अधिकतम करने के साथ-साथ दक्षता, अनुपालन और टिकाऊ विकास सुनिश्चित करने के लिए डिज़ाइन किए गए हैं। सावधानीपूर्वक योजना, गुणवत्तापूर्ण निष्पादन और ग्राहक-केंद्रित दृष्टिकोण के माध्यम से, हम ऐसे विकास का निर्माण जारी रखते हैं जो शहरी और आवासीय बुनियादी ढांचे के भविष्य में सकारात्मक योगदान देते हैं।</span>
                 </p>
                 
                 <h2>
