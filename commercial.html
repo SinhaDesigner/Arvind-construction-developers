@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Commercial Construction - Arvind Construction &amp; Developers</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,700&amp;family=Shrikhand&amp;display=swap" rel="stylesheet">
+
+    <style>
+        /* Same Page Background Color */
+        body {
+            background-color: #fef3d0;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            color: #000000;
+            overflow-x: hidden; /* Prevent horizontal shake during slow slide transitions */
+        }
+
+        /* 🌐 DYNAMIC LANGUAGE SWITCHING SYSTEM */
+        .lang-hi { 
+            display: none !important; 
+        } 
+        body.hindi-active .lang-en { 
+            display: none !important; 
+        }
+        body.hindi-active .lang-hi { 
+            display: inline-block !important; 
+        }
+
+        /* FULL WIDTH CONTAINER */
+        .container {
+            width: 100%;
+            max-width: 100%;     
+            margin: 0;           
+            padding: 40px 30px 180px 30px; 
+            position: relative;
+            box-sizing: border-box;
+            min-height: 100vh; 
+        }
+
+        /* Language Switcher Styling */
+        .lang-switcher {
+            position: absolute;
+            top: 10px;
+            right: 30px;
+            display: inline-block;
+            z-index: 1000;
+        }
+
+        /* 🌟 MOUSE TRACKING SPOTLIGHT SHINE FOR LANGUAGE BUTTON */
+        .lang-btn {
+            background-color: #4a0404;
+            color: #fef3d0;
+            border: none;
+            padding: 8px 16px;
+            font-family: 'Lora', serif;
+            font-weight: bold;
+            font-style: italic;
+            font-size: 0.95rem;
+            border-radius: 20px;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(74, 4, 4, 0.2);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            background-image: radial-gradient(circle 60px at var(--x, -1000px) var(--y, -1000px), rgba(255, 255, 255, 0.45) 0%, transparent 100%);
+            background-color: #4a0404;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .lang-btn:hover {
+            box-shadow: 0 0 15px rgba(74, 4, 4, 0.45);
+        }
+
+        .lang-dropdown {
+            display: none;
+            position: absolute;
+            right: 0;
+            background-color: #fef3d0;
+            min-width: 130px;
+            box-shadow: 0px 8px 20px rgba(0,0,0,0.2);
+            border: 2px solid #4a0404;
+            border-radius: 8px;
+            margin-top: 5px;
+            overflow: hidden;
+        }
+
+        .lang-dropdown a {
+            color: #4a0404;
+            padding: 10px 15px;
+            text-decoration: none;
+            display: block;
+            font-family: 'Lora', serif;
+            font-weight: bold;
+            font-style: italic;
+        }
+
+        .lang-dropdown a:hover {
+            background-color: #4a0404;
+            color: #fef3d0;
+        }
+
+        .show-lang {
+            display: block;
+        }
+
+        /* 🌟 MAIN HEADING WITH CURSOR GLOW OVERLAY */
+        h1 {
+            font-family: 'Shrikhand', cursive;
+            font-style: italic;
+            text-decoration: underline;
+            font-size: 2.5rem;
+            color: #4a0404;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            display: inline-block;
+            position: relative;
+            overflow: hidden;
+            padding: 4px 14px;
+            border-radius: 8px;
+        }
+        
+        h1::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: radial-gradient(circle 65px at var(--x, -1000px) var(--y, -1000px), rgba(74, 4, 4, 0.12), transparent 100%);
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        /* Text area width constraint */
+        .text-content-area {
+            max-width: 55%; 
+            position: relative;
+            z-index: 5;
+        }
+
+        /* Same Lora Font, Bold, Italic, Dark Black for details */
+        p, ul, li {
+            font-family: 'Lora', serif;
+            font-weight: bold;
+            font-style: italic;
+            font-size: 1.15rem;
+            line-height: 1.7;
+            color: #000000;
+        }
+
+        .description {
+            margin-bottom: 25px;
+            text-align: justify;
+        }
+
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        li {
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* 🌟 BACK BUTTON WITH TRACKING MOUSE SHINE PACK */
+        .back-btn {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 12px 25px;
+            background-color: #4a0404;
+            color: #fef3d0;
+            font-family: 'Lora', serif;
+            font-weight: bold;
+            font-style: italic;
+            text-decoration: none;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+            position: relative;
+            overflow: hidden;
+            z-index: 10;
+            background-image: radial-gradient(circle 70px at var(--x, -1000px) var(--y, -1000px), rgba(255, 255, 255, 0.45) 0%, transparent 100%);
+            background-color: #4a0404;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .back-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+        }
+
+        /* 💻 DESKTOP IMAGE VIEW Framework */
+        .bottom-corner-image {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            max-width: 900px; 
+            width: 200%;
+            height: auto;
+            display: block;
+            z-index: 1;
+            pointer-events: none; 
+        }
+
+        /* 🎬 ========================================================
+           🌟 3 SECONDS SYSTEMATIC DIRECTIONAL SCROLL REVEAL TIMING
+           ======================================================== 🎬 */
+        .scroll-reveal {
+            opacity: 0;
+            transition: opacity 3s cubic-bezier(0.15, 1, 0.2, 1), transform 3s cubic-bezier(0.15, 1, 0.2, 1);
+            will-change: transform, opacity;
+        }
+
+        .reveal-left {
+            transform: translateX(-100px) scale(0.97);
+        }
+
+        .reveal-top {
+            transform: translateY(-50px);
+        }
+
+        /* 🔥 DYNAMIC 3-SECOND WIPE ANIMATION FOR IMAGE */
+        .reveal-wipe {
+            opacity: 0;
+            clip-path: inset(0 100% 0 0); /* Right to Left curtain lock */
+            transition: opacity 3s cubic-bezier(0.15, 1, 0.2, 1), clip-path 3s cubic-bezier(0.15, 1, 0.2, 1);
+            will-change: clip-path, opacity;
+        }
+
+        /* 🔥 ACTIVE VIEW FOR SCROLL ELEMENTS */
+        .scroll-reveal.active-view {
+            opacity: 1;
+            transform: translateX(0) translateY(0) scale(1);
+        }
+
+        /* 🔥 ACTIVE VIEW FOR IMAGE WIPE (Fires cleanly on Page Render) */
+        .reveal-wipe.wipe-active {
+            opacity: 1;
+            clip-path: inset(0 0 0 0); /* Spreads completely left-to-right */
+        }
+
+        /* 📱 MOBILE RESPONSIVE VIEW FIXED */
+        @media (max-width: 768px) {
+            .text-content-area {
+                max-width: 100%; 
+            }
+            h1 {
+                font-size: 2rem;
+                display: block;
+                text-align: center;
+            }
+            
+            .bottom-corner-image {
+                height: 260px !important;   
+                width: auto !important;     
+                max-width: none !important; 
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                z-index: -1;                
+                opacity: 0.85;     
+            }
+            
+            .container {
+                padding-bottom: 300px; 
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <div class="lang-switcher">
+            <button class="lang-btn" onclick="toggleLangDropdown()">🌐 Language / भाषा ▾</button>
+            <div class="lang-dropdown" id="myLangDropdown">
+                <a href="#" onclick="selectLanguage('English')">English</a>
+                <a href="#" onclick="selectLanguage('Hindi')">हिन्दी</a>
+            </div>
+        </div>
+        
+        <h1 class="scroll-reveal reveal-top">
+            <span class="lang-en">Commercial Construction</span>
+            <span class="lang-hi">व्यावसायिक निर्माण</span>
+        </h1>
+
+        <div class="text-content-area scroll-reveal reveal-left">
+            <p class="description">
+                <span class="lang-en">We provide comprehensive commercial construction services, delivering modern, functional, and high-quality spaces tailored to business needs. Our expertise includes the construction of office buildings, retail spaces, commercial complexes, showrooms, and institutional facilities with a focus on quality, safety, and timely project delivery.</span>
+                <span class="lang-hi">हम व्यावसायिक आवश्यकताओं के अनुरूप आधुनिक, कार्यात्मक और उच्च गुणवत्ता वाले स्थान प्रदान करते हुए व्यापक व्यावसायिक निर्माण सेवाएं प्रदान करते हैं। हमारी विशेषज्ञता में गुणवत्ता, सुरक्षा और समय पर परियोजना वितरण पर ध्यान देने के साथ कार्यालय भवनों, खुदरा स्थानों, वाणिज्यिक परिसरों, शोरूम और संस्थागत सुविधाओं का निर्माण शामिल है।</span>
+            </p>
+            
+            <h2 style="font-family: 'Lora', serif; font-size: 1.4rem; font-weight: bold; font-style: italic; color:#4a0404; margin-top:30px;">
+                <span class="lang-en">Services Include:</span>
+                <span class="lang-hi">सेवाओं में शामिल हैं:</span>
+            </h2>
+
+            <ul>
+                <li>✔ 
+                    <span class="lang-en">Office Buildings</span>
+                    <span class="lang-hi">कार्यालय भवन</span>
+                </li>
+                <li>✔ 
+                    <span class="lang-en">Commercial Complexes</span>
+                    <span class="lang-hi">व्यावसायिक परिसर</span>
+                </li>
+                <li>✔ 
+                    <span class="lang-en">Shopping Centers &amp; Malls</span>
+                    <span class="lang-hi">शॉपिंग सेंटर और मॉल</span>
+                </li>
+                <li>✔ 
+                    <span class="lang-en">Retail Stores &amp; Showrooms</span>
+                    <span class="lang-hi">रिटेल स्टोर और शोरूम</span>
+                </li>
+                <li>✔ 
+                    <span class="lang-en">Hotels &amp; Hospitality Projects</span>
+                    <span class="lang-hi">होटल और आतिथ्य परियोजनाएं</span>
+                </li>
+                <li>✔ 
+                    <span class="lang-en">Educational Institutions</span>
+                    <span class="lang-hi">शैक्षणिक संस्थान</span>
+                </li>
+                <li>✔ 
+                    <span class="lang-en">Healthcare Facilities</span>
+                    <span class="lang-hi">स्वास्थ्य सेवा सुविधाएं</span>
+                </li>
+                <li>✔ 
+                    <span class="lang-en">Warehouses &amp; Industrial Buildings</span>
+                    <span class="lang-hi">गोदाम और औद्योगिक भवन</span>
+                </li>
+            </ul>
+
+            <a href="index.html" class="back-btn">
+                <span class="lang-en">⬅ Back to Home</span>
+                <span class="lang-hi">⬅ मुख्य पृष्ठ पर वापस जाएं</span>
+            </a>
+        </div>
+
+        <img src="commercial.png" alt="Commercial Corner Design" class="bottom-corner-image reveal-wipe" id="wipeImage">
+
+    </div>
+
+    <script>
+        // Auto Sync from LocalStorage
+        window.onload = function() {
+            var savedLang = localStorage.getItem('selectedLanguage');
+            if (savedLang === 'Hindi') {
+                document.body.classList.add('hindi-active');
+            }
+            
+            initScrollReveal();
+            initMouseTrackingShine();
+            
+            // ⚡ PAGE LOAD SE IMAGE WIPE SYSTEM ACTIVATE
+            setTimeout(function() {
+                var img = document.getElementById('wipeImage');
+                if(img) {
+                    img.classList.add('wipe-active');
+                }
+            }, 150); // Small standard delay for browser stabilization
+        };
+
+        function toggleLangDropdown() {
+            document.getElementById("myLangDropdown").classList.toggle("show-lang");
+        }
+
+        window.onclick = function(event) {
+            if (!event.target.matches('.lang-btn')) {
+                var dropdowns = document.getElementsByClassName("lang-dropdown");
+                for (var i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show-lang')) {
+                        openDropdown.classList.remove('show-lang');
+                    }
+                }
+            }
+        }
+
+        function selectLanguage(lang) {
+            if (lang === 'Hindi') {
+                document.body.classList.add('hindi-active');
+                localStorage.setItem('selectedLanguage', 'Hindi');
+            } else {
+                document.body.classList.remove('hindi-active');
+                localStorage.setItem('selectedLanguage', 'English');
+            }
+            document.getElementById("myLangDropdown").classList.remove("show-lang");
+        }
+
+        /* 🌟 MOUSE GLOW SPOTLIGHT TRACKING CORE LOGIC */
+        function initMouseTrackingShine() {
+            const elements = document.querySelectorAll('.lang-btn, .back-btn, h1');
+            elements.forEach(el => {
+                el.addEventListener('mousemove', (e) => {
+                    const rect = el.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    el.style.setProperty('--x', `${x}px`);
+                    el.style.setProperty('--y', `${y}px`);
+                });
+                el.addEventListener('mouseleave', () => {
+                    el.style.setProperty('--x', '-1000px');
+                    el.style.setProperty('--y', '-1000px');
+                });
+            });
+        }
+
+        /* 🎬 STRICT ONE-WAY SCROLL OBSERVER TIMING CONTROLLER */
+        function initScrollReveal() {
+            const observer = new IntersectionObserver((entries, obs) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active-view');
+                        obs.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.scroll-reveal').forEach(el => observer.observe(el));
+        }
+    </script>
+</body>
+</html>

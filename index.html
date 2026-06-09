@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arvind Construction &amp; Developers</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&amp;family=Lora:ital,wght@1,700&amp;family=Shrikhand&amp;display=swap" rel="stylesheet">
+
+    <style>
+        /* Page Background Color */
+        body {
+            background-color: #fef3d0;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            color: #000000; /* Default text color Dark Black */
+            overflow-x: hidden; /* Prevent horizontal scrollbars during entrance animations */
+        }
+
+        /* 🌐 DYNAMIC LANGUAGE SWITCHING SYSTEM */
+        .lang-hi { 
+            display: none !important; 
+        } 
+        body.hindi-active .lang-en { 
+            display: none !important; 
+        }
+        body.hindi-active .lang-hi { 
+            display: inline-block !important; 
+        }
+
+        /* FULL WIDTH CONTAINER */
+        .container {
+            width: 100%;
+            max-width: 100%;     
+            margin: 0;           
+            padding: 40px 30px;  
+            box-sizing: border-box;
+            position: relative; 
+        }
+
+        /* Language Switcher Styling */
+        .lang-switcher {
+            position: absolute;
+            top: 10px;
+            right: 30px;
+            display: inline-block;
+            z-index: 1000;
+        }
+
+        /* 🌟 MOUSE TRACKING REAL-TIME SHINE FOR LANGUAGE BUTTON */
+        .lang-btn {
+            background-color: #4a0404;
+            color: #fef3d0;
+            border: none;
+            padding: 8px 16px;
+            font-family: 'Lora', serif;
+            font-weight: bold;
+            font-style: italic;
+            font-size: 0.95rem;
+            border-radius: 20px;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(74, 4, 4, 0.2);
+            position: relative;
+            overflow: hidden; 
+            z-index: 1;
+            /* Dynamic background glow that follows the cursor exactly */
+            background-image: radial-gradient(circle 60px at var(--x, -1000px) var(--y, -1000px), rgba(255, 255, 255, 0.45) 0%, transparent 100%);
+            background-color: #4a0404;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .lang-btn:hover {
+            box-shadow: 0 0 15px rgba(74, 4, 4, 0.45);
+        }
+
+        .lang-dropdown {
+            display: none;
+            position: absolute;
+            right: 0;
+            background-color: #fef3d0;
+            min-width: 130px;
+            box-shadow: 0px 8px 20px rgba(0,0,0,0.2);
+            border: 2px solid #4a0404;
+            border-radius: 8px;
+            margin-top: 5px;
+            overflow: hidden;
+        }
+
+        .lang-dropdown a {
+            color: #4a0404;
+            padding: 10px 15px;
+            text-decoration: none;
+            display: block;
+            font-family: 'Lora', serif;
+            font-weight: bold;
+            font-style: italic;
+        }
+
+        .lang-dropdown a:hover {
+            background-color: #4a0404;
+            color: #fef3d0;
+        }
+
+        .show-lang {
+            display: block;
+        }
+
+        /* 🖼️ RESPONSIVE BANNER CONTAINER */
+        .banner-container {
+            width: 100%;
+            max-width: 1000px; 
+            margin: 30px auto; 
+            border-radius: 20px; 
+            overflow: hidden;
+            box-shadow: 0 6px 15px rgba(74, 4, 4, 0.15); 
+            position: relative; 
+        }
+
+        .banner-img {
+            width: 100%;
+            height: auto; 
+            display: block;
+        }
+
+        /* 📞 GOLDEN ROUND RECTANGLE PHONE BADGE */
+        .banner-phone-badge {
+            position: absolute;
+            bottom: 8%;
+            left: 5%;
+            background-color: #ffd700; 
+            color: #4a0404; 
+            padding: 6px 14px;
+            border-radius: 25px; 
+            font-family: 'Lora', serif;
+            font-weight: bold;
+            font-style: italic;
+            font-size: 1.25vw; 
+            text-decoration: none;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            z-index: 10;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            cursor: pointer;
+        }
+
+        .banner-phone-badge:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+        }
+
+        /* 🔴 FIXED RESPONSIVE TEXT POSITIONING 🔴 */
+        .banner-text-arvind {
+            position: absolute;
+            top: 23%;
+            left: 47%;
+            font-family: 'Cinzel Decorative', cursive;
+            font-size: 4vw; 
+            color: #4a0404;
+            margin: 0;
+            font-weight: bold;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.65);
+        }
+
+        .banner-text-construction {
+            position: absolute;
+            top: 35%; 
+            left: 35%;
+            font-family: 'Cinzel Decorative', cursive;
+            font-size: 4.6vw;
+            color: #4a0404;
+            margin: 0;
+            font-weight: bold;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.65);
+        }
+
+        .banner-text-developers {
+            position: absolute;
+            top: 50%; 
+            left: 60%; 
+            font-family: 'Cinzel Decorative', cursive;
+            font-size: 3.2vw; 
+            color: #4a0404;
+            margin: 0;
+            font-weight: bold;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.65);
+        }
+
+        /* Mobile screens responsive view updates */
+        @media (max-width: 768px) {
+            .banner-phone-badge {
+                font-size: 2.8vw;
+                padding: 4px 8px;
+                bottom: 8%;
+                left: 5%;
+            }
+        }
+
+        /* Laptop Copy Toast Popup */
+        .toast-notification {
+            visibility: hidden;
+            min-width: 250px;
+            background-color: #4a0404;
+            color: #fef3d0;
+            text-align: center;
+            border-radius: 8px;
+            padding: 12px 24px;
+            position: fixed;
+            z-index: 2000;
+            left: 50%;
+            bottom: 30px;
+            transform: translateX(-50%);
+            font-family: 'Lora', serif;
+            font-weight: bold;
+            font-style: italic;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+            opacity: 0;
+            transition: opacity 0.4s ease, visibility 0.4s ease;
+        }
+
+        .toast-notification.show {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        /* Main Header Slogans */
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        header p {
+            font-family: 'Lora', serif;
+            font-weight: bold;
+            font-style: italic;
+            font-size: 1.2rem;
+            color: #000000; 
+        }
+
+        /* 🌟 ALL TOPIC HEADINGS WITH DYNAMIC SPOTLIGHT MOUSE SHINE */
+        h2 {
+            font-family: 'Shrikhand', cursive;
+            font-style: italic;
+            text-decoration: underline;
+            font-size: 2rem;
+            color: #4a0404;
+            margin-top: 40px;
+            margin-bottom: 15px;
+            display: inline-block; 
+            position: relative;
+            overflow: hidden; 
+            padding: 4px 14px;
+            border-radius: 8px;
+            transition: text-shadow 0.3s ease;
+        }
+        
+        h2:hover {
+            text-shadow: 2px 2px 8px rgba(74, 4, 4, 0.25);
+        }
+        
+        /* Dynamic Spotlight overlay structure on headings */
+        h2::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: radial-gradient(circle 55px at var(--x, -1000px) var(--y, -1000px), rgba(74, 4, 4, 0.12), transparent 100%);
+            pointer-events: none; 
+            z-index: 2;
+        }
+
+        p, ul, li, address {
+            font-family: 'Lora', serif;
+            font-weight: bold;
+            font-style: italic;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #000000; 
+        }
+
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        /* Brand Name Inline Styling */
+        .brand-name-heading {
+            font-family: 'Cinzel Decorative', cursive;
+            font-weight: bold;
+            color: #460020;
+            font-size: 2.1rem; 
+            margin-bottom: 5px;
+        }
+
+        .brand-name-inline {
+            font-family: 'Cinzel Decorative', cursive;
+            font-weight: bold;
+            color: #460020;
+            font-size: 1.25rem; 
+            font-style: normal; 
+            display: inline-block;
+        }
+
+        /* Services Grid and Rounded Rectangle Boxes */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .service-box {
+            background-color: #4a0404; 
+            padding: 20px 25px;
+            border-radius: 15px; 
+            text-decoration: none; 
+            
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 15px;
+            text-align: left;
+            
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+            cursor: pointer;
+            -webkit-tap-highlight-color: transparent;
+            /* Wapas smooth 0.3s transition on leave taaki aram se box neeche aaye */
+            transition: transform 0.3s ease, box-shadow 0.3s ease; 
+        }
+
+        .service-box, .service-box span {
+            color: #fef3d0 !important;
+        }
+
+        /* 🎬 ========================================================
+           🌟 DIRECTIONAL SCROLL REVEAL ENGINE (3 SECONDS SYSTEM TIME)
+           ======================================================== 🎬 */
+        .scroll-reveal {
+            opacity: 0;
+            /* Transition set to 3s for an ultra-smooth cinematic entry */
+            transition: opacity 3s cubic-bezier(0.15, 1, 0.2, 1), transform 3s cubic-bezier(0.15, 1, 0.2, 1);
+            will-change: transform, opacity;
+        }
+
+        /* ⬅️ Left to Right Slide + Subtle Lift */
+        .reveal-left {
+            transform: translateX(-100px) scale(0.96);
+        }
+
+        /* ➡️ Right to Left Slide + Subtle Lift */
+        .reveal-right {
+            transform: translateX(100px) scale(0.96);
+        }
+
+        /* ⬆️ Premium Lift-Scale from Bottom */
+        .reveal-bottom {
+            transform: translateY(80px) scale(0.97);
+        }
+
+        /* ⬇️ Top to Bottom Slow Slide */
+        .reveal-top {
+            transform: translateY(-60px);
+        }
+
+        /* 🌟 NEW REVEAL POPUP FOR SERVICES GRID ITEMS (ONE BY ONE BOUNCE) */
+        .reveal-popup {
+            transform: scale(0.4) translateY(60px);
+            /* Snappy cubic-bezier curve for a premium software popup feeling */
+            transition: opacity 0.8s cubic-bezier(0.34, 1.56, 0.64, 1), transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        /* 🔥 ACTIVE STATE CLASS */
+        .scroll-reveal.active-view {
+            opacity: 1;
+            transform: translateX(0) translateY(0) scale(1);
+        }
+
+        /* ⏱️ STAGGERED REVEAL DELAY PACK FOR SERVICES GRID */
+        .services-grid .service-box:nth-child(1) { transition-delay: 0.05s; }
+        .services-grid .service-box:nth-child(2) { transition-delay: 0.15s; }
+        .services-grid .service-box:nth-child(3) { transition-delay: 0.25s; }
+        .services-grid .service-box:nth-child(4) { transition-delay: 0.35s; }
+        .services-grid .service-box:nth-child(5) { transition-delay: 0.45s; }
+        .services-grid .service-box:nth-child(6) { transition-delay: 0.55s; }
+        .services-grid .service-box:nth-child(7) { transition-delay: 0.65s; }
+        .services-grid .service-box:nth-child(8) { transition-delay: 0.75s; }
+
+        /* Hover animation separated from trigger framework (Aram se uthne wala smooth transition) */
+        .service-box:hover, .service-box:active {
+            transform: translateY(-6px) scale(1.02); 
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.65); 
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition-delay: 0s !important; /* Instant lift on hover, clears entrance stagger block */
+        }
+
+        /* Footer Styling */
+        footer {
+            margin-top: 60px;
+            text-align: center;
+            border-top: 2px dashed #4a0404;
+            padding-top: 30px;
+        }
+
+        footer p {
+            font-size: 1.3rem;
+            color: #000000;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <div class="lang-switcher">
+            <button class="lang-btn" onclick="toggleLangDropdown()">🌐 Language / भाषा ▾</button>
+            <div class="lang-dropdown" id="myLangDropdown">
+                <a href="#" onclick="selectLanguage('English')">English</a>
+                <a href="#" onclick="selectLanguage('Hindi')">हिन्दी</a>
+            </div>
+        </div>
+
+        <div class="banner-container">
+            <img src="1000103872.png" alt="Arvind Construction Background" class="banner-img">
+            
+            <a href="tel:+918544218916" class="banner-phone-badge" onclick="handlePhoneClick(event)">
+                📞 +91 8544218916
+            </a>
+            
+            <h1 class="banner-text-arvind">
+                <span class="lang-en">ARVIND</span>
+                <span class="lang-hi">अरविन्द</span>
+            </h1>
+            <h1 class="banner-text-construction">
+                <span class="lang-en">CONSTRUCTION</span>
+                <span class="lang-hi">कंस्ट्रक्शन</span>
+            </h1>
+            <h1 class="banner-text-developers">
+                <span class="lang-en">&amp; DEVELOPERS</span>
+                <span class="lang-hi">&amp; डेवलपर्स</span>
+            </h1>
+        </div>
+
+        <div id="toast" class="toast-notification">Phone number is copied! / फ़ोन नंबर कॉपी हो गया है!</div>
+
+        <header class="scroll-reveal reveal-top">
+            <p style="text-decoration: underline;">
+                <span class="lang-en">Building Excellence. Created and Creating Trust.</span>
+                <span class="lang-hi">उत्कृष्टता का निर्माण। विश्वास का सृजन।</span>
+            </p>
+            <p>
+                <span class="lang-en">We deliver high-quality construction, real estate development, interior design, renovation, and property solutions with a commitment to excellence, transparency, and customer satisfaction.</span>
+                <span class="lang-hi">हम उत्कृष्टता, पारदर्शिता और ग्राहक संतुष्टि के प्रति प्रतिबद्धता के साथ उच्च गुणवत्ता वाले निर्माण, रियल एस्टेट विकास, इंटीरियर डिजाइन, नवीनीकरण और संपत्ति समाधान प्रदान करते हैं।</span>
+            </p>
+            <p>
+                <strong style="text-decoration: underline;">
+                    <span class="lang-en">"Transforming Ideas into Landmarks."</span>
+                    <span class="lang-hi">"विचारों को ऐतिहासिक धरोहरों में बदलना।"</span>
+                </strong>
+            </p>
+        </header>
+
+        <hr style="border: 1px solid #4a0404; opacity: 0.2;">
+
+        <section class="scroll-reveal reveal-left">
+            <h2>
+                <span class="lang-en">WHO WE ARE</span>
+                <span class="lang-hi">हम कौन हैं</span>
+            </h2>
+            <p>
+                <span class="brand-name-inline">Arvind Construction &amp; Developers</span> 
+                <span class="lang-en">is a trusted name in the construction and real estate industry, dedicated to delivering projects that combine architectural excellence, structural strength, and modern innovation. With a strong focus on quality workmanship, professional project management, and client satisfaction, we create residential and commercial spaces that stand the test of time.<br><br><strong><u>Our mission is to provide reliable, cost-effective, and high-quality construction solutions while maintaining the highest standards of integrity, safety, and professionalism.</u></strong></span>
+                <span class="lang-hi"><strong>अरविन्द कंस्ट्रक्शन &amp; डेवलपर्स</strong> निर्माण और रियल एस्टेट उद्योग में एक विश्वसनीय नाम है, जो ऐसी परियोजनाओं को पूरा करने के लिए समर्पित है जो वास्तुकला की उत्कृष्टता, संरचनात्मक मजबूती और आधुनिक नवाचार का एक बेहतरीन संयोजन हैं। गुणवत्तापूर्ण कारीगरी, पेशेवर प्रोजेक्ट मैनेजमेंट और ग्राहक संतुष्टि पर विशेष ध्यान देते हुए, हम ऐसे आवासीय और व्यावसायिक स्थानों का निर्माण करते हैं जो समय की कसौटी पर खरे उतरते हैं।<br><br><strong><u>हमारा मिशन ईमानदारी, सुरक्षा और व्यावसायिकता के उच्चतम मानकों को बनाए रखते हुए विश्वसनीय, लागत प्रभावी और उच्च गुणवत्ता वाले निर्माण समाधान प्रदान करना है।</u></strong></span>
+            </p>
+        </section>
+
+        <section>
+            <h2 class="scroll-reveal reveal-left">
+                <span class="lang-en">OUR SERVICES</span>
+                <span class="lang-hi">हमारी सेवाएं</span>
+            </h2>
+            <div class="services-grid">
+                <a href="residential.html" class="service-box scroll-reveal reveal-popup">
+                    <span style="font-size: 2rem;">🏗️</span>
+                    <span>
+                        <span class="lang-en">Residential Construction</span>
+                        <span class="lang-hi">आवासीय निर्माण</span>
+                    </span>
+                </a>
+                <a href="commercial.html" class="service-box scroll-reveal reveal-popup">
+                    <span style="font-size: 2rem;">🏢</span>
+                    <span>
+                        <span class="lang-en">Commercial Construction</span>
+                        <span class="lang-hi">व्यावसायिक निर्माण</span>
+                    </span>
+                </a>
+                <a href="interior.html" class="service-box scroll-reveal reveal-popup">
+                    <span style="font-size: 2rem;">🎨</span>
+                    <span>
+                        <span class="lang-en">Interior Design &amp; Execution</span>
+                        <span class="lang-hi">इंटीरियर डिजाइन और निष्पादन</span>
+                    </span>
+                </a>
+                <a href="renovation.html" class="service-box scroll-reveal reveal-popup">
+                    <span style="font-size: 2rem;">🔨</span>
+                    <span>
+                        <span class="lang-en">Renovation &amp; Remodeling</span>
+                        <span class="lang-hi">नवीनीकरण और रीमॉडलिंग</span>
+                    </span>
+                </a>
+                <div class="service-box scroll-reveal reveal-popup">
+                    <span style="font-size: 2rem;">🏘️</span>
+                    <span>
+                        <span class="lang-en">Real Estate Development</span>
+                        <span class="lang-hi">रियल एस्टेट विकास</span>
+                    </span>
+                </div>
+                <div class="service-box scroll-reveal reveal-popup">
+                    <span style="font-size: 2rem;">🌍</span>
+                    <span>
+                        <span class="lang-en">Land Purchase &amp; Sale</span>
+                        <span class="lang-hi">भूमि क्रय और विक्रय</span>
+                    </span>
+                </div>
+                <div class="service-box scroll-reveal reveal-popup">
+                    <span style="font-size: 2rem;">🛠️</span>
+                    <span>
+                        <span class="lang-en">Building Repair &amp; Maintenance</span>
+                        <span class="lang-hi">भवन मरम्मत और रखरखाव</span>
+                    </span>
+                </div>
+                <div class="service-box scroll-reveal reveal-popup">
+                    <span style="font-size: 2rem;">📋</span>
+                    <span>
+                        <span class="lang-en">Project Consultation</span>
+                        <span class="lang-hi">परियोजना परामर्श</span>
+                    </span>
+                </div>
+            </div>
+        </section>
+
+        <section class="scroll-reveal reveal-bottom">
+            <h2>
+                <span class="lang-en">WHY CHOOSE US</span>
+                <span class="lang-hi">हमें क्यों चुनें</span>
+            </h2>
+            <ul>
+                <li>✔ 
+                    <span class="lang-en">Premium Quality Standards</span>
+                    <span class="lang-hi">प्रीमियम गुणवत्ता मानक</span>
+                </li>
+                <li>✔ 
+                    <span class="lang-en">Professional Project Management</span>
+                    <span class="lang-hi">व्यावसायिक परियोजना प्रबंधन</span>
+                </li>
+                <li>✔ 
+                    <span class="lang-en">Transparent Business Practices</span>
+                    <span class="lang-hi">पारदर्शी व्यावसायिक नीतियां</span>
+                </li>
+                <li>✔ 
+                    <span class="lang-en">Timely Project Delivery</span>
+                    <span class="lang-hi">समय पर परियोजना की डिलीवरी</span>
+                </li>
+                <li>✔ 
+                    <span class="lang-en">Customer-Centric Approach</span>
+                    <span class="lang-hi">ग्राहक-केंद्रित दृष्टिकोण</span>
+                </li>
+                <li>✔ 
+                    <span class="lang-en">Long-Term Reliability &amp; Trust</span>
+                    <span class="lang-hi">दीर्घकालिक विश्वसनीयता और विश्वास</span>
+                </li>
+            </ul>
+        </section>
+
+        <section class="scroll-reveal reveal-left">
+            <h2>
+                <span class="lang-en">OUR VISION</span>
+                <span class="lang-hi">हमारा दृष्टिकोण</span>
+            </h2>
+            <p>
+                <span class="lang-en">To become a leading construction and real estate development company by delivering exceptional projects that redefine quality, innovation, and customer satisfaction.</span>
+                <span class="lang-hi">असाधारण परियोजनाओं को वितरित करके एक अग्रणी निर्माण और रियल एस्टेट विकास कंपनी बनना जो गुणवत्ता, नवाचार और ग्राहक संतुष्टि को फिर से परिभाषित करती है।</span>
+            </p>
+        </section>
+
+        <section class="scroll-reveal reveal-right">
+            <h2>
+                <span class="lang-en">CONTACT US</span>
+                <span class="lang-hi">हमसे संपर्क करें</span>
+            </h2>
+            <address>
+                📍 
+                <span class="lang-en">Office Address: [Write Your Address Here]</span>
+                <span class="lang-hi">कार्यालय का पता: [आपका पता यहाँ लिखें]</span>
+                <br>
+                📞 
+                <span class="lang-en">Mobile Number: [Your Mobile Number]</span>
+                <span class="lang-hi">मोबाइल नंबर: [आपका मोबाइल नंबर]</span>
+                <br>
+                ✉ Email Address: [Aapki Email ID]<br>
+                🕒 
+                <span class="lang-en">Office Hours: 10:00 AM – 10:00 PM</span>
+                <span class="lang-hi">कार्यालय का समय: सुबह 10:00 बजे से रात 10:00 बजे तक</span>
+            </address>
+        </section>
+
+        <footer>
+            <h3 class="brand-name-heading">ARVIND CONSTRUCTION &amp; DEVELOPERS</h3>
+            <p>
+                <span class="lang-en">"Turning Vision Into Reality."</span>
+                <span class="lang-hi">"दृष्टिकोण को वास्तविकता में बदलना।"</span>
+            </p>
+        </footer>
+
+    </div>
+
+    <script>
+        // LocalStorage Sync Engine
+        window.onload = function() {
+            var savedLang = localStorage.getItem('selectedLanguage');
+            if (savedLang === 'Hindi') {
+                document.body.classList.add('hindi-active');
+            }
+            
+            // Engines Initialization
+            initScrollReveal();
+            initMouseTrackingShine();
+        };
+
+        function toggleLangDropdown() {
+            document.getElementById("myLangDropdown").classList.toggle("show-lang");
+        }
+
+        window.onclick = function(event) {
+            if (!event.target.matches('.lang-btn')) {
+                var dropdowns = document.getElementsByClassName("lang-dropdown");
+                for (var i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show-lang')) {
+                        openDropdown.classList.remove('show-lang');
+                    }
+                }
+            }
+        }
+
+        function selectLanguage(lang) {
+            if (lang === 'Hindi') {
+                document.body.classList.add('hindi-active');
+                localStorage.setItem('selectedLanguage', 'Hindi');
+            } else {
+                document.body.classList.remove('hindi-active');
+                localStorage.setItem('selectedLanguage', 'English');
+            }
+            document.getElementById("myLangDropdown").classList.remove("show-lang");
+        }
+
+        function handlePhoneClick(event) {
+            if (/Mobi|Android|iPhone|iPad/i.test(navigator.userAgent)) {
+                return true; 
+            } else {
+                event.preventDefault(); 
+                var phoneNumber = "+918544218916";
+                navigator.clipboard.writeText(phoneNumber).then(function() {
+                    var toast = document.getElementById("toast");
+                    toast.classList.add("show");
+                    setTimeout(function(){ toast.classList.remove("show"); }, 2800);
+                });
+                return false;
+            }
+        }
+
+        /* 🎬 ========================================================
+           🌟 JAVASCRIPT FOR DYNAMIC MOUSE TRACKING SPOTLIGHT SHINE
+           ======================================================== 🎬 */
+        function initMouseTrackingShine() {
+            const shineElements = document.querySelectorAll('.lang-btn, h2');
+            
+            shineElements.forEach(element => {
+                element.addEventListener('mousemove', (e) => {
+                    const rect = element.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    
+                    element.style.setProperty('--x', `${x}px`);
+                    element.style.setProperty('--y', `${y}px`);
+                });
+
+                element.addEventListener('mouseleave', () => {
+                    element.style.setProperty('--x', '-1000px');
+                    element.style.setProperty('--y', '-1000px');
+                });
+            });
+        }
+
+        /* 🎬 ========================================================
+           🌟 STRICT ONE-WAY SCROLL ENGINE (ANIMATES ONCE ON SCROLL DOWN ONLY)
+           ======================================================== 🎬 */
+        function initScrollReveal() {
+            const options = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries, obs) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        // Scroll down karte hi class add ho jayegi
+                        entry.target.classList.add('active-view');
+                        // 🛑 Animate hone ke baad tracking band (unobserve) taaki upar scroll karne par kuch na badle!
+                        obs.unobserve(entry.target);
+                    }
+                });
+            }, options);
+
+            const animatedSections = document.querySelectorAll('.scroll-reveal');
+            animatedSections.forEach(section => {
+                observer.observe(section);
+            });
+        }
+    </script>
+</body>
+</html>
