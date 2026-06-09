@@ -66,7 +66,6 @@
             position: relative;
             overflow: hidden; 
             z-index: 1;
-            /* Dynamic background glow that follows the cursor exactly */
             background-image: radial-gradient(circle 60px at var(--x, -1000px) var(--y, -1000px), rgba(255, 255, 255, 0.45) 0%, transparent 100%);
             background-color: #4a0404;
             transition: box-shadow 0.3s ease;
@@ -477,7 +476,7 @@
             <p>
                 <span class="brand-name-inline">Arvind Construction &amp; Developers</span> 
                 <span class="lang-en">is a trusted name in the construction and real estate industry, dedicated to delivering projects that combine architectural excellence, structural strength, and modern innovation. With a strong focus on quality workmanship, professional project management, and client satisfaction, we create residential and commercial spaces that stand the test of time.<br><br><strong><u>Our mission is to provide reliable, cost-effective, and high-quality construction solutions while maintaining the highest standards of integrity, safety, and professionalism.</u></strong></span>
-                <span class="lang-hi"><strong>अरविन्द कंस्ट्रक्शन &amp; डेवलपर्स</strong> निर्माण और रियल एस्टेट उद्योग में एक विश्वसनीय नाम है, जो ऐसी परियोजनाओं को पूरा करने के लिए समर्पित है जो वास्तुकला की उत्कृष्टता, संरचनात्मक मजबूती और आधुनिक नवाचार का एक बेहतरीन संयोजन हैं। गुणवत्तापूर्ण कारीगरी, पेशेवर प्रोजेक्ट मैनेजमेंट और ग्राहक संतुष्टि पर विशेष ध्यान देते हुए, हम ऐसे आवासीय और व्यावसायिक स्थानों का निर्माण करते हैं जो समय की कसौटी पर खरे उतरते हैं।<br><br><strong><u>हमारा मिशन ईमानदारी, सुरक्षा और व्यावसायिकता के उच्चतम मानकों को बनाए रखते हुए विश्वसनीय, लागत प्रभावी और उच्च गुणवत्ता वाले निर्माण समाधान प्रदान करना है।</u></strong></span>
+                <span class="lang-hi"><strong>अरविन्द कंस्ट्रक्शन &amp; डेवलपर्स</strong> निर्माण patterns और रियल एस्टेट उद्योग में एक विश्वसनीय नाम है, जो ऐसी परियोजनाओं को पूरा करने के लिए समर्पित है जो वास्तुकला की उत्कृष्टता, संरचनात्मक मजबूती और आधुनिक नवाचार का एक बेहतरीन संयोजन हैं। गुणवत्तापूर्ण कारीगरी, पेशेवर प्रोजेक्ट मैनेजमेंट और ग्राहक संतुष्टि पर विशेष ध्यान देते हुए, हम ऐसे आवासीय और व्यावसायिक स्थानों का निर्माण करते हैं जो समय की कसौटी पर खरे उतरते हैं।<br><br><strong><u>हमारा मिशन ईमानदारी, सुरक्षा और व्यावसायिकता के उच्चतम मानकों को बनाए रखते हुए विश्वसनीय, लागत प्रभावी और उच्च गुणवत्ता वाले निर्माण समाधान प्रदान करना है।</u></strong></span>
             </p>
         </section>
 
@@ -515,34 +514,34 @@
                         <span class="lang-hi">नवीनीकरण और रीमॉडलिंग</span>
                     </span>
                 </a>
-                <div class="service-box scroll-reveal reveal-popup">
+                <a href="realestate.html" class="service-box scroll-reveal reveal-popup">
                     <span style="font-size: 2rem;">🏘️</span>
                     <span>
                         <span class="lang-en">Real Estate Development</span>
                         <span class="lang-hi">रियल एस्टेट विकास</span>
                     </span>
-                </div>
-                <div class="service-box scroll-reveal reveal-popup">
+                </a>
+                <a href="land.html" class="service-box scroll-reveal reveal-popup">
                     <span style="font-size: 2rem;">🌍</span>
                     <span>
                         <span class="lang-en">Land Purchase &amp; Sale</span>
                         <span class="lang-hi">भूमि क्रय और विक्रय</span>
                     </span>
-                </div>
-                <div class="service-box scroll-reveal reveal-popup">
+                </a>
+                <a href="repair.html" class="service-box scroll-reveal reveal-popup">
                     <span style="font-size: 2rem;">🛠️</span>
                     <span>
                         <span class="lang-en">Building Repair &amp; Maintenance</span>
                         <span class="lang-hi">भवन मरम्मत और रखरखाव</span>
                     </span>
-                </div>
-                <div class="service-box scroll-reveal reveal-popup">
+                </a>
+                <a href="consultation.html" class="service-box scroll-reveal reveal-popup">
                     <span style="font-size: 2rem;">📋</span>
                     <span>
                         <span class="lang-en">Project Consultation</span>
                         <span class="lang-hi">परियोजना परामर्श</span>
                     </span>
-                </div>
+                </a>
             </div>
         </section>
 
@@ -676,9 +675,7 @@
             }
         }
 
-        /* 🎬 ========================================================
-           🌟 JAVASCRIPT FOR DYNAMIC MOUSE TRACKING SPOTLIGHT SHINE
-           ======================================================== 🎬 */
+        /* 🎬 JAVASCRIPT FOR DYNAMIC MOUSE TRACKING SPOTLIGHT SHINE */
         function initMouseTrackingShine() {
             const shineElements = document.querySelectorAll('.lang-btn, h2');
             
@@ -699,9 +696,7 @@
             });
         }
 
-        /* 🎬 ========================================================
-           🌟 STRICT ONE-WAY SCROLL ENGINE (ANIMATES ONCE ON SCROLL DOWN ONLY)
-           ======================================================== 🎬 */
+        /* 🎬 STRICT ONE-WAY SCROLL ENGINE (ANIMATES ONCE ON SCROLL DOWN ONLY) */
         function initScrollReveal() {
             const options = {
                 root: null,
@@ -712,9 +707,7 @@
             const observer = new IntersectionObserver((entries, obs) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
-                        // Scroll down karte hi class add ho jayegi
                         entry.target.classList.add('active-view');
-                        // 🛑 Animate hone ke baad tracking band (unobserve) taaki upar scroll karne par kuch na badle!
                         obs.unobserve(entry.target);
                     }
                 });
