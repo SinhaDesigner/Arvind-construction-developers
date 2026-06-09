@@ -17,6 +17,7 @@
             padding: 0;
             box-sizing: border-box;
             color: #000000;
+            overflow-x: hidden; /* Prevent horizontal shake during slow slide transitions */
         }
 
         /* 🌐 DYNAMIC LANGUAGE SWITCHING SYSTEM */
@@ -35,9 +36,10 @@
             width: 100%;
             max-width: 100%;     
             margin: 0;           
-            padding: 40px 30px;  
+            padding: 40px 30px 180px 30px; 
             position: relative;
             box-sizing: border-box;
+            min-height: 100vh; 
         }
 
         /* Language Switcher Styling */
@@ -49,6 +51,7 @@
             z-index: 1000;
         }
 
+        /* 🌟 MOUSE TRACKING SPOTLIGHT SHINE FOR LANGUAGE BUTTON */
         .lang-btn {
             background-color: #4a0404;
             color: #fef3d0;
@@ -61,7 +64,16 @@
             border-radius: 20px;
             cursor: pointer;
             box-shadow: 0 4px 10px rgba(74, 4, 4, 0.2);
-            transition: background 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            background-image: radial-gradient(circle 60px at var(--x, -1000px) var(--y, -1000px), rgba(255, 255, 255, 0.45) 0%, transparent 100%);
+            background-color: #4a0404;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .lang-btn:hover {
+            box-shadow: 0 0 15px rgba(74, 4, 4, 0.45);
         }
 
         .lang-dropdown {
@@ -96,7 +108,7 @@
             display: block;
         }
 
-        /* Heading Style Same */
+        /* 🌟 MAIN HEADING WITH CURSOR GLOW OVERLAY */
         h1 {
             font-family: 'Shrikhand', cursive;
             font-style: italic;
@@ -105,34 +117,27 @@
             color: #4a0404;
             margin-top: 30px;
             margin-bottom: 30px;
+            display: inline-block;
+            position: relative;
+            overflow: hidden;
+            padding: 4px 14px;
+            border-radius: 8px;
+        }
+        
+        h1::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: radial-gradient(circle 65px at var(--x, -1000px) var(--y, -1000px), rgba(74, 4, 4, 0.12), transparent 100%);
+            pointer-events: none;
+            z-index: 2;
         }
 
-        /* Left-Right Layout Design */
-        .content-layout {
-            display: flex;
-            gap: 15px; 
-            align-items: flex-start;
-            margin-top: 20px;
-            width: 100%;
-        }
-
-        /* Text Side takes all remaining left width */
-        .text-side {
-            flex: 1;          
-        }
-
-        /* Image Side takes more screen share and expands right */
-        .image-side {
-            flex: 2;          
-            text-align: right;
-        }
-
-        .image-side img {
-            width: 100%;      
-            max-width: 800px; 
-            height: auto;
-            border-radius: 15px;
-            box-shadow: 0 6px 15px rgba(74, 4, 4, 0.2);
+        /* Text area width constraint */
+        .text-content-area {
+            max-width: 55%; 
+            position: relative;
+            z-index: 5;
         }
 
         /* Same Lora Font, Bold, Italic, Dark Black for details */
@@ -162,7 +167,7 @@
             gap: 10px;
         }
 
-        /* Back Button Styling */
+        /* 🌟 BACK BUTTON WITH TRACKING MOUSE SHINE PACK */
         .back-btn {
             display: inline-block;
             margin-top: 30px;
@@ -175,6 +180,11 @@
             text-decoration: none;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+            position: relative;
+            overflow: hidden;
+            z-index: 10;
+            background-image: radial-gradient(circle 70px at var(--x, -1000px) var(--y, -1000px), rgba(255, 255, 255, 0.45) 0%, transparent 100%);
+            background-color: #4a0404;
             transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
 
@@ -183,18 +193,69 @@
             box-shadow: 0 8px 20px rgba(0,0,0,0.4);
         }
 
-        /* Mobile Responsive View */
+        /* 💻 DESKTOP IMAGE VIEW (Aapka laptop wala perfect bada size) */
+        .bottom-corner-image {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            max-width: 700px; 
+            width: 50%;
+            height: auto;
+            display: block;
+            z-index: 1;
+            pointer-events: none; 
+        }
+
+        /* 🎬 ========================================================
+           🌟 3 SECONDS SYSTEMATIC DIRECTIONAL SCROLL REVEAL TIMING
+           ======================================================== 🎬 */
+        .scroll-reveal {
+            opacity: 0;
+            transition: opacity 3s cubic-bezier(0.15, 1, 0.2, 1), transform 3s cubic-bezier(0.15, 1, 0.2, 1);
+            will-change: transform, opacity;
+        }
+
+        .reveal-left {
+            transform: translateX(-100px) scale(0.97);
+        }
+
+        .reveal-right {
+            transform: translateX(100px) scale(0.97);
+        }
+
+        .reveal-top {
+            transform: translateY(-50px);
+        }
+
+        .scroll-reveal.active-view {
+            opacity: 1;
+            transform: translateX(0) translateY(0) scale(1);
+        }
+
+        /* 📱 MOBILE RESPONSIVE VIEW FIXED */
         @media (max-width: 768px) {
-            .content-layout {
-                flex-direction: column; 
-            }
-            .image-side {
-                width: 100%;
-                text-align: center;
+            .text-content-area {
+                max-width: 100%; 
             }
             h1 {
                 font-size: 2rem;
+                display: block;
                 text-align: center;
+            }
+            
+            .bottom-corner-image {
+                height: 260px !important;   
+                width: auto !important;     
+                max-width: none !important; 
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                z-index: -1;                
+                opacity: 0.85;     
+            }
+            
+            .container {
+                padding-bottom: 300px; 
             }
         }
     </style>
@@ -211,61 +272,60 @@
             </div>
         </div>
         
-        <h1>
+        <h1 class="scroll-reveal reveal-top">
             <span class="lang-en">Residential Construction</span>
             <span class="lang-hi">आवासीय निर्माण</span>
         </h1>
 
-        <div class="content-layout">
+        <div class="text-content-area scroll-reveal reveal-left">
+            <p class="description">
+                <span class="lang-en">We specialize in building high-quality, beautiful, and structurally sound residential spaces tailored to your family's needs. From independent luxury villas and duplex homes to modern apartments and complete housing societies, we ensure top-tier craftsmanship, premium materials, and timely project delivery with complete safety and transparency.</span>
+                <span class="lang-hi">हम आपके परिवार की आवश्यकताओं के अनुरूप उच्च गुणवत्ता वाले, सुंदर और मजबूत आवासीय स्थानों के निर्माण में विशेषज्ञता रखते हैं। स्वतंत्र लक्जरी विला और डुप्लेक्स घरों से लेकर आधुनिक अपार्टमेंट और पूरी हाउसिंग सोसायटियों तक, हम पूर्ण सुरक्षा और पारदर्शिता के साथ बेहतरीन कारीगरी, प्रीमियम सामग्री और समय पर प्रोजेक्ट डिलीवरी सुनिश्चित करते हैं।</span>
+            </p>
             
-            <div class="text-side">
-                <p class="description">
-                    <span class="lang-en">Construction of independent houses, duplex homes, villas, apartments, residential buildings, and housing projects with a commitment to quality, safety, and excellence.</span>
-                    <span class="lang-hi">गुणवत्ता, सुरक्षा और उत्कृष्टता के प्रति प्रतिबद्धता के साथ स्वतंत्र घरों, डुप्लेक्स घरों, विला, अपार्टमेंट, आवासीय भवनों और आवास परियोजनाओं का निर्माण।</span>
-                </p>
-                
-                <ul>
-                    <li>✔ 
-                        <span class="lang-en">Independent House Construction</span>
-                        <span class="lang-hi">स्वतंत्र घर निर्माण</span>
-                    </li>
-                    <li>✔ 
-                        <span class="lang-en">Duplex House Construction</span>
-                        <span class="lang-hi">डुप्लेक्स घर निर्माण</span>
-                    </li>
-                    <li>✔ 
-                        <span class="lang-en">Villa Construction</span>
-                        <span class="lang-hi">विला निर्माण</span>
-                    </li>
-                    <li>✔ 
-                        <span class="lang-en">Apartment &amp; Flat Construction</span>
-                        <span class="lang-hi">अपार्टमेंट और फ्लैट निर्माण</span>
-                    </li>
-                    <li>✔ 
-                        <span class="lang-en">Multi-Storey Residential Buildings</span>
-                        <span class="lang-hi">बहुमंज़िला आवासीय भवन</span>
-                    </li>
-                    <li>✔ 
-                        <span class="lang-en">Housing Projects</span>
-                        <span class="lang-hi">आवास परियोजनाएं</span>
-                    </li>
-                    <li>✔ 
-                        <span class="lang-en">Home Renovation &amp; Extension Works</span>
-                        <span class="lang-hi">गृह नवीनीकरण और विस्तार कार्य</span>
-                    </li>
-                </ul>
+            <h2 style="font-family: 'Lora', serif; font-size: 1.4rem; font-weight: bold; font-style: italic; color:#4a0404; margin-top:30px;">
+                <span class="lang-en">Services Include:</span>
+                <span class="lang-hi">सेवाओं में शामिल हैं:</span>
+            </h2>
 
-                <a href="index.html" class="back-btn">
-                    <span class="lang-en">⬅ Back to Home</span>
-                    <span class="lang-hi">⬅ मुख्य पृष्ठ पर वापस जाएं</span>
-                </a>
-            </div>
+            <ul>
+                <li>✔ 
+                    <span class="lang-en">Independent Houses &amp; Luxury Villas</span>
+                    <span class="lang-hi">स्वतंत्र घर और शानदार विला</span>
+                </li>
+                <li>✔ 
+                    <span class="lang-en">Apartments &amp; Residential Flats</span>
+                    <span class="lang-hi">अपार्टमेंट और आवासीय फ्लैट</span>
+                </li>
+                <li>✔ 
+                    <span class="lang-en">Duplex &amp; Modern Homes</span>
+                    <span class="lang-hi">डुप्लेक्स और आधुनिक घर</span>
+                </li>
+                <li>✔ 
+                    <span class="lang-en">Row Houses &amp; Townships</span>
+                    <span class="lang-hi">रो हाउस और टाउनशिप</span>
+                </li>
+                <li>✔ 
+                    <span class="lang-en">Structural Construction (Grey Structure)</span>
+                    <span class="lang-hi">संरचनात्मक निर्माण (ढांचा निर्माण)</span>
+                </li>
+                <li>✔ 
+                    <span class="lang-en">Complete Turnkey Residential Projects</span>
+                    <span class="lang-hi">पूर्ण टर्नकी आवासीय परियोजनाएं</span>
+                </li>
+                <li>✔ 
+                    <span class="lang-en">Housing Society Development</span>
+                    <span class="lang-hi">हाउसिंग सोसाइटी का विकास</span>
+                </li>
+            </ul>
 
-            <div class="image-side">
-                <img src="residential.png" alt="Residential Construction">
-            </div>
-
+            <a href="index.html" class="back-btn">
+                <span class="lang-en">⬅ Back to Home</span>
+                <span class="lang-hi">⬅ मुख्य पृष्ठ पर वापस जाएं</span>
+            </a>
         </div>
+
+        <img src="residential.png" alt="Residential Corner Design" class="bottom-corner-image scroll-reveal reveal-right">
 
     </div>
 
@@ -276,6 +336,9 @@
             if (savedLang === 'Hindi') {
                 document.body.classList.add('hindi-active');
             }
+            
+            initScrollReveal();
+            initMouseTrackingShine();
         };
 
         function toggleLangDropdown() {
@@ -303,6 +366,38 @@
                 localStorage.setItem('selectedLanguage', 'English');
             }
             document.getElementById("myLangDropdown").classList.remove("show-lang");
+        }
+
+        /* 🌟 MOUSE GLOW SPOTLIGHT TRACKING CORE LOGIC */
+        function initMouseTrackingShine() {
+            const elements = document.querySelectorAll('.lang-btn, .back-btn, h1');
+            elements.forEach(el => {
+                el.addEventListener('mousemove', (e) => {
+                    const rect = el.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    el.style.setProperty('--x', `${x}px`);
+                    el.style.setProperty('--y', `${y}px`);
+                });
+                el.addEventListener('mouseleave', () => {
+                    el.style.setProperty('--x', '-1000px');
+                    el.style.setProperty('--y', '-1000px');
+                });
+            });
+        }
+
+        /* 🎬 SCROLL OBSERVER TIMING CONTROLLER */
+        function initScrollReveal() {
+            const observer = new IntersectionObserver((entries, obs) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active-view');
+                        obs.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.scroll-reveal').forEach(el => observer.observe(el));
         }
     </script>
 </body>
