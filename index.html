@@ -17,6 +17,7 @@
             padding: 0;
             box-sizing: border-box;
             color: #000000; /* Default text color Dark Black */
+            overflow-x: hidden; /* Prevent horizontal scrollbars during entrance animations */
         }
 
         /* 🌐 DYNAMIC LANGUAGE SWITCHING SYSTEM */
@@ -49,6 +50,7 @@
             z-index: 1000;
         }
 
+        /* 🌟 MOUSE TRACKING REAL-TIME SHINE FOR LANGUAGE BUTTON */
         .lang-btn {
             background-color: #4a0404;
             color: #fef3d0;
@@ -61,7 +63,17 @@
             border-radius: 20px;
             cursor: pointer;
             box-shadow: 0 4px 10px rgba(74, 4, 4, 0.2);
-            transition: background 0.3s ease;
+            position: relative;
+            overflow: hidden; 
+            z-index: 1;
+            /* Dynamic background glow that follows the cursor exactly */
+            background-image: radial-gradient(circle 60px at var(--x, -1000px) var(--y, -1000px), rgba(255, 255, 255, 0.45) 0%, transparent 100%);
+            background-color: #4a0404;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .lang-btn:hover {
+            box-shadow: 0 0 15px rgba(74, 4, 4, 0.45);
         }
 
         .lang-dropdown {
@@ -96,11 +108,10 @@
             display: block;
         }
 
-        /* 🖼️ BANNER CONTAINER */
+        /* 🖼️ RESPONSIVE BANNER CONTAINER */
         .banner-container {
             width: 100%;
             max-width: 1000px; 
-            height: 400px; 
             margin: 30px auto; 
             border-radius: 20px; 
             overflow: hidden;
@@ -110,10 +121,8 @@
 
         .banner-img {
             width: 100%;
-            height: 100%;
+            height: auto; 
             display: block;
-            object-fit: cover; 
-            object-position: top; 
         }
 
         /* 📞 GOLDEN ROUND RECTANGLE PHONE BADGE */
@@ -121,14 +130,14 @@
             position: absolute;
             bottom: 8%;
             left: 5%;
-            background-color: #ffd700; /* Rich Golden Color */
-            color: #4a0404; /* Maroon color matching text */
-            padding: 8px 18px;
-            border-radius: 25px; /* Rounded Rectangle */
+            background-color: #ffd700; 
+            color: #4a0404; 
+            padding: 6px 14px;
+            border-radius: 25px; 
             font-family: 'Lora', serif;
             font-weight: bold;
             font-style: italic;
-            font-size: 1.25vw; /* Responsive scaling */
+            font-size: 1.25vw; 
             text-decoration: none;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
             display: flex;
@@ -144,10 +153,10 @@
             box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
         }
 
-        /* 🔴 EXACT CORNER POSITIONING FOR TEXT OVERLAY */
+        /* 🔴 FIXED RESPONSIVE TEXT POSITIONING 🔴 */
         .banner-text-arvind {
             position: absolute;
-            top: 30%;
+            top: 23%;
             left: 47%;
             font-family: 'Cinzel Decorative', cursive;
             font-size: 4vw; 
@@ -159,7 +168,7 @@
 
         .banner-text-construction {
             position: absolute;
-            top: 45%; 
+            top: 35%; 
             left: 35%;
             font-family: 'Cinzel Decorative', cursive;
             font-size: 4.6vw;
@@ -171,7 +180,7 @@
 
         .banner-text-developers {
             position: absolute;
-            top: 60%; 
+            top: 50%; 
             left: 60%; 
             font-family: 'Cinzel Decorative', cursive;
             font-size: 3.2vw; 
@@ -181,19 +190,13 @@
             text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.65);
         }
 
-        /* Mobile screens responsive view */
+        /* Mobile screens responsive view updates */
         @media (max-width: 768px) {
-            .banner-container {
-                height: 190px; 
-            }
-            .banner-text-arvind { top: 21%; left: 45%; }
-            .banner-text-construction { top: 43%; left: 34%; }
-            .banner-text-developers { top: 64%; left: 58%; }
             .banner-phone-badge {
                 font-size: 2.8vw;
-                padding: 4px 10px;
-                bottom: 6%;
-                left: 4%;
+                padding: 4px 8px;
+                bottom: 8%;
+                left: 5%;
             }
         }
 
@@ -238,7 +241,7 @@
             color: #000000; 
         }
 
-        /* All Section Topics/Headings */
+        /* 🌟 ALL TOPIC HEADINGS WITH DYNAMIC SPOTLIGHT MOUSE SHINE */
         h2 {
             font-family: 'Shrikhand', cursive;
             font-style: italic;
@@ -247,6 +250,26 @@
             color: #4a0404;
             margin-top: 40px;
             margin-bottom: 15px;
+            display: inline-block; 
+            position: relative;
+            overflow: hidden; 
+            padding: 4px 14px;
+            border-radius: 8px;
+            transition: text-shadow 0.3s ease;
+        }
+        
+        h2:hover {
+            text-shadow: 2px 2px 8px rgba(74, 4, 4, 0.25);
+        }
+        
+        /* Dynamic Spotlight overlay structure on headings */
+        h2::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: radial-gradient(circle 55px at var(--x, -1000px) var(--y, -1000px), rgba(74, 4, 4, 0.12), transparent 100%);
+            pointer-events: none; 
+            z-index: 2;
         }
 
         p, ul, li, address {
@@ -333,6 +356,42 @@
             font-size: 1.3rem;
             color: #000000;
         }
+
+        /* 🎬 ========================================================
+           🌟 SUPER SLOW DIRECTIONAL SCROLL REVEAL ENGINE (UPDATED TO 3 SECONDS)
+           ======================================================== 🎬 */
+        .scroll-reveal {
+            opacity: 0;
+            /* Transition set to 3s for an ultra-smooth cinematic entry */
+            transition: opacity 3s cubic-bezier(0.15, 1, 0.2, 1), transform 3s cubic-bezier(0.15, 1, 0.2, 1);
+            will-change: transform, opacity;
+        }
+
+        /* ⬅️ Topic 1 (Who We Are): Left to Right Slide + Subtle Lift */
+        .reveal-left {
+            transform: translateX(-100px) scale(0.96);
+        }
+
+        /* ➡️ Topic 2 (Our Services): Right to Left Slide + Subtle Lift */
+        .reveal-right {
+            transform: translateX(100px) scale(0.96);
+        }
+
+        /* ⬆️ Topic 3 (Why Choose Us): Premium Lift-Scale from Bottom */
+        .reveal-bottom {
+            transform: translateY(80px) scale(0.97);
+        }
+
+        /* ⬇️ Header: Top to Bottom Slow Slide */
+        .reveal-top {
+            transform: translateY(-60px);
+        }
+
+        /* 🔥 ACTIVE STATE CLASS (Fires smoothly via JavaScript Engine) */
+        .scroll-reveal.active-view {
+            opacity: 1;
+            transform: translateX(0) translateY(0) scale(1);
+        }
     </style>
 </head>
 <body>
@@ -370,7 +429,7 @@
 
         <div id="toast" class="toast-notification">Phone number is copied! / फ़ोन नंबर कॉपी हो गया है!</div>
 
-        <header>
+        <header class="scroll-reveal reveal-top">
             <p style="text-decoration: underline;">
                 <span class="lang-en">Building Excellence. Created and Creating Trust.</span>
                 <span class="lang-hi">उत्कृष्टता का निर्माण। विश्वास का सृजन।</span>
@@ -389,19 +448,19 @@
 
         <hr style="border: 1px solid #4a0404; opacity: 0.2;">
 
-        <section>
+        <section class="scroll-reveal reveal-left">
             <h2>
                 <span class="lang-en">WHO WE ARE</span>
                 <span class="lang-hi">हम कौन हैं</span>
             </h2>
             <p>
                 <span class="brand-name-inline">Arvind Construction &amp; Developers</span> 
-                <span class="lang-en">is a trusted name in construction and real estate development. We combine innovation, quality craftsmanship, and modern engineering to create spaces that inspire confidence and deliver lasting value.</span>
-                <span class="lang-hi">निर्माण और रियल एस्टेट विकास के क्षेत्र में एक विश्वसनीय नाम है। हम ऐसे स्थानों का निर्माण करने के लिए नवाचार, गुणवत्तापूर्ण शिल्प कौशल और आधुनिक engineering को जोड़ते हैं जो आत्मविश्वास को प्रेरित करते हैं और स्थायी मूल्य प्रदान करते हैं।</span>
+                <span class="lang-en">is a trusted name in the construction and real estate industry, dedicated to delivering projects that combine architectural excellence, structural strength, and modern innovation. With a strong focus on quality workmanship, professional project management, and client satisfaction, we create residential and commercial spaces that stand the test of time.<br><br><strong><u>Our mission is to provide reliable, cost-effective, and high-quality construction solutions while maintaining the highest standards of integrity, safety, and professionalism.</u></strong></span>
+                <span class="lang-hi"><strong>अरविन्द कंस्ट्रक्शन &amp; डेवलपर्स</strong> निर्माण और रियल एस्टेट उद्योग में एक विश्वसनीय नाम है, जो ऐसी परियोजनाओं को पूरा करने के लिए समर्पित है जो वास्तुकला की उत्कृष्टता, संरचनात्मक मजबूती और आधुनिक नवाचार का एक बेहतरीन संयोजन हैं। गुणवत्तापूर्ण कारीगरी, पेशेवर प्रोजेक्ट मैनेजमेंट और ग्राहक संतुष्टि पर विशेष ध्यान देते हुए, हम ऐसे आवासीय और व्यावसायिक स्थानों का निर्माण करते हैं जो समय की कसौटी पर खरे उतरते हैं।<br><br><strong><u>हमारा मिशन ईमानदारी, सुरक्षा और व्यावसायिकता के उच्चतम मानकों को बनाए रखते हुए विश्वसनीय, लागत प्रभावी और उच्च गुणवत्ता वाले निर्माण समाधान प्रदान करना है।</u></strong></span>
             </p>
         </section>
 
-        <section>
+        <section class="scroll-reveal reveal-right">
             <h2>
                 <span class="lang-en">OUR SERVICES</span>
                 <span class="lang-hi">हमारी सेवाएं</span>
@@ -414,27 +473,27 @@
                         <span class="lang-hi">आवासीय निर्माण</span>
                     </span>
                 </a>
-                <div class="service-box">
+                <a href="commercial.html" class="service-box">
                     <span style="font-size: 2rem;">🏢</span>
                     <span>
                         <span class="lang-en">Commercial Construction</span>
                         <span class="lang-hi">व्यावसायिक निर्माण</span>
                     </span>
-                </div>
-                <div class="service-box">
+                </a>
+                <a href="interior.html" class="service-box">
                     <span style="font-size: 2rem;">🎨</span>
                     <span>
                         <span class="lang-en">Interior Design &amp; Execution</span>
                         <span class="lang-hi">इंटीरियर डिजाइन और निष्पादन</span>
                     </span>
-                </div>
-                <div class="service-box">
+                </a>
+                <a href="renovation.html" class="service-box">
                     <span style="font-size: 2rem;">🔨</span>
                     <span>
-                        <span class="lang-en">Renovation &amp; Remodeling</span>
-                        <span class="lang-hi">नवीनीकरण और रीमॉडलिंग</span>
+                    <span class="lang-en">Renovation &amp; Remodeling</span>
+                    <span class="lang-hi">नवीनीकरण और रीमॉडलिंग</span>
                     </span>
-                </div>
+                </a>
                 <div class="service-box">
                     <span style="font-size: 2rem;">🏘️</span>
                     <span>
@@ -466,7 +525,7 @@
             </div>
         </section>
 
-        <section>
+        <section class="scroll-reveal reveal-bottom">
             <h2>
                 <span class="lang-en">WHY CHOOSE US</span>
                 <span class="lang-hi">हमें क्यों चुनें</span>
@@ -499,7 +558,7 @@
             </ul>
         </section>
 
-        <section>
+        <section class="scroll-reveal reveal-left">
             <h2>
                 <span class="lang-en">OUR VISION</span>
                 <span class="lang-hi">हमारा दृष्टिकोण</span>
@@ -510,7 +569,7 @@
             </p>
         </section>
 
-        <section>
+        <section class="scroll-reveal reveal-right">
             <h2>
                 <span class="lang-en">CONTACT US</span>
                 <span class="lang-hi">हमसे संपर्क करें</span>
@@ -522,7 +581,7 @@
                 <br>
                 📞 
                 <span class="lang-en">Mobile Number: [Your Mobile Number]</span>
-                <span class="lang-hi">मोबाइल नंबर: [आपका मोबाइल नंबर]</span>
+                <span class="lang-hi">मोबाइल नंबर: [आपका mobile नंबर]</span>
                 <br>
                 ✉ Email Address: [Aapki Email ID]<br>
                 🕒 
@@ -548,6 +607,10 @@
             if (savedLang === 'Hindi') {
                 document.body.classList.add('hindi-active');
             }
+            
+            // Engines Initialization
+            initScrollReveal();
+            initMouseTrackingShine();
         };
 
         function toggleLangDropdown() {
@@ -577,12 +640,11 @@
             document.getElementById("myLangDropdown").classList.remove("show-lang");
         }
 
-        // 📞 Mobile call vs Laptop Copy script
         function handlePhoneClick(event) {
             if (/Mobi|Android|iPhone|iPad/i.test(navigator.userAgent)) {
-                return true; // Mobile par standard call action hone dega
+                return true; 
             } else {
-                event.preventDefault(); // Laptop par phone dialer blocks karega
+                event.preventDefault(); 
                 var phoneNumber = "+918544218916";
                 navigator.clipboard.writeText(phoneNumber).then(function() {
                     var toast = document.getElementById("toast");
@@ -591,6 +653,54 @@
                 });
                 return false;
             }
+        }
+
+        /* 🎬 ========================================================
+           🌟 JAVASCRIPT FOR DYNAMIC MOUSE TRACKING SPOTLIGHT SHINE
+           ======================================================== 🎬 */
+        function initMouseTrackingShine() {
+            const shineElements = document.querySelectorAll('.lang-btn, h2');
+            
+            shineElements.forEach(element => {
+                element.addEventListener('mousemove', (e) => {
+                    const rect = element.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    
+                    element.style.setProperty('--x', `${x}px`);
+                    element.style.setProperty('--y', `${y}px`);
+                });
+
+                element.addEventListener('mouseleave', () => {
+                    element.style.setProperty('--x', '-1000px');
+                    element.style.setProperty('--y', '-1000px');
+                });
+            });
+        }
+
+        /* 🎬 ========================================================
+           🌟 INTERSECTION OBSERVER JAVASCRIPT FOR SCROLL ENGINE
+           ======================================================== 🎬 */
+        function initScrollReveal() {
+            const options = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.12 
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active-view');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, options);
+
+            const animatedSections = document.querySelectorAll('.scroll-reveal');
+            animatedSections.forEach(section => {
+                observer.observe(section);
+            });
         }
     </script>
 </body>
