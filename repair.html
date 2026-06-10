@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interior Design &amp; Execution - Arvind Construction &amp; Developers</title>
+    <title>Building Repair &amp; Maintenance - Arvind Construction &amp; Developers</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&amp;family=Lora:ital,wght@1,700&amp;family=Shrikhand&amp;display=swap" rel="stylesheet">
 
     <style>
-        /* ⚡ FIX: Added premium shifting gradient loop using only #fef3d0 and #829778 */
+        /* ⚡ PREMIUM MOVING GRADIENT LIQUID EFFECT USING #fef3d0 AND #829778 */
         body {
             background: linear-gradient(-45deg, #fef3d0, #829778, #fef3d0, #829778);
             background-size: 400% 400%;
@@ -22,17 +22,11 @@
             overflow-x: hidden;
         }
 
-        /* 🔥 KEYFRAMES ENGINE FOR SMOOTH COLOR SHIFTING FLOW */
+        /* KEYFRAMES ENGINE FOR SMOOTH COLOR SHIFTING FLOW */
         @keyframes premiumLiquidBG {
-            0% {
-                background-position: 0% 50%;
-            }
-            50% {
-                background-position: 100% 50%;
-            }
-            100% {
-                background-position: 0% 50%;
-            }
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
 
         /* 🌐 DYNAMIC LANGUAGE SWITCHING SYSTEM */
@@ -65,7 +59,7 @@
             z-index: 1000;
         }
 
-        /* 🌟 MOUSE TRACKING REAL-TIME SHINE FOR LANGUAGE BUTTON WITH GRADIENT */
+        /* MOUSE TRACKING REAL-TIME SHINE FOR LANGUAGE BUTTON */
         .lang-btn {
             background: radial-gradient(circle 60px at var(--x, -1000px) var(--y, -1000px), rgba(255, 255, 255, 0.45) 0%, transparent 100%), linear-gradient(to bottom, #8a0000, #460020);
             color: #fef3d0;
@@ -120,7 +114,7 @@
             display: block;
         }
 
-        /* 🌈 MAIN HEADING WITH CURSOR SHINE INTERACTION & TEXT GRADIENT */
+        /* 🌈 MAIN HEADING WITH CURSOR GLOW OVERLAY & TEXT GRADIENT */
         h1 {
             font-family: 'Shrikhand', cursive;
             font-style: italic;
@@ -147,57 +141,7 @@
             z-index: 2;
         }
 
-        /* Left-Right Layout Design (Image Left, Text Right) */
-        .content-layout {
-            display: flex;
-            gap: 40px; 
-            align-items: flex-start;
-            margin-top: 20px;
-            width: 100%;
-        }
-
-        /* 🖼️ IMAGE SIDE (Left Raised, Right Sloping/Plane Effect) */
-        .image-side {
-            flex: 4.5; /* ⚡ FIX: Space allocation increased from 1 to 4.5 to make image bigger */
-            text-align: left;
-            position: relative;
-            display: inline-block;
-            z-index: 1; 
-        }
-
-        /* 🔄 PERFECT LEFT-TO-RIGHT SLOPING SHADOW PACK */
-        .image-side::before {
-            content: '';
-            position: absolute;
-            top: -15px;   
-            bottom: -15px;
-            left: -20px;  
-            right: 30px; 
-            border-radius: 15px;
-            background: linear-gradient(to right, rgba(74, 4, 4, 0.5) 0%, rgba(74, 4, 4, 0.22) 35%, transparent 65%);
-            filter: blur(15px); 
-            z-index: -1; 
-        }
-
-        /* AAPKA ORIGINAL LOOK PRESERVED AND ENLARGED SAFELY */
-        .image-side img {
-            width: 100%;    
-            max-width: 600px; /* ⚡ FIX: Max-width stabilized to make it clean and bigger */
-            height: auto;
-            border-radius: 15px;
-            box-shadow: none; 
-            display: block;
-        }
-
-        /* Text Side takes remaining right width */
-        .text-side {
-            flex: 5.5; /* ⚡ FIX: Adjusted flex ratio for a clean side-by-side view */
-            position: relative;    
-            z-index: 10;
-            margin-left: -150px; /* ⚡ FIX: Removed -150px negative margin so text pushes back naturally */
-        }
-
-        /* 👑 SIGNATURE ARVIND BRAND STYLING FROM INDEX.HTML (⚡ Added newly as requested) */
+        /* 👑 SIGNATURE ARVIND BRAND STYLING FROM INDEX.HTML (⚡ Joda Gaya Hai) */
         .brand-name-inline {
             font-family: 'Cinzel Decorative', cursive;
             font-weight: bold;
@@ -208,7 +152,69 @@
             display: inline-block;
         }
 
-        /* Same Lora Font, Bold, Italic, Dark Black for details */
+        /* 📋 SECTION SUBHEADINGS STYLE WITH TEXT GRADIENT */
+        h2 {
+            font-family: 'Lora', serif;
+            font-size: 1.4rem;
+            font-weight: bold;
+            font-style: italic;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            background: linear-gradient(to bottom, #8a0000, #460020);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+        }
+
+        /* 🗺️ SIDE-BY-SIDE GRID CONTROL STRUCTURE */
+        .content-layout {
+            display: flex;
+            gap: 50px; 
+            align-items: flex-start;
+            margin-top: 20px;
+            width: 100%;
+        }
+
+        /* ⚡ FIX: ALLOCATED STRICT 40% DESKTOP WIDTH SPEC FOR TEXT TRACK LANE */
+        .text-side {
+            flex: 4; 
+            position: relative;    
+            z-index: 10;
+        }
+
+        /* ⚡ FIX: ALLOCATED STRICT 60% DESKTOP WIDTH SPEC FOR IMAGE TRACK LANE WITH SLOPING PRE-SHADOW EFFECT */
+        .image-side {
+            flex: 6;
+            text-align: right;
+            position: relative;
+            z-index: 1; 
+        }
+
+        /* Raised sloping multi-angle shadow framework behind image bounds */
+        .image-side::before {
+            content: '';
+            position: absolute;
+            top: -15px;   
+            bottom: -15px;
+            left: 15px;  
+            right: -15px; 
+            border-radius: 15px;
+            background: linear-gradient(to left, rgba(74, 4, 4, 0.45) 0%, rgba(74, 4, 4, 0.18) 35%, transparent 65%);
+            filter: blur(15px); 
+            z-index: -1; 
+        }
+
+        /* Full bounding limits setup so curtain animations don't clip the pixels */
+        .image-side img {
+            width: 100%;    
+            max-width: 100%;
+            height: auto;
+            border-radius: 15px;
+            display: block;
+            margin-left: auto;
+        }
+
+        /* Typography Configs */
         p, ul, li {
             font-family: 'Lora', serif;
             font-weight: bold;
@@ -268,8 +274,8 @@
             will-change: transform, opacity;
         }
 
-        .reveal-right {
-            transform: translateX(100px) scale(0.97);
+        .reveal-left {
+            transform: translateX(-100px) scale(0.97);
         }
 
         .reveal-top {
@@ -295,10 +301,11 @@
             clip-path: inset(0 0 0 0);
         }
 
-        /* Mobile Responsive View */
-        @media (max-width: 768px) {
+        /* 📱 MOBILE RESPONSIVE BLOCK SYSTEMS */
+        @media (max-width: 991px) {
             .content-layout {
                 flex-direction: column; 
+                gap: 30px;
             }
             .image-side {
                 width: 100%;
@@ -310,24 +317,23 @@
                 margin: 0 auto;
                 width: 100%; 
             }
-            
             .image-side::before {
-                top: -12px;
-                bottom: -12px;
-                left: -14px;
-                right: 25px;
-                background: linear-gradient(to right, rgba(74, 4, 4, 0.45) 0%, rgba(74, 4, 4, 0.18) 35%, transparent 65%);
+                left: -14px; right: 25px;
             }
-            
             .text-side {
                 order: 2;
                 width: 100%;
                 flex: none;
-                margin-left: 0;
             }
             h1 {
                 font-size: 2rem;
                 display: block;
+                text-align: center;
+            }
+            .back-btn {
+                display: block !important;
+                width: fit-content !important;
+                margin: 20px auto 0 auto !important;
                 text-align: center;
             }
         }
@@ -346,81 +352,68 @@
         </div>
         
         <h1 class="scroll-reveal reveal-top">
-            <span class="lang-en">Interior Design &amp; Execution</span>
-            <span class="lang-hi">इंटीरियर डिजाइन और निष्पादन</span>
+            <span class="lang-en">🔨 Building Refurbishment &amp; Maintenance</span>
+            <span class="lang-hi">🔨 भवन नवीनीकरण और रखरखाव</span>
         </h1>
 
         <div class="content-layout">
             
-            <div class="image-side reveal-wipe" id="wipeImage">
-                <img src="interior.png" alt="Interior Design &amp; Execution">
-            </div>
-
-            <div class="text-side scroll-reveal reveal-right">
+            <div class="text-side scroll-reveal reveal-left">
                 <p class="description">
-                    <span class="lang-en">At <span class="brand-name-inline">Arvind Construction &amp; Developers</span>, we create thoughtfully designed interiors that combine functionality, comfort, and aesthetic excellence. Our Interior Design &amp; Execution services are tailored to transform residential, commercial, and corporate spaces into environments that reflect style, purpose, and individuality.<br><br>From concept development and space planning to material selection, custom furnishings, lighting design, and final execution, we manage every aspect of the project with precision and attention to detail. Our team focuses on creating elegant, practical, and modern interiors that enhance both the visual appeal and usability of every space. Whether it is a luxury residence, office, showroom, retail outlet, apartment, or commercial establishment, we deliver complete turnkey interior solutions that meet the highest standards of quality, craftsmanship, and customer satisfaction.</span>
-                    <span class="lang-hi"><span class="brand-name-inline">अरविंद कंस्ट्रक्शन एंड डेवलपर्स</span> में, we design thoughtful interiors that combine functionality, comfort and aesthetic excellence. हमारी इंटीरियर डिजाइन और निष्पादन सेवाएं आवासीय, व्यावसायिक और कॉर्पोरेट स्थानों को ऐसे वातावरण में बदलने के लिए तैयार की गई हैं जो शैली, उद्देश्य और व्यक्तित्व को दर्शाती हैं।<br><br>अवधारणा विकास (concept development) और स्पेस कामना से लेकर सामग्री चयन, CUSTOM फर्निशिंग, लाइटिंग डिजाइन और अंतिम निष्पादन तक, हम सटीकता और विवरण पर ध्यान देते हुए परियोजना के हर पहलू का प्रबंधन करते हैं। हमारी टीम सुरुचिपूर्ण, व्यावहारिक và आधुनिक इंटीरियर बनाने पर ध्यान केंद्रित करती है जो हर स्थान की दृश्य अपील और उपयोगिता दोनों को बढ़ाती है। चाहे वह एक लक्जरी निवास, कार्यालय, शोरूम, रिटेल आउटलेट, apartment या व्यावसायिक प्रतिष्ठान हो, हम पूर्ण टर्नकी इंटीरियर समाधान प्रदान करते हैं जो गुणवत्ता, शिल्प कौशल और ग्राहक संतुष्टि के उच्चतम मानकों को पूरा करते हैं।</span>
+                    <span class="lang-en">At <span class="brand-name-inline">Arvind Construction &amp; Developers</span>, we specialize in comprehensive building refurbishment and maintenance solutions designed to restore, enhance, and preserve the value of residential, commercial, and industrial properties. Our expert team combines modern construction techniques, quality materials, and professional project management to transform aging structures into safe, functional, and visually appealing spaces.<br><br>Whether it is structural repairs, exterior renovation, waterproofing, painting, flooring upgrades, facade restoration, or routine maintenance, we deliver reliable solutions that improve durability, performance, and long-term value. Our approach focuses on maintaining the highest standards of workmanship while minimizing disruption and ensuring projects are completed on time and within budget.<br><br>From minor repairs to complete building restoration, we are committed to extending the life of your property and enhancing its appearance, safety, and efficiency. Through careful planning, skilled execution, and attention to detail, we help property owners protect their investments and create environments that remain attractive and functional for years to come.</span>
+                    <span class="lang-hi"><span class="brand-name-inline">अरविंद कंस्ट्रक्शन एंड डेवलपर्स</span> में, हम आवासीय, व्यावसायिक और औद्योगिक संपत्तियों के मूल्य को बहाल करने, बढ़ाने और संरक्षित करने के लिए डिज़ाइन की गई व्यापक भवन नवीनीकरण और रखरखाव समाधानों में विशेषज्ञता रखते हैं। हमारी विशेषज्ञ टीम पुरानी संरचनाओं को सुरक्षित, कार्यात्मक और सुंदर वातावरण में बदलने के लिए आधुनिक निर्माण तकनीकों, गुणवत्तापूर्ण सामग्री और पेशेवर परियोजना प्रबंधन को जोड़ती है।<br><br>चाहे वह संरचनात्मक मरम्मत हो, बाहरी नवीनीकरण, वॉटरप्रूफिंग, पेंटिंग, फ़्लोरिंग अपग्रेड, फ़ासाड (facade) बहाली, या नियमित रखरखाव, हम विश्वसनीय समाधान प्रदान करते हैं जो स्थायित्व, performance और दीर्घकालिक मूल्य में सुधार करते हैं। हमारा दृष्टिकोण व्यवधान को कम करते हुए और परियोजनाओं को समय पर और बजट के भीतर पूरा करना सुनिश्चित करते हुए कारीगरी के उच्चतम मानकों को बनाए रखने पर केंद्रित है।<br><br>छोटी मरम्मत से लेकर पूरी इमारत की बहाली तक, हम आपकी संपत्ति के जीवन को बढ़ाने और उसकी उपस्थिति, सुरक्षा और दक्षता को बढ़ाने के लिए प्रतिबद्ध हैं। सावधानीपूर्वक योजना, कुशल निष्पादन और विवरणों पर ध्यान देने के माध्यम से, हम संपत्ति मालिकों को उनके निवेश की रक्षा करने और ऐसे वातावरण बनाने में मदद करते हैं जो आने वाले वर्षों तक आकर्षक और कार्यात्मक बने रहें।</span>
                 </p>
                 
-                <h2 style="font-family: 'Lora', serif; font-size: 1.3rem; font-weight: bold; font-style: italic; margin-top:10px; margin-bottom:15px; background: linear-gradient(to bottom, #8a0000, #460020); -webkit-background-clip: text; -webkit-text-fill-color: transparent; display: inline-block;">
-                    <span class="lang-en">Our Interior Design Services Include:</span>
-                    <span class="lang-hi">हमारी इंटीरियर डिजाइन सेवाओं में शामिल हैं:</span>
+                <h2>
+                    <span class="lang-en">Our Services Include:</span>
+                    <span class="lang-hi">हमारी सेवाओं में शामिल हैं:</span>
                 </h2>
-
                 <ul>
-                    <li>✔ 
-                        <span class="lang-en">Residential Interior Design</span>
-                        <span class="lang-hi">आवासीय इंटीरियर डिजाइन</span>
-                    </li>
-                    <li>✔ 
-                        <span class="lang-en">Commercial &amp; Office Interior Design</span>
-                        <span class="lang-hi">व्यावसायिक और कार्यालय इंटीरियर डिजाइन</span>
-                    </li>
-                    <li>✔ 
-                        <span class="lang-en">Modular Kitchen Design</span>
-                        <span class="lang-hi">मॉड्यूलर किचन डिजाइन</span>
-                    </li>
-                    <li>✔ 
-                        <span class="lang-en">Living Room &amp; Bedroom Design</span>
-                        <span class="lang-hi">लिविंग ROOM और बेडरूम डिजाइन</span>
-                    </li>
-                    <li>✔ 
-                        <span class="lang-en">False Ceiling &amp; Lighting Solutions</span>
-                        <span class="lang-hi">फॉल्स सीलिंग और लाइटिंग सॉल्यूशंस</span>
-                    </li>
-                    <li>✔ 
-                        <span class="lang-en">Space Planning &amp; Layout Optimization</span>
-                        <span class="lang-hi">स्पेस कामना और लेआउट ऑप्टिमाइज़ेशन</span>
-                    </li>
-                    <li>✔ 
-                        <span class="lang-en">Custom Furniture &amp; Woodwork</span>
-                        <span class="lang-hi">कस्टम फर्नीचर और लकड़ी का काम</span>
-                    </li>
-                    <li>✔ 
-                        <span class="lang-en">Flooring &amp; Wall Finishing</span>
-                        <span class="lang-hi">फ्लोरिंग और वाॅल फिनिशिंग</span>
-                    </li>
-                    <li>✔ 
-                        <span class="lang-en">Renovation &amp; Interior Remodeling</span>
-                        <span class="lang-hi">नवीनीकरण और इंटीरियर रीमॉडलिंग</span>
-                    </li>
-                    <li>✔ 
-                        <span class="lang-en">Complete Turnkey Interior Execution</span>
-                        <span class="lang-hi">पूर्ण टर्नकी इंटीरियर निष्पादन</span>
-                    </li>
+                    <li>✔ <span class="lang-en">Building Renovation &amp; Refurbishment</span><span class="lang-hi">भवन नवीनीकरण और नवीनीकरण</span></li>
+                    <li>✔ <span class="lang-en">Structural Repair &amp; Strengthening</span><span class="lang-hi">संरचनात्मक मरम्मत और मजबूती</span></li>
+                    <li>✔ <span class="lang-en">Interior &amp; Exterior Painting</span><span class="lang-hi">आंतरिक और बाहरी पेंटिंग</span></li>
+                    <li>✔ <span class="lang-en">Waterproofing Solutions</span><span class="lang-hi">वॉटरप्रूफिंग समाधान</span></li>
+                    <li>✔ <span class="lang-en">Flooring &amp; Tile Replacement</span><span class="lang-hi">फ़्लोरिंग और टाइल रिप्लेसमेंट</span></li>
+                    <li>✔ <span class="lang-en">Facade Restoration</span><span class="lang-hi">फ़ासाड (मोहरा) बहाली</span></li>
+                    <li>✔ <span class="lang-en">Plumbing &amp; Electrical Maintenance</span><span class="lang-hi">प्लंबिंग और इलेक्ट्रिकल रखरखाव</span></li>
+                    <li>✔ <span class="lang-en">Roof Repair &amp; Protection</span><span class="lang-hi">छत की मरम्मत और सुरक्षा</span></li>
+                    <li>✔ <span class="lang-en">Preventive Maintenance Programs</span><span class="lang-hi">निवारक रखरखाव कार्यक्रम</span></li>
+                    <li>✔ <span class="lang-en">Commercial &amp; Residential Upgrades</span><span class="lang-hi">व्यावसायिक और आवासीय अपग्रेड</span></li>
+                    <li>✔ <span class="lang-en">Property Value Enhancement</span><span class="lang-hi">संपत्ति मूल्य संवर्द्धन</span></li>
+                    <li>✔ <span class="lang-en">End-to-End Project Management</span><span class="lang-hi">शुरू से अंत तक परियोजना प्रबंधन</span></li>
+                </ul>
+
+                <h2>
+                    <span class="lang-en">Why Choose Us?</span>
+                    <span class="lang-hi">हमें क्यों चुनें?</span>
+                </h2>
+                <ul>
+                    <li>✔ <span class="lang-en">Experienced &amp; Skilled Professionals</span><span class="lang-hi">अनुभवी और कुशल पेशेवर</span></li>
+                    <li>✔ <span class="lang-en">Premium Quality Materials</span><span class="lang-hi">प्रीमियम गुणवत्ता सामग्री</span></li>
+                    <li>✔ <span class="lang-en">Cost-Effective Solutions</span><span class="lang-hi">लागत प्रभावी समाधान</span></li>
+                    <li>✔ <span class="lang-en">Timely Project Delivery</span><span class="lang-hi">समय पर परियोजना की डिलीवरी</span></li>
+                    <li>✔ <span class="lang-en">Safety &amp; Quality Assurance</span><span class="lang-hi">सुरक्षा और गुणवत्ता आश्वासन</span></li>
+                    <li>✔ <span class="lang-en">Long-Term Durability</span><span class="lang-hi">दीर्घकालिक स्थायित्व</span></li>
+                    <li>✔ <span class="lang-en">Customer-Focused Approach</span><span class="lang-hi">ग्राहक-केंद्रित दृष्टिकोण</span></li>
+                    <li>✔ <span class="lang-en">Reliable After-Service Support</span><span class="lang-hi">विश्वसनीय आफ्टर-सर्विस सपोर्ट</span></li>
                 </ul>
 
                 <p style="margin-top:25px; font-size:1.2rem; background: linear-gradient(to bottom, #8a0000, #460020); -webkit-background-clip: text; -webkit-text-fill-color: transparent; display: inline-block;">
                     <strong>
-                        <span class="lang-en">"Transforming Spaces Into Inspiring Experiences."</span>
-                        <span class="lang-hi">"स्थानों को प्रेरक अनुभवों में बदलना।"</span>
+                        <span class="lang-en">"Reviving Buildings. Reinforcing Quality. Creating Lasting Value." 🔨🏗️✨</span>
+                        <span class="lang-hi">"भवनों का पुनरुद्धार। गुणवत्ता की मजबूती। स्थायी मूल्य का सृजन।" 🔨🏗️✨</span>
                     </strong>
                 </p>
 
+                <br>
                 <a href="index.html" class="back-btn">
                     <span class="lang-en">⬅ Back to Home</span>
                     <span class="lang-hi">⬅ मुख्य पृष्ठ पर वापस जाएं</span>
                 </a>
+            </div>
+
+            <div class="image-side reveal-wipe" id="wipeImage">
+                <img src="repair.png" alt="Building Repair and Maintenance Execution Plan">
             </div>
 
         </div>

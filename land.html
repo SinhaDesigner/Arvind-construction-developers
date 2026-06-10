@@ -10,14 +10,29 @@
     <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&amp;family=Lora:ital,wght@1,700&amp;family=Shrikhand&amp;display=swap" rel="stylesheet">
 
     <style>
-        /* Cream Theme Background Color */
+        /* ⚡ FIX: Added premium shifting gradient loop using only #fef3d0 and #829778 */
         body {
-            background-color: #fef3d0;
+            background: linear-gradient(-45deg, #fef3d0, #829778, #fef3d0, #829778);
+            background-size: 400% 400%;
+            animation: premiumLiquidBG 22s ease infinite; /* Smooth 22 seconds organic wave loop */
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             color: #000000;
             overflow-x: hidden;
+        }
+
+        /* 🔥 KEYFRAMES ENGINE FOR SMOOTH COLOR SHIFTING FLOW */
+        @keyframes premiumLiquidBG {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
         }
 
         /* 🌐 DYNAMIC LANGUAGE SWITCHING SYSTEM */
@@ -206,7 +221,7 @@
             flex: 4.8 !important;
         }
 
-        /* ⚡ FIX: TARGETED SPECIFICALLY TO MAKE LAND.PNG MUCH LARGER WITHOUT BREAKING THE RIGHT-ALIGNED TEXT */
+        /* TARGETED SPECIFICALLY TO MAKE LAND.PNG MUCH LARGER WITHOUT BREAKING THE RIGHT-ALIGNED TEXT */
         #wipeLand {
             flex: 5.8 !important; /* Image container gets expanded desktop presence */
         }
@@ -381,7 +396,7 @@
             <div class="text-block scroll-reveal reveal-right">
                 <p class="description">
                     <span class="lang-en">At <span class="brand-name-inline">Arvind Construction &amp; Developers</span>, we provide trusted and professional land purchase and sale services designed to help individuals, investors, businesses, and developers make informed property decisions with confidence. Whether you are looking to purchase residential plots, commercial land, investment properties, agricultural land, or development sites, our team offers comprehensive support throughout the entire transaction process.<br><br>With a strong understanding of market trends, land valuation, legal compliance, and investment potential, we help our clients identify opportunities that align with their goals and deliver long-term value. Our commitment to transparency, integrity, and professional guidance ensures that every transaction is handled with accuracy, security, and complete peace of mind. We believe that purchasing land is not just an investment in property, but an investment in future growth, financial security, and development opportunities.</span>
-                    <span class="lang-hi"><span class="brand-name-inline">अरविन्द कंस्ट्रक्शन &amp; डेवलपर्स</span> में, हम विश्वसनीय और पेशेवर भूमि क्रय और विक्रय सेवाएं प्रदान करने के लिए प्रतिबद्ध हैं, जो व्यक्तियों, निवेशकों, व्यवसायों और डेवलपर्स को आत्मविश्वास के साथ सूचित संपत्ति निर्णय लेने में मदद करने के लिए डिज़ाइन की गई हैं। चाहे आप आवासीय भूखंड, व्यावसायिक भूमि, निवेश संपत्तियां, कृषि भूमि, या विकास स्थलों को खरीदना चाह रहे हों, हमारी टीम पूरी लेनदेन प्रक्रिया में व्यापक सहायता प्रदान करती है।<br><br>बाजार के रुझानों, भूमि मूल्यांकन, कानूनी अनुपालन और निवेश क्षमता की मजबूत समझ के साथ, हम अपने ग्राहकों को उन अवसरों की पहचान करने में मदद करते हैं जो उनके लक्ष्यों के अनुरूप हैं और दीर्घकालिक मूल्य प्रदान करते हैं। पारदर्शिता, ईमानदारी और पेशेवर मार्गदर्शन के प्रति हमारी प्रतिबद्धता यह सुनिश्चित करती है कि प्रत्येक लेनदेन को सटीकता, सुरक्षा और पूर्ण शांति के साथ संभाला जाए। हमारा मानना है कि भूमि खरीदना केवल संपत्ति में निवेश नहीं है, बल्कि भविष्य के विकास, वित्तीय सुरक्षा और विकास के अवसरों में एक निवेश है।</span>
+                    <span class="lang-hi"><span class="brand-name-inline">अरविन्द कंस्ट्रक्शन &amp; डेवलपर्स</span> में, हम विश्वसनीय और पेशेवर भूमि क्रय और विक्रय सेवाएं प्रदान करने के लिए प्रतिबद्ध हैं, जो व्यक्तियों, निवेशकों, व्यवसायों और डेवलपर्स को आत्मविश्वास के साथ सूचित संपत्ति निर्णय लेने में मदद करने के लिए डिज़ाइन की गई हैं। चाहे आप आवासीय भूखंड, व्यावसायिक भूमि, निवेश संपत्तियां, कृषि भूमि, या विकास स्थलों को खरीदना चाह रहे हों, हमारी टीम पूरी लेनदेन प्रक्रिया में व्यापक सहायता प्रदान करती है।<br><br>बाजार के रुझानों, भूमि मूल्यांकन, कानूनी अनुपालन और निवेश क्षमता की मजबूत समझ के साथ, हम अपने ग्राहकों को उन अवसरों की पहचान करने में मदद करते हैं जो उनके लक्ष्यों के अनुरूप हैं और दीर्घकालिक मूल्य प्रदान करते हैं। पारदर्शिता, ईमानदारी और पेशेवर मार्गदर्शन के प्रति हमारी प्रतिबद्धता यह सुनिश्चित करती है कि प्रत्येक लेनदेन को सटीकता, सुरक्षा trends और पूर्ण शांति के साथ संभाला जाए। हमारा मानना है कि भूमि खरीदना केवल संपत्ति में निवेश नहीं है, बल्कि भविष्य के विकास, वित्तीय सुरक्षा और विकास के अवसरों में एक निवेश है।</span>
                 </p>
             </div>
 

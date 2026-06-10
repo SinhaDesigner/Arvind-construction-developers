@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interior Design &amp; Execution - Arvind Construction &amp; Developers</title>
+    <title>Project Consultation - Arvind Construction &amp; Developers</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&amp;family=Lora:ital,wght@1,700&amp;family=Shrikhand&amp;display=swap" rel="stylesheet">
 
     <style>
-        /* ⚡ FIX: Added premium shifting gradient loop using only #fef3d0 and #829778 */
+        /* ⚡ PREMIUM MOVING GRADIENT LIQUID EFFECT USING #fef3d0 AND #829778 */
         body {
             background: linear-gradient(-45deg, #fef3d0, #829778, #fef3d0, #829778);
             background-size: 400% 400%;
@@ -22,17 +22,11 @@
             overflow-x: hidden;
         }
 
-        /* 🔥 KEYFRAMES ENGINE FOR SMOOTH COLOR SHIFTING FLOW */
+        /* KEYFRAMES ENGINE FOR SMOOTH COLOR SHIFTING FLOW */
         @keyframes premiumLiquidBG {
-            0% {
-                background-position: 0% 50%;
-            }
-            50% {
-                background-position: 100% 50%;
-            }
-            100% {
-                background-position: 0% 50%;
-            }
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
 
         /* 🌐 DYNAMIC LANGUAGE SWITCHING SYSTEM */
@@ -65,7 +59,7 @@
             z-index: 1000;
         }
 
-        /* 🌟 MOUSE TRACKING REAL-TIME SHINE FOR LANGUAGE BUTTON WITH GRADIENT */
+        /* MOUSE TRACKING REAL-TIME SHINE FOR LANGUAGE BUTTON */
         .lang-btn {
             background: radial-gradient(circle 60px at var(--x, -1000px) var(--y, -1000px), rgba(255, 255, 255, 0.45) 0%, transparent 100%), linear-gradient(to bottom, #8a0000, #460020);
             color: #fef3d0;
@@ -120,7 +114,7 @@
             display: block;
         }
 
-        /* 🌈 MAIN HEADING WITH CURSOR SHINE INTERACTION & TEXT GRADIENT */
+        /* 🌈 MAIN HEADING WITH CURSOR GLOW OVERLAY & TEXT GRADIENT */
         h1 {
             font-family: 'Shrikhand', cursive;
             font-style: italic;
@@ -147,57 +141,7 @@
             z-index: 2;
         }
 
-        /* Left-Right Layout Design (Image Left, Text Right) */
-        .content-layout {
-            display: flex;
-            gap: 40px; 
-            align-items: flex-start;
-            margin-top: 20px;
-            width: 100%;
-        }
-
-        /* 🖼️ IMAGE SIDE (Left Raised, Right Sloping/Plane Effect) */
-        .image-side {
-            flex: 4.5; /* ⚡ FIX: Space allocation increased from 1 to 4.5 to make image bigger */
-            text-align: left;
-            position: relative;
-            display: inline-block;
-            z-index: 1; 
-        }
-
-        /* 🔄 PERFECT LEFT-TO-RIGHT SLOPING SHADOW PACK */
-        .image-side::before {
-            content: '';
-            position: absolute;
-            top: -15px;   
-            bottom: -15px;
-            left: -20px;  
-            right: 30px; 
-            border-radius: 15px;
-            background: linear-gradient(to right, rgba(74, 4, 4, 0.5) 0%, rgba(74, 4, 4, 0.22) 35%, transparent 65%);
-            filter: blur(15px); 
-            z-index: -1; 
-        }
-
-        /* AAPKA ORIGINAL LOOK PRESERVED AND ENLARGED SAFELY */
-        .image-side img {
-            width: 100%;    
-            max-width: 600px; /* ⚡ FIX: Max-width stabilized to make it clean and bigger */
-            height: auto;
-            border-radius: 15px;
-            box-shadow: none; 
-            display: block;
-        }
-
-        /* Text Side takes remaining right width */
-        .text-side {
-            flex: 5.5; /* ⚡ FIX: Adjusted flex ratio for a clean side-by-side view */
-            position: relative;    
-            z-index: 10;
-            margin-left: -150px; /* ⚡ FIX: Removed -150px negative margin so text pushes back naturally */
-        }
-
-        /* 👑 SIGNATURE ARVIND BRAND STYLING FROM INDEX.HTML (⚡ Added newly as requested) */
+        /* 👑 SIGNATURE ARVIND BRAND STYLING FROM INDEX.HTML */
         .brand-name-inline {
             font-family: 'Cinzel Decorative', cursive;
             font-weight: bold;
@@ -208,7 +152,67 @@
             display: inline-block;
         }
 
-        /* Same Lora Font, Bold, Italic, Dark Black for details */
+        /* 📋 SECTION SUBHEADINGS STYLE WITH TEXT GRADIENT */
+        h2 {
+            font-family: 'Lora', serif;
+            font-size: 1.4rem;
+            font-weight: bold;
+            font-style: italic;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            background: linear-gradient(to bottom, #8a0000, #460020);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+        }
+
+        /* 🗺️ SIDE-BY-SIDE SPLIT CONTROL STRUCTURE */
+        .content-layout {
+            display: flex;
+            gap: 50px; 
+            align-items: flex-start;
+            margin-top: 20px;
+            width: 100%;
+        }
+
+        /* ⚡ FIX: ALLOCATED STRICT 60% WIDTH FOR THE IMAGE BLOCK (LEFT SIDE) */
+        .image-side {
+            flex: 6;
+            text-align: left;
+            position: relative;
+            z-index: 1; 
+        }
+
+        /* Sloping organic gradient shadow pack below image bounds */
+        .image-side::before {
+            content: '';
+            position: absolute;
+            top: -15px;   
+            bottom: -15px;
+            left: -15px;  
+            right: 15px; 
+            border-radius: 15px;
+            background: linear-gradient(to right, rgba(74, 4, 4, 0.45) 0%, rgba(74, 4, 4, 0.18) 35%, transparent 65%);
+            filter: blur(15px); 
+            z-index: -1; 
+        }
+
+        .image-side img {
+            width: 100%;    
+            max-width: 100%;
+            height: auto;
+            border-radius: 15px;
+            display: block;
+        }
+
+        /* ⚡ FIX: ALLOCATED STRICT 40% WIDTH FOR THE TEXT BLOCK (RIGHT SIDE) */
+        .text-side {
+            flex: 4; 
+            position: relative;    
+            z-index: 10;
+        }
+
+        /* Typography Configs */
         p, ul, li {
             font-family: 'Lora', serif;
             font-weight: bold;
@@ -235,7 +239,7 @@
             gap: 10px;
         }
 
-        /* 🌟 BACK BUTTON WITH REVOLVING SPOTLIGHT SHINE & GRADIENT PACK */
+        /* 🌟 BACK BUTTON WITH TRACKING MOUSE SHINE & GRADIENT PACK */
         .back-btn {
             display: inline-block;
             margin-top: 30px;
@@ -295,10 +299,11 @@
             clip-path: inset(0 0 0 0);
         }
 
-        /* Mobile Responsive View */
-        @media (max-width: 768px) {
+        /* 📱 MOBILE RESPONSIVE STRUCTURE FIXED */
+        @media (max-width: 991px) {
             .content-layout {
                 flex-direction: column; 
+                gap: 30px;
             }
             .image-side {
                 width: 100%;
@@ -310,24 +315,23 @@
                 margin: 0 auto;
                 width: 100%; 
             }
-            
             .image-side::before {
-                top: -12px;
-                bottom: -12px;
-                left: -14px;
-                right: 25px;
-                background: linear-gradient(to right, rgba(74, 4, 4, 0.45) 0%, rgba(74, 4, 4, 0.18) 35%, transparent 65%);
+                left: -14px; right: 25px;
             }
-            
             .text-side {
                 order: 2;
                 width: 100%;
                 flex: none;
-                margin-left: 0;
             }
             h1 {
                 font-size: 2rem;
                 display: block;
+                text-align: center;
+            }
+            .back-btn {
+                display: block !important;
+                width: fit-content !important;
+                margin: 20px auto 0 auto !important;
                 text-align: center;
             }
         }
@@ -346,77 +350,62 @@
         </div>
         
         <h1 class="scroll-reveal reveal-top">
-            <span class="lang-en">Interior Design &amp; Execution</span>
-            <span class="lang-hi">इंटीरियर डिजाइन और निष्पादन</span>
+            <span class="lang-en">📋 Project Consultation</span>
+            <span class="lang-hi">📋 परियोजना परामर्श</span>
         </h1>
 
         <div class="content-layout">
             
             <div class="image-side reveal-wipe" id="wipeImage">
-                <img src="interior.png" alt="Interior Design &amp; Execution">
+                <img src="project.png" alt="Project Consultation and Development Planning Blueprint">
             </div>
 
             <div class="text-side scroll-reveal reveal-right">
                 <p class="description">
-                    <span class="lang-en">At <span class="brand-name-inline">Arvind Construction &amp; Developers</span>, we create thoughtfully designed interiors that combine functionality, comfort, and aesthetic excellence. Our Interior Design &amp; Execution services are tailored to transform residential, commercial, and corporate spaces into environments that reflect style, purpose, and individuality.<br><br>From concept development and space planning to material selection, custom furnishings, lighting design, and final execution, we manage every aspect of the project with precision and attention to detail. Our team focuses on creating elegant, practical, and modern interiors that enhance both the visual appeal and usability of every space. Whether it is a luxury residence, office, showroom, retail outlet, apartment, or commercial establishment, we deliver complete turnkey interior solutions that meet the highest standards of quality, craftsmanship, and customer satisfaction.</span>
-                    <span class="lang-hi"><span class="brand-name-inline">अरविंद कंस्ट्रक्शन एंड डेवलपर्स</span> में, we design thoughtful interiors that combine functionality, comfort and aesthetic excellence. हमारी इंटीरियर डिजाइन और निष्पादन सेवाएं आवासीय, व्यावसायिक और कॉर्पोरेट स्थानों को ऐसे वातावरण में बदलने के लिए तैयार की गई हैं जो शैली, उद्देश्य और व्यक्तित्व को दर्शाती हैं।<br><br>अवधारणा विकास (concept development) और स्पेस कामना से लेकर सामग्री चयन, CUSTOM फर्निशिंग, लाइटिंग डिजाइन और अंतिम निष्पादन तक, हम सटीकता और विवरण पर ध्यान देते हुए परियोजना के हर पहलू का प्रबंधन करते हैं। हमारी टीम सुरुचिपूर्ण, व्यावहारिक và आधुनिक इंटीरियर बनाने पर ध्यान केंद्रित करती है जो हर स्थान की दृश्य अपील और उपयोगिता दोनों को बढ़ाती है। चाहे वह एक लक्जरी निवास, कार्यालय, शोरूम, रिटेल आउटलेट, apartment या व्यावसायिक प्रतिष्ठान हो, हम पूर्ण टर्नकी इंटीरियर समाधान प्रदान करते हैं जो गुणवत्ता, शिल्प कौशल और ग्राहक संतुष्टि के उच्चतम मानकों को पूरा करते हैं।</span>
+                    <span class="lang-en">At <span class="brand-name-inline">Arvind Construction &amp; Developers</span>, we believe that every successful project begins with the right planning, expert guidance, and a clear vision. Our Project Consultation services are designed to help clients make informed decisions at every stage of development, from concept and feasibility analysis to design planning, budgeting, and execution strategy.<br><br>Our experienced team works closely with clients to understand their goals, requirements, budget, and long-term expectations. By combining technical expertise, industry knowledge, and practical solutions, we provide comprehensive consultation that minimizes risks, optimizes resources, and ensures smooth project execution. Whether you are planning a residential home, commercial property, renovation project, or large-scale real estate development, we offer strategic insights that transform ideas into successful realities.<br><br>We focus on creating cost-effective, sustainable, and future-ready solutions while maintaining the highest standards of quality, safety, and efficiency. Through detailed planning, project evaluation, design coordination, and professional advisory services, we help clients achieve maximum value and long-term success from their investments.</span>
+                    <span class="lang-hi"><span class="brand-name-inline">अरविन्द कंस्ट्रक्शन &amp; डेवलपर्स</span> में, हमारा मानना है कि हर सफल परियोजना की शुरुआत सही योजना, विशेषज्ञ मार्गदर्शन और एक स्पष्ट दृष्टिकोण से होती है। हमारी परियोजना परामर्श सेवाएं ग्राहकों को विकास के हर चरण में सूचित निर्णय लेने में मदद करने के लिए डिज़ाइन की गई हैं, जिसमें अवधारणा (concept) और व्यवहार्यता विश्लेषण से लेकर डिज़ाइन योजना, बजट और निष्पादन रणनीति शामिल हैं।<br><br>हमारी अनुभवी टीम ग्राहकों के लक्ष्यों, आवश्यकताओं, बजट और दीर्घकालिक अपेक्षाओं को समझने के लिए उनके साथ मिलकर काम करती है। तकनीकी विशेषज्ञता, उद्योग ज्ञान और व्यावहारिक समाधानों को जोड़कर, हम व्यापक परामर्श प्रदान करते हैं जो जोखिमों को कम करता है, संसाधनों का अनुकूलन करता है, और सुचारू परियोजना निष्पादन सुनिश्चित करता है। चाहे आप आवासीय घर, व्यावसायिक संपत्ति, नवीनीकरण परियोजना, या बड़े पैमाने पर रियल एस्टेट विकास की योजना बना रहे हों, हम रणनीतिक अंतर्दृष्टि प्रदान करते हैं जो विचारों को सफल वास्तविकताओं में बदल देती है।<br><br>हम गुणवत्ता, सुरक्षा और दक्षता के उच्चतम मानकों को बनाए रखते हुए लागत प्रभावी, टिकाऊ और भविष्य के लिए तैयार समाधान बनाने पर ध्यान केंद्रित करते हैं। विस्तृत योजना, परियोजना मूल्यांकन, डिजाइन समन्वय और पेशेवर सलाहकार सेवाओं के माध्यम से, हम ग्राहकों को उनके निवेश से अधिकतम मूल्य और दीर्घकालिक सफलता प्राप्त करने में मदद करते हैं।</span>
                 </p>
                 
-                <h2 style="font-family: 'Lora', serif; font-size: 1.3rem; font-weight: bold; font-style: italic; margin-top:10px; margin-bottom:15px; background: linear-gradient(to bottom, #8a0000, #460020); -webkit-background-clip: text; -webkit-text-fill-color: transparent; display: inline-block;">
-                    <span class="lang-en">Our Interior Design Services Include:</span>
-                    <span class="lang-hi">हमारी इंटीरियर डिजाइन सेवाओं में शामिल हैं:</span>
+                <h2>
+                    <span class="lang-en">Our Consultation Services Include:</span>
+                    <span class="lang-hi">हमारी परामर्श सेवाओं में शामिल हैं:</span>
                 </h2>
-
                 <ul>
-                    <li>✔ 
-                        <span class="lang-en">Residential Interior Design</span>
-                        <span class="lang-hi">आवासीय इंटीरियर डिजाइन</span>
-                    </li>
-                    <li>✔ 
-                        <span class="lang-en">Commercial &amp; Office Interior Design</span>
-                        <span class="lang-hi">व्यावसायिक और कार्यालय इंटीरियर डिजाइन</span>
-                    </li>
-                    <li>✔ 
-                        <span class="lang-en">Modular Kitchen Design</span>
-                        <span class="lang-hi">मॉड्यूलर किचन डिजाइन</span>
-                    </li>
-                    <li>✔ 
-                        <span class="lang-en">Living Room &amp; Bedroom Design</span>
-                        <span class="lang-hi">लिविंग ROOM और बेडरूम डिजाइन</span>
-                    </li>
-                    <li>✔ 
-                        <span class="lang-en">False Ceiling &amp; Lighting Solutions</span>
-                        <span class="lang-hi">फॉल्स सीलिंग और लाइटिंग सॉल्यूशंस</span>
-                    </li>
-                    <li>✔ 
-                        <span class="lang-en">Space Planning &amp; Layout Optimization</span>
-                        <span class="lang-hi">स्पेस कामना और लेआउट ऑप्टिमाइज़ेशन</span>
-                    </li>
-                    <li>✔ 
-                        <span class="lang-en">Custom Furniture &amp; Woodwork</span>
-                        <span class="lang-hi">कस्टम फर्नीचर और लकड़ी का काम</span>
-                    </li>
-                    <li>✔ 
-                        <span class="lang-en">Flooring &amp; Wall Finishing</span>
-                        <span class="lang-hi">फ्लोरिंग और वाॅल फिनिशिंग</span>
-                    </li>
-                    <li>✔ 
-                        <span class="lang-en">Renovation &amp; Interior Remodeling</span>
-                        <span class="lang-hi">नवीनीकरण और इंटीरियर रीमॉडलिंग</span>
-                    </li>
-                    <li>✔ 
-                        <span class="lang-en">Complete Turnkey Interior Execution</span>
-                        <span class="lang-hi">पूर्ण टर्नकी इंटीरियर निष्पादन</span>
-                    </li>
+                    <li>✔ <span class="lang-en">Project Planning &amp; Development Strategy</span><span class="lang-hi">परियोजना योजना और विकास रणनीति</span></li>
+                    <li>✔ <span class="lang-en">Architectural &amp; Design Consultation</span><span class="lang-hi">वास्तुकला और डिजाइन परामर्श</span></li>
+                    <li>✔ <span class="lang-en">Budgeting &amp; Cost Estimation</span><span class="lang-hi">बजट और लागत अनुमान</span></li>
+                    <li>✔ <span class="lang-en">Feasibility Studies &amp; Site Analysis</span><span class="lang-hi">व्यवहार्यता अध्ययन और साइट विश्लेषण</span></li>
+                    <li>✔ <span class="lang-en">Construction Planning &amp; Scheduling</span><span class="lang-hi">निर्माण योजना और समय निर्धारण</span></li>
+                    <li>✔ <span class="lang-en">Material Selection Guidance</span><span class="lang-hi">सामग्री चयन मार्गदर्शन</span></li>
+                    <li>✔ <span class="lang-en">Regulatory &amp; Compliance Advisory</span><span class="lang-hi">नियामक और अनुपालन सलाहकार</span></li>
+                    <li>✔ <span class="lang-en">Risk Assessment &amp; Project Optimization</span><span class="lang-hi">जोखिम मूल्यांकन और परियोजना अनुकूलन</span></li>
+                    <li>✔ <span class="lang-en">Investment &amp; Development Consultation</span><span class="lang-hi">निवेश और विकास परामर्श</span></li>
+                    <li>✔ <span class="lang-en">End-to-End Project Management Support</span><span class="lang-hi">शुरू से अंत तक परियोजना प्रबंधन सहायता</span></li>
+                </ul>
+
+                <h2>
+                    <span class="lang-en">Why Choose Us?</span>
+                    <span class="lang-hi">हमें क्यों चुनें?</span>
+                </h2>
+                <ul>
+                    <li>✔ <span class="lang-en">Experienced Industry Professionals</span><span class="lang-hi">अनुभवी उद्योग पेशेवर</span></li>
+                    <li>✔ <span class="lang-en">Customized Project Solutions</span><span class="lang-hi">अनुकूलित परियोजना समाधान</span></li>
+                    <li>✔ <span class="lang-en">Transparent Planning &amp; Guidance</span><span class="lang-hi">पारदर्शी योजना और मार्गदर्शन</span></li>
+                    <li>✔ <span class="lang-en">Cost-Effective Recommendations</span><span class="lang-hi">लागत प्रभावी सिफारिशें</span></li>
+                    <li>✔ <span class="lang-en">Timely Project Execution Strategies</span><span class="lang-hi">समय पर परियोजना निष्पादन रणनीतियाँ</span></li>
+                    <li>✔ <span class="lang-en">Quality-Focused Approach</span><span class="lang-hi">गुणवत्ता-केंद्रित दृष्टिकोण</span></li>
+                    <li>✔ <span class="lang-en">Client-Centric Consultation</span><span class="lang-hi">ग्राहक-केंद्रित परामर्श</span></li>
+                    <li>✔ <span class="lang-en">Long-Term Value Creation</span><span class="lang-hi">दीर्घकालिक मूल्य सृजन</span></li>
                 </ul>
 
                 <p style="margin-top:25px; font-size:1.2rem; background: linear-gradient(to bottom, #8a0000, #460020); -webkit-background-clip: text; -webkit-text-fill-color: transparent; display: inline-block;">
                     <strong>
-                        <span class="lang-en">"Transforming Spaces Into Inspiring Experiences."</span>
-                        <span class="lang-hi">"स्थानों को प्रेरक अनुभवों में बदलना।"</span>
+                        <span class="lang-en">"Plan Smart. Build Better. Create Lasting Value." ✨🏢</span>
+                        <span class="lang-hi">"स्मार्ट योजना। बेहतर निर्माण। स्थायी मूल्य का सृजन।" ✨🏢</span>
                     </strong>
                 </p>
 
+                <br>
                 <a href="index.html" class="back-btn">
                     <span class="lang-en">⬅ Back to Home</span>
                     <span class="lang-hi">⬅ मुख्य पृष्ठ पर वापस जाएं</span>

@@ -7,17 +7,32 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,700&amp;family=Shrikhand&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&amp;family=Lora:ital,wght@1,700&amp;family=Shrikhand&amp;display=swap" rel="stylesheet">
 
     <style>
-        /* Same Page Background Color */
+        /* ⚡ FIX: Added premium shifting gradient loop using only #fef3d0 and #829778 */
         body {
-            background-color: #fef3d0;
+            background: linear-gradient(-45deg, #fef3d0, #829778, #fef3d0, #829778);
+            background-size: 400% 400%;
+            animation: premiumLiquidBG 22s ease infinite; /* Smooth 22 seconds organic wave loop */
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             color: #000000;
             overflow-x: hidden; /* Prevent horizontal shake during slow slide transitions */
+        }
+
+        /* 🔥 KEYFRAMES ENGINE FOR SMOOTH COLOR SHIFTING FLOW */
+        @keyframes premiumLiquidBG {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
         }
 
         /* 🌐 DYNAMIC LANGUAGE SWITCHING SYSTEM */
@@ -133,6 +148,31 @@
             z-index: 2;
         }
 
+        /* 👑 SIGNATURE ARVIND BRAND STYLING FROM INDEX.HTML (⚡ Joda Gaya Hai) */
+        .brand-name-inline {
+            font-family: 'Cinzel Decorative', cursive;
+            font-weight: bold;
+            background: linear-gradient(to bottom, #8a0000, #460020);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-style: normal; 
+            display: inline-block;
+        }
+
+        /* SERVICES SUBHEADING STYLE WITH TEXT GRADIENT */
+        h2 {
+            font-family: 'Lora', serif;
+            font-size: 1.4rem;
+            font-weight: bold;
+            font-style: italic;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            background: linear-gradient(to bottom, #8a0000, #460020);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+        }
+
         /* Top Layout (Left Image, Right Description) */
         .upper-content-layout {
             display: flex;
@@ -149,7 +189,7 @@
             position: relative;
         }
 
-        /* ⚡ FIX: Sized image strictly within bounds to eliminate clipping animations completely */
+        /* Sized image strictly within bounds to eliminate clipping animations completely */
         .image-left-side img {
             width: 100%;      
             max-width: 555px; 
@@ -361,8 +401,8 @@
 
             <div class="text-description-area scroll-reveal reveal-right">
                 <p class="description">
-                    <span class="lang-en">At Arvind Construction &amp; Developers, we specialize in transforming outdated, damaged, and underutilized spaces into modern, functional, and visually appealing environments. Whether it is a residential property, commercial establishment, office space, apartment, villa, or retail outlet, our renovation and remodeling services are designed to enhance both the value and functionality of your property. We carefully analyze the existing structure and develop customized solutions that align with your vision, lifestyle, and budget.<br><br>Our team manages every aspect of the renovation process, including structural modifications, space optimization, flooring upgrades, false ceiling installation, electrical and plumbing improvements, painting, lighting solutions, kitchen remodeling, bathroom modernization, and premium interior enhancements. By combining innovative design concepts with high-quality materials and skilled craftsmanship, we ensure that every project achieves a perfect balance between aesthetics, comfort, and durability. From minor upgrades to complete property transformations, we are committed to delivering renovation solutions that exceed expectations. Our focus on quality workmanship, timely execution, transparent communication, and attention to detail allows us to create spaces that not only look exceptional but also provide long-term value and functionality. Whether you are modernizing an existing property or giving a completely new identity to your space, we help turn your ideas into reality with professionalism and precision.</span>
-                    <span class="lang-hi">अरविंद कंस्ट्रक्शन एंड डेवलपर्स में, हम पुराने, क्षतिग्रस्त और कम उपयोग किए गए स्थानों को आधुनिक, कार्यात्मक और सुंदर वातावरण में बदलने में विशेषज्ञता रखते हैं। चाहे वह आवासीय संपत्ति हो, व्यावसायिक प्रतिष्ठान, कार्यालय स्थान, अपार्टमेंट, विला या रिटेल आउटलेट हो, हमारी नवीनीकरण (renovation) और रीमॉडलिंग सेवाएं आपकी संपत्ति के मूल्य और कार्यख्ता दोनों को बढ़ाने के लिए डिज़ाइन की गई हैं। हम मौजूदा संरचना का सावधानीपूर्वक विश्लेषण करते हैं और अनुकूलित समाधान विकसित करते हैं जो आपकी दृष्टि, जीवनशैली और बजट के अनुरूप हों।<br><br>हमारी टीम नवीनीकरण प्रक्रिया के हर पहलू का प्रबंधन करती है, जिसमें संरचनात्मक संशोधन, स्पेस ऑप्टिमाइज़ेशन, फ़्लोरिंग अपग्रेड, फॉल्स सीलिंग इंस्टॉलेशन, इलेक्ट्रिकल और प्लंबिंग सुधार, पेंटिंग, लाइटिंग सॉल्यूशंस, kitchen रीमॉडलिंग, बाथरूम का आधुनिकीकरण और प्रीमियम इंटीरियर संवर्द्धन शामिल हैं। अभिनव डिज़ाईन अवधारणाओं को उच्च गुणवत्ता वाली सामग्री और कुशल शिल्प कौशल के साथ जोड़कर, हम यह सुनिश्चित करते हैं कि हर परियोजना सौंदर्यशास्त्र, आराम और स्थायित्व के बीच एक सही संतुलन प्राप्त करे। छोटे अपग्रेड से लेकर पूरी संपत्ति के बदलाव तक, हम ऐसी नवीनीकरण सेवाएं देने के लिए प्रतिबद्ध हैं जो अपेक्षाओं से परे हों। गुणवत्तापूर्ण काम, समय पर निष्पादन, पारदर्शी संचार और विवरणों पर ध्यान देने से हमें ऐसे स्थान बनाने में मदद मिलती है जो न केवल असाधारण दिखते हैं बल्कि दीर्घकालिक मूल्य और कार्यख्ता भी प्रदान करते हैं। चाहे आप किसी मौजूदा संपत्ति का आधुनिकीकरण कर रहे हों या अपने स्थान को पूरी तरह से नई पहचान दे रहे हों, हम पेशेवर और सटीकता के साथ आपके विचारों को वास्तविकता में बदलने में मदद करते हैं।</span>
+                    <span class="lang-en">At <span class="brand-name-inline">Arvind Construction &amp; Developers</span>, we specialize in transforming outdated, damaged, and underutilized spaces into modern, functional, and visually appealing environments. Whether it is a residential property, commercial establishment, office space, apartment, villa, or retail outlet, our renovation and remodeling services are designed to enhance both the value and functionality of your property. We carefully analyze the existing structure and develop customized solutions that align with your vision, lifestyle, and budget.<br><br>Our team manages every aspect of the renovation process, including structural modifications, space optimization, flooring upgrades, false ceiling installation, electrical and plumbing improvements, painting, lighting solutions, kitchen remodeling, bathroom modernization, and premium interior enhancements. By combining innovative design concepts with high-quality materials and skilled craftsmanship, we ensure that every project achieves a perfect balance between aesthetics, comfort, and durability. From minor upgrades to complete property transformations, we are committed to delivering renovation solutions that exceed expectations. Our focus on quality workmanship, timely execution, transparent communication, and attention to detail allows us to create spaces that not only look exceptional but also provide long-term value and functionality. Whether you are modernizing an existing property or giving a completely new identity to your space, we help turn your ideas into reality with professionalism and precision.</span>
+                    <span class="lang-hi"><span class="brand-name-inline">अरविंद कंस्ट्रक्शन एंड डेवलपर्स</span> में, हम पुराने, क्षतिग्रस्त और कम उपयोग किए गए स्थानों को आधुनिक, कार्यात्मक और सुंदर वातावरण में बदलने में विशेषज्ञता रखते हैं। चाहे वह आवासीय संपत्ति हो, व्यावसायिक प्रतिष्ठान, कार्यालय स्थान, अपार्टमेंट, विला या retail आउटलेट हो, हमारी नवीनीकरण (renovation) और रीमॉडलिंग सेवाएं आपकी संपत्ति के मूल्य और कार्यख्ता दोनों को बढ़ाने के लिए डिज़ाइन की गई हैं। हम मौजूदा संरचना का सावधानीपूर्वक विश्लेषण करते हैं और अनुकूलित समाधान विकसित करते हैं जो आपकी दृष्टि, जीवनशैली और बजट के अनुरूप हों।<br><br>हमारी टीम नवीनीकरण प्रक्रिया के हर पहलू का प्रबंधन करती है, जिसमें संरचनात्मक संशोधन, स्पेस ऑप्टिमाइज़ेशन, फ़्लोरिंग अपग्रेड, फॉल्स सीलिंग इंस्टॉलेशन,电气 और कमरा सुधार, पेंटिंग, लाइटिंग走向, kitchen रीमॉडलिंग, बाथरूम का आधुनिकीकरण और प्रीमियम इंटीरियर संवर्द्धन शामिल हैं। अभिनव डिज़ाईन अवधारणाओं को उच्च गुणवत्ता वाली सामग्री और कुशल शिल्प कौशल के साथ जोड़कर, हम यह सुनिश्चित करते हैं कि हर परियोजना सौंदर्यशास्त्र, आराम और स्थायित्व के बीच एक सही संतुलन प्राप्त करे। छोटे अपग्रेड से लेकर पूरी संपत्ति के बदलाव तक, हम ऐसी नवीनीकरण सेवाएं देने के लिए प्रतिबद्ध हैं जो अपेक्षाओं से परे हों। गुणवत्तापूर्ण काम, समय पर निष्पादन, पारदर्शी संचार और विवरणों पर ध्यान देने से हमें ऐसे स्थान बनाने में मदद मिलती है जो न केवल असाधारण दिखते हैं बल्कि दीर्घकालिक मूल्य और कार्यख्ता भी प्रदान करते हैं। चाहे आप किसी मौजूदा संपत्ति का आधुनिकीकरण कर रहे हों या अपने स्थान को पूरी तरह से नई पहचान दे रहे हों, हम पेशेवर और सटीकता के साथ आपके विचारों को वास्तविकता में बदलने में मदद करते हैं।</span>
                 </p>
             </div>
 

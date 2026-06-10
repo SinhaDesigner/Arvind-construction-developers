@@ -10,14 +10,29 @@
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,700&amp;family=Shrikhand&amp;display=swap" rel="stylesheet">
 
     <style>
-        /* Same Page Background Color */
+        /* ⚡ FIX: Added premium shifting gradient loop using only #fef3d0 and #829778 */
         body {
-            background-color: #fef3d0;
+            background: linear-gradient(-45deg, #fef3d0, #829778, #fef3d0, #829778);
+            background-size: 400% 400%;
+            animation: premiumLiquidBG 22s ease infinite; /* Smooth 22 seconds organic wave loop */
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             color: #000000;
             overflow-x: hidden; /* Prevent horizontal shake during slow transitions */
+        }
+
+        /* 🔥 KEYFRAMES ENGINE FOR SMOOTH COLOR SHIFTING FLOW */
+        @keyframes premiumLiquidBG {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
         }
 
         /* 🌐 DYNAMIC LANGUAGE SWITCHING SYSTEM */
@@ -51,7 +66,7 @@
             z-index: 1000;
         }
 
-        /* ⚡ FIX: Combined both gradients in one line so it never disappears */
+        /* 🌟 MOUSE TRACKING REAL-TIME SHINE FOR LANGUAGE BUTTON WITH GRADIENT */
         .lang-btn {
             background: radial-gradient(circle 60px at var(--x, -1000px) var(--y, -1000px), rgba(255, 255, 255, 0.45) 0%, transparent 100%), linear-gradient(to bottom, #8a0000, #460020);
             color: #fef3d0;
@@ -181,7 +196,7 @@
             gap: 10px;
         }
 
-        /* ⚡ FIX: Combined layer stack for the back button so background gradient stays visible */
+        /* 🌟 BACK BUTTON WITH REVOLVING SPOTLIGHT SHINE & GRADIENT PACK */
         .back-btn {
             display: inline-block;
             margin-top: 30px;
@@ -219,8 +234,8 @@
         }
 
         /* 🎬 ========================================================
-           🌟 3 SECONDS SYSTEMATIC DIRECTIONAL SCROLL REVEAL TIMING
-           ======================================================== 🎬 */
+            🌟 3 SECONDS SYSTEMATIC DIRECTIONAL SCROLL REVEAL TIMING
+            ======================================================== 🎬 */
         .scroll-reveal {
             opacity: 0;
             transition: opacity 3s cubic-bezier(0.15, 1, 0.2, 1), transform 3s cubic-bezier(0.15, 1, 0.2, 1);

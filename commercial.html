@@ -10,14 +10,29 @@
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,700&amp;family=Shrikhand&amp;display=swap" rel="stylesheet">
 
     <style>
-        /* Same Page Background Color */
+        /* ⚡ FIX: Added premium shifting gradient loop using only #fef3d0 and #829778 */
         body {
-            background-color: #fef3d0;
+            background: linear-gradient(-45deg, #fef3d0, #829778, #fef3d0, #829778);
+            background-size: 400% 400%;
+            animation: premiumLiquidBG 22s ease infinite; /* Smooth 22 seconds organic wave loop */
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             color: #000000;
             overflow-x: hidden; /* Prevent horizontal shake during slow slide transitions */
+        }
+
+        /* 🔥 KEYFRAMES ENGINE FOR SMOOTH COLOR SHIFTING FLOW */
+        @keyframes premiumLiquidBG {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
         }
 
         /* 🌐 DYNAMIC LANGUAGE SWITCHING SYSTEM */
@@ -205,8 +220,8 @@
         }
 
         /* 🎬 ========================================================
-           🌟 3 SECONDS SYSTEMATIC DIRECTIONAL SCROLL REVEAL TIMING
-           ======================================================== 🎬 */
+            🌟 3 SECONDS SYSTEMATIC DIRECTIONAL SCROLL REVEAL TIMING
+            ======================================================== 🎬 */
         .scroll-reveal {
             opacity: 0;
             transition: opacity 3s cubic-bezier(0.15, 1, 0.2, 1), transform 3s cubic-bezier(0.15, 1, 0.2, 1);

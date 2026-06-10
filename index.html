@@ -10,14 +10,22 @@
     <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&amp;family=Lora:ital,wght@1,700&amp;family=Shrikhand&amp;display=swap" rel="stylesheet">
 
     <style>
-        /* Page Background Color */
+        /* Premium Cream and Sage Green Moving Gradient Loop Background */
         body {
-            background-color: #fef3d0;
+            background: linear-gradient(-45deg, #fef3d0, #829778, #fef3d0, #829778);
+            background-size: 400% 400%;
+            animation: premiumLiquidBG 22s ease infinite; 
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            color: #000000; /* Default text color Dark Black */
-            overflow-x: hidden; /* Prevent horizontal scrollbars during entrance animations */
+            color: #000000; 
+            overflow-x: hidden; 
+        }
+
+        @keyframes premiumLiquidBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
 
         /* 🌐 DYNAMIC LANGUAGE SWITCHING SYSTEM */
@@ -50,7 +58,6 @@
             z-index: 1000;
         }
 
-        /* ⚡ FIX: Combined both gradients in a single property so the wine-red color doesn't get wiped out */
         .lang-btn {
             background: radial-gradient(circle 60px at var(--x, -1000px) var(--y, -1000px), rgba(255, 255, 255, 0.45) 0%, transparent 100%), linear-gradient(to bottom, #8a0000, #460020);
             color: #fef3d0;
@@ -122,35 +129,40 @@
             display: block;
         }
 
-        /* 📞 GOLDEN ROUND RECTANGLE PHONE BADGE */
-        .banner-phone-badge {
+        .banner-badges-group {
             position: absolute;
-            bottom: 8%;
-            left: 5%;
+            bottom: 5%;
+            left: 4%;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            z-index: 10;
+        }
+
+        .banner-badge {
             background-color: #ffd700; 
             color: #460020; 
-            padding: 6px 14px;
+            padding: 6px 12px;
             border-radius: 25px; 
             font-family: 'Lora', serif;
             font-weight: bold;
             font-style: italic;
-            font-size: 1.25vw; 
+            font-size: 1.1vw; 
             text-decoration: none;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
             display: flex;
             align-items: center;
             gap: 6px;
-            z-index: 10;
             transition: transform 0.2s ease, box-shadow 0.2s ease;
             cursor: pointer;
         }
 
-        .banner-phone-badge:hover {
-            transform: scale(1.05);
+        .banner-badge:hover {
+            transform: scale(1.04);
             box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
         }
 
-        /* 🔴 FIXED RESPONSIVE TEXT POSITIONING WITH LINEAR GRADIENT 🔴 */
+        /* 🔴 RESPONSIVE TEXT POSITIONING WITH LINEAR GRADIENT 🔴 */
         .banner-text-arvind, .banner-text-construction, .banner-text-developers {
             position: absolute;
             font-family: 'Cinzel Decorative', cursive;
@@ -159,36 +171,16 @@
             background: linear-gradient(to bottom, #8a0000, #460020);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            /* Using drop-shadow filter for gradient text compatibility instead of text-shadow */
             filter: drop-shadow(3px 3px 4px rgba(0, 0, 0, 0.65));
         }
 
-        .banner-text-arvind {
-            top: 23%;
-            left: 47%;
-            font-size: 4vw; 
-        }
+        .banner-text-arvind { top: 23%; left: 47%; font-size: 4vw; }
+        .banner-text-construction { top: 35%; left: 35%; font-size: 4.6vw; }
+        .banner-text-developers { top: 50%; left: 60%; font-size: 3.2vw; }
 
-        .banner-text-construction {
-            top: 35%; 
-            left: 35%;
-            font-size: 4.6vw;
-        }
-
-        .banner-text-developers {
-            top: 50%; 
-            left: 60%; 
-            font-size: 3.2vw; 
-        }
-
-        /* Mobile screens responsive view updates */
         @media (max-width: 768px) {
-            .banner-phone-badge {
-                font-size: 2.8vw;
-                padding: 4px 8px;
-                bottom: 8%;
-                left: 5%;
-            }
+            .banner-badges-group { bottom: 4%; left: 3%; gap: 6px; }
+            .banner-badge { font-size: 2.2vw; padding: 4px 8px; }
         }
 
         /* Laptop Copy Toast Popup */
@@ -213,26 +205,50 @@
             transition: opacity 0.4s ease, visibility 0.4s ease;
         }
 
-        .toast-notification.show {
-            visibility: visible;
-            opacity: 1;
+        .toast-notification.show { visibility: visible; opacity: 1; }
+
+        /* Main Slogans Header */
+        header { text-align: center; margin-bottom: 50px; }
+        header p { font-family: 'Lora', serif; font-weight: bold; font-style: italic; font-size: 1.2rem; color: #000000; }
+
+        /* LIQUID GOLD ANIMATED STATS BOXES GRID DESIGN */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 20px;
+            margin: 30px auto 50px auto;
+            max-width: 1100px;
+            width: 100%;
         }
 
-        /* Main Vacation Slogans */
-        header {
+        .stats-box {
+            background: linear-gradient(-45deg, #fef3d0, #fcd34d, #b8860b, #fef3d0);
+            background-size: 300% 300%;
+            animation: shiftingGoldLiquid 7s ease infinite; 
+            padding: 22px 20px;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             text-align: center;
-            margin-bottom: 50px;
+            box-shadow: 0 6px 16px rgba(70, 0, 32, 0.12);
+            box-sizing: border-box;
+            transition: transform 0.3s ease;
         }
 
-        header p {
-            font-family: 'Lora', serif;
-            font-weight: bold;
-            font-style: italic;
-            font-size: 1.2rem;
-            color: #000000; 
+        .stats-box:hover { transform: translateY(-5px); }
+        .stats-box span {
+            color: #460020 !important; font-family: 'Lora', serif;
+            font-weight: bold; font-style: italic; font-size: 1.15rem; line-height: 1.4;
         }
 
-        /* 🌟 ALL TOPIC HEADINGS WITH DYNAMIC SPOTLIGHT & GRADIENT TEXT */
+        @keyframes shiftingGoldLiquid {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* ALL TOPIC HEADINGS WITH DYNAMIC SPOTLIGHT & GRADIENT TEXT */
         h2 {
             font-family: 'Shrikhand', cursive;
             font-style: italic;
@@ -251,133 +267,163 @@
             transition: filter 0.3s ease;
         }
         
-        h2:hover {
-            filter: drop-shadow(2px 2px 4px rgba(70, 0, 32, 0.25));
-        }
-        
-        /* Dynamic Spotlight overlay structure on headings */
+        h2:hover { filter: drop-shadow(2px 2px 4px rgba(70, 0, 32, 0.25)); }
         h2::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
+            content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
             background: radial-gradient(circle 55px at var(--x, -1000px) var(--y, -1000px), rgba(70, 0, 32, 0.15), transparent 100%);
-            pointer-events: none; 
-            z-index: 2;
+            pointer-events: none; z-index: 2;
         }
 
-        p, ul, li, address {
-            font-family: 'Lora', serif;
-            font-weight: bold;
-            font-style: italic;
-            font-size: 1.1rem;
-            line-height: 1.6;
-            color: #000000; 
-        }
+        p, ul, li { font-family: 'Lora', serif; font-weight: bold; font-style: italic; font-size: 1.1rem; line-height: 1.6; color: #000000; }
+        ul { list-style-type: none; padding-left: 0; }
+        li { margin-bottom: 10px; }
 
-        ul {
-            list-style-type: none;
-            padding-left: 0;
-        }
-
-        li {
-            margin-bottom: 10px;
-        }
-
-        /* Brand Name Inline/Heading Styling with Signature Gradient */
         .brand-name-heading {
-            font-family: 'Cinzel Decorative', cursive;
-            font-weight: bold;
-            font-size: 2.1rem; 
-            margin-bottom: 5px;
+            font-family: 'Cinzel Decorative', cursive; font-weight: bold; font-size: 2.1rem; margin-bottom: 5px;
             background: linear-gradient(to bottom, #8a0000, #460020);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            display: inline-block;
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; display: inline-block;
         }
 
         .brand-name-inline {
-            font-family: 'Cinzel Decorative', cursive;
-            font-weight: bold;
-            color: #460020;
-            font-size: 1.25rem; 
-            font-style: normal; 
-            display: inline-block;
-            background: linear-gradient(to bottom, #8a0000, #460020);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            font-family: 'Cinzel Decorative', cursive; font-weight: bold; color: #460020; font-size: 1.25rem; font-style: normal; 
+            display: inline-block; background: linear-gradient(to bottom, #8a0000, #460020);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
         }
 
-        /* Services Grid and Rounded Rectangle Boxes with Gradient Background */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-            margin-top: 20px;
-        }
-
+        /* Services Grid and Rounded Rectangle Boxes */
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 20px; }
         .service-box {
-            background: linear-gradient(to bottom, #8a0000, #460020); 
-            padding: 20px 25px;
-            border-radius: 15px; 
-            text-decoration: none; 
-            
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: flex-start;
-            gap: 15px;
-            text-align: left;
-            
-            box-shadow: 0 4px 8px rgba(70, 0, 32, 0.15);
-            cursor: pointer;
-            -webkit-tap-highlight-color: transparent;
+            background: linear-gradient(to bottom, #8a0000, #460020); padding: 20px 25px; border-radius: 15px; text-decoration: none; 
+            display: flex; flex-direction: row; align-items: center; justify-content: flex-start; gap: 15px; text-align: left;
+            box-shadow: 0 4px 8px rgba(70, 0, 32, 0.15); cursor: pointer; -webkit-tap-highlight-color: transparent;
             transition: transform 0.3s ease, box-shadow 0.3s ease; 
         }
+        .service-box, .service-box span { color: #fef3d0 !important; }
 
-        .service-box, .service-box span {
-            color: #fef3d0 !important;
+        /* 🗺️ CUSTOM COMPONENT PANEL SYSTEM FLUID WRAPPER (NO API KEY REQUIRED) */
+        .map-wrapper {
+            width: 100%;
+            height: 520px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 12px 28px rgba(70, 0, 32, 0.16);
+            margin-top: 15px;
+            margin-bottom: 20px;
+            display: flex;
+            background-color: #ffffff;
+            box-sizing: border-box;
         }
 
-        /* 🎬 ========================================================
-            🌟 DIRECTIONAL SCROLL REVEAL ENGINE (3 SECONDS SYSTEM TIME)
-            ======================================================== 🎬 */
-        .scroll-reveal {
-            opacity: 0;
-            transition: opacity 3s cubic-bezier(0.15, 1, 0.2, 1), transform 3s cubic-bezier(0.15, 1, 0.2, 1);
-            will-change: transform, opacity;
+        /* Left Side Store Locator Details Panel Mock */
+        .map-left-panel {
+            flex: 3.5;
+            background-color: #ffffff;
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            border-right: 1px solid #e0e0e0;
+            box-sizing: border-box;
+            overflow-y: auto;
+            text-align: left;
         }
 
-        /* Left to Right Slide */
-        .reveal-left {
-            transform: translateX(-100px) scale(0.96);
+        .panel-title {
+            font-family: 'Lora', serif;
+            font-size: 1.15rem;
+            font-weight: bold;
+            color: #212121;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
 
-        /* Right to Left Slide */
-        .reveal-right {
-            transform: translateX(100px) scale(0.96);
+        .panel-search-box {
+            border: 1px solid #9e9e9e;
+            padding: 11px 14px;
+            border-radius: 6px;
+            font-family: 'Lora', serif;
+            font-size: 0.95rem;
+            color: #757575;
+            background: #ffffff;
+            font-weight: bold;
+            pointer-events: none; 
         }
 
-        /* Premium Lift-Scale from Bottom */
-        .reveal-bottom {
-            transform: translateY(80px) scale(0.97);
+        .panel-subhead {
+            font-family: 'Lora', serif;
+            font-size: 0.9rem;
+            font-weight: bold;
+            color: #616161;
+            margin: 5px 0 0 0;
         }
 
-        /* Top to Bottom Slow Slide */
-        .reveal-top {
-            transform: translateY(-60px);
+        .location-card {
+            border: 1.5px solid #8a0000;
+            border-radius: 8px;
+            padding: 16px;
+            background-color: #ffffff;
+            box-sizing: border-box;
         }
 
-        /* Services grid zoom transitions */
-        .reveal-popup {
-            transform: scale(0.4) translateY(60px);
-            transition: opacity 0.8s cubic-bezier(0.34, 1.56, 0.64, 1), transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+        .card-name {
+            font-family: 'Lora', serif;
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #460020;
+            margin: 0 0 8px 0;
         }
 
-        /* 🔥 ACTIVE STATE CLASS */
-        .scroll-reveal.active-view {
-            opacity: 1;
-            transform: translateX(0) translateY(0) scale(1);
+        .card-address {
+            font-family: 'Lora', serif;
+            font-size: 0.9rem;
+            font-weight: bold;
+            line-height: 1.5;
+            color: #616161;
+            margin: 0 0 15px 0;
         }
+
+        .card-btn {
+            display: inline-block;
+            border: 1px solid #8a0000;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-family: 'Lora', serif;
+            font-size: 0.85rem;
+            font-weight: bold;
+            color: #8a0000;
+            text-decoration: none;
+            background: transparent;
+            transition: background 0.2s ease, color 0.2s ease;
+        }
+        .card-btn:hover {
+            background-color: #8a0000;
+            color: #ffffff;
+        }
+
+        /* Right Side Map Canvas Embed */
+        .map-right-panel {
+            flex: 6.5;
+            height: 100%;
+            background-color: #e5e3df;
+        }
+
+        .map-right-panel iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+            display: block;
+        }
+
+        /* 🎬 SCROLL REVEAL ENGINE */
+        .scroll-reveal { opacity: 0; transition: opacity 3s cubic-bezier(0.15, 1, 0.2, 1), transform 3s cubic-bezier(0.15, 1, 0.2, 1); will-change: transform, opacity; }
+        .reveal-left { transform: translateX(-100px) scale(0.96); }
+        .reveal-right { transform: translateX(100px) scale(0.96); }
+        .reveal-bottom { transform: translateY(80px) scale(0.97); }
+        .reveal-top { transform: translateY(-60px); }
+        .reveal-popup { transform: scale(0.4) translateY(60px); transition: opacity 0.8s cubic-bezier(0.34, 1.56, 0.64, 1), transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1); }
+        .scroll-reveal.active-view { opacity: 1; transform: translateX(0) translateY(0) scale(1); }
 
         /* STAGGERED REVEAL DELAY PACK FOR SERVICES GRID */
         .services-grid .service-box:nth-child(1) { transition-delay: 0.05s; }
@@ -390,23 +436,31 @@
         .services-grid .service-box:nth-child(8) { transition-delay: 0.75s; }
 
         .service-box:hover, .service-box:active {
-            transform: translateY(-6px) scale(1.02); 
-            box-shadow: 0 15px 35px rgba(70, 0, 32, 0.5); 
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            transition-delay: 0s !important; 
+            transform: translateY(-6px) scale(1.02); box-shadow: 0 15px 35px rgba(70, 0, 32, 0.5); 
+            transition: transform 0.3s ease, box-shadow 0.3s ease; transition-delay: 0s !important; 
         }
 
-        /* Footer Styling */
-        footer {
-            margin-top: 60px;
-            text-align: center;
-            border-top: 2px dashed #460020;
-            padding-top: 30px;
-        }
+        footer { margin-top: 60px; text-align: center; border-top: 2px dashed #460020; padding-top: 30px; }
+        footer p { font-size: 1.3rem; color: #000000; }
 
-        footer p {
-            font-size: 1.3rem;
-            color: #000000;
+        /* 📱 MOBILE MODIFICATIONS */
+        @media (max-width: 991px) {
+            .map-wrapper {
+                flex-direction: column;
+                height: auto;
+            }
+            .map-left-panel {
+                width: 100%;
+                flex: none;
+                border-right: none;
+                border-bottom: 1px solid #e0e0e0;
+                padding: 20px;
+            }
+            .map-right-panel {
+                width: 100%;
+                height: 380px;
+                flex: none;
+            }
         }
     </style>
 </head>
@@ -425,9 +479,18 @@
         <div class="banner-container">
             <img src="1000103872.png" alt="Arvind Construction Background" class="banner-img">
             
-            <a href="tel:+918544218916" class="banner-phone-badge" onclick="handlePhoneClick(event)">
-                📞 +91 8544218916
-            </a>
+            <div class="banner-badges-group">
+                <a href="tel:+918544218916" class="banner-badge" onclick="handlePhoneClick(event)">
+                    📞 +91 8544218916
+                </a>
+                <div class="banner-badge" style="cursor: default;">
+                    <span class="lang-en">🕒 10:00 AM – 10:00 PM</span>
+                    <span class="lang-hi">🕒 सुबह 10:00 – रात 10:00</span>
+                </div>
+                <a href="mailto:arvind.constructionn@gmail.com" class="banner-badge">
+                    ✉ arvind.constructionn@gmail.com
+                </a>
+            </div>
             
             <h1 class="banner-text-arvind">
                 <span class="lang-en">ARVIND</span>
@@ -464,15 +527,55 @@
 
         <hr style="border: 1px solid #460020; opacity: 0.15;">
 
+        <div class="stats-grid scroll-reveal reveal-bottom">
+            <div class="stats-box">
+                <span>
+                    <span class="lang-en">📅 Established Since 2000</span>
+                    <span class="lang-hi">📅 सन 2000 से स्थापित</span>
+                </span>
+            </div>
+            <div class="stats-box">
+                <span>
+                    <span class="lang-en">🏗️ 70+ Projects Completed</span>
+                    <span class="lang-hi">🏗️ 70+ प्रोजेक्ट्स पूरे किए</span>
+                </span>
+            </div>
+            <div class="stats-box">
+                <span>
+                    <span class="lang-en">🤝 50+ Happy &amp; Trusted Clients</span>
+                    <span class="lang-hi">🤝 50+ खुश और भरोसेमंद ग्राहक</span>
+                </span>
+            </div>
+            <div class="stats-box">
+                <span>
+                    <span class="lang-en">⭐ 100% Commitment to Quality &amp; Reliability</span>
+                    <span class="lang-hi">⭐ गुणवत्ता और विश्वसनीयता के लिए 100% प्रतिबद्धता</span>
+                </span>
+            </div>
+            <div class="stats-box">
+                <span>
+                    <span class="lang-en">🚀 Driven by Excellence &amp; Innovation</span>
+                    <span class="lang-hi">🚀 उत्कृष्टता और नवाचार द्वारा संचालित</span>
+                </span>
+            </div>
+        </div>
+
         <section class="scroll-reveal reveal-left">
             <h2>
-                <span class="lang-en">WHO WE ARE</span>
-                <span class="lang-hi">हम कौन हैं</span>
+                <span class="lang-en">ABOUT US</span>
+                <span class="lang-hi">हमारे बारे में</span>
             </h2>
-            <p>
-                <span class="brand-name-inline">Arvind Construction &amp; Developers</span> 
-                <span class="lang-en">is a trusted name in the construction and real estate industry, dedicated to delivering projects that combine architectural excellence, structural strength, and modern innovation. With a strong focus on quality workmanship, professional project management, and client satisfaction, we create residential and commercial spaces that stand the test of time.<br><br><strong><u>Our mission is to provide reliable, cost-effective, and high-quality construction solutions while maintaining the highest standards of integrity, safety, and professionalism.</u></strong></span>
-                <span class="lang-hi"><strong>अरविन्द कंस्ट्रक्शन &amp; डेवलपर्स</strong> निर्माण और Real Estate उद्योग में एक विश्वसनीय name है, जो ऐसी परियोजनाओं को पूरा करने के लिए समर्पित है जो वास्तुकला की उत्कृष्टता, संरचनात्मक मजबूती और आधुनिक नवाचार का एक बेहतरीन संयोजन हैं। गुणवत्तापूर्ण कारीगरी, पेशेवर प्रोजेक्ट मैनेजमेंट और ग्राहक संतुष्टि पर विशेष ध्यान देते हुए, हम ऐसे आवासीय और व्यावसायिक स्थानों का निर्माण करते हैं जो समय की कसौटी पर खरे उतरते हैं।<br><br><strong><u>हमारा मिशन ईमानदारी, सुरक्षा और व्यावसायिकता के उच्चतम मानकों को बनाए रखते हुए विश्वसनीय, लागत प्रभावी और उच्च गुणवत्ता वाले निर्माण समाधान प्रदान करना है।</u></strong></span>
+            <p class="description">
+                <span class="lang-en">
+                    Established in 2000, <span class="brand-name-inline">Arvind Construction &amp; Developers</span> has been delivering premium construction, real estate development, renovation, and project consultation services for over two decades. We are a trusted name in the industry, dedicated to delivering projects that combine architectural excellence, structural strength, and modern innovation. With a strong focus on quality workmanship, professional project management, and client satisfaction, we create residential and commercial spaces that stand the test of time.<br><br>
+                    <strong>Our Mission:</strong> To provide reliable, cost-effective, and high-quality construction solutions while maintaining the highest standards of integrity, safety, and professionalism.<br><br>
+                    🏆 Trusted Construction &amp; Real Estate Solutions Since 2000.
+                </span>
+                <span class="lang-hi">
+                    सन 2000 में स्थापित, <span class="brand-name-inline">अरविन्द कंस्ट्रक्शन &amp; डेवलपर्स</span> दो दशकों से अधिक समय से उच्च-गुणवत्ता वाले निर्माण, रियल एस्टेट विकास, नवीनीकरण और परियोजना परामर्श सेवाएं प्रदान कर रहा है। हम निर्माण और रियल एस्टेट उद्योग में एक अत्यंत विश्वसनीय नाम हैं, जो ऐसी परियोजनाओं को पूरा करने के लिए समर्पित हैं जो वास्तुकला की उत्कृष्टता, संरचनात्मक मजबूती और आधुनिक नवाचार का एक बेहतरीन संयोजन हैं। गुणवत्तापूर्ण कारीगरी, पेशेवर प्रोजेक्ट मैनेजमेंट और ग्राहक संतुष्टि पर विशेष ध्यान देते हुए, हम ऐसे आवासीय और व्यावसायिक स्थानों का निर्माण करते हैं जो समय की कसौटी पर खरे उतरते हैं।<br><br>
+                    <strong>हमारा मिशन:</strong> ईमानदारी, सुरक्षा और व्यावसायिकता के उच्चतम मानकों को बनाए रखते हुए विश्वसनीय, लागत प्रभावी और उच्च गुणवत्ता वाले निर्माण समाधान प्रदान करना।<br><br>
+                    🏆 सन 2000 से विश्वसनीय निर्माण और रियल एस्टेट समाधान।
+                </span>
             </p>
         </section>
 
@@ -547,30 +650,16 @@
                 <span class="lang-hi">हमें क्यों चुनें</span>
             </h2>
             <ul>
-                <li>✔ 
-                    <span class="lang-en">Premium Quality Standards</span>
-                    <span class="lang-hi">प्रीमियम गुणवत्ता मानक</span>
-                </li>
-                <li>✔ 
-                    <span class="lang-en">Professional Project Management</span>
-                    <span class="lang-hi">व्यावसायिक परियोजना प्रबंधन</span>
-                </li>
-                <li>✔ 
-                    <span class="lang-en">Transparent Business Practices</span>
-                    <span class="lang-hi">पारदर्शी व्यावसायिक नीतियां</span>
-                </li>
-                <li>✔ 
-                    <span class="lang-en">Timely Project Delivery</span>
-                    <span class="lang-hi">समय पर परियोजना की डिलीवरी</span>
-                </li>
-                <li>✔ 
-                    <span class="lang-en">Customer-Centric Approach</span>
-                    <span class="lang-hi">ग्राहक-केंद्रित दृष्टिकोण</span>
-                </li>
-                <li>✔ 
-                    <span class="lang-en">Long-Term Reliability &amp; Trust</span>
-                    <span class="lang-hi">दीर्घकालिक विश्वसनीयता और विश्वास</span>
-                </li>
+                <li>✔ <span class="lang-en">Premium Quality Standards</span><span class="lang-hi">प्रीमियम गुणवत्ता मानक</span></li>
+                <li>✔ <span class="lang-en">Professional Project Management</span><span class="lang-hi">व्यावसायिक परियोजना प्रबंधन</span></li>
+                <li>✔ <span class="lang-en">Experienced Construction Team</span><span class="lang-hi">अनुभवी निर्माण टीम</span></li>
+                <li>✔ <span class="lang-en">Transparent Business Practices</span><span class="lang-hi">पारदर्शी व्यावसायिक नीतियां</span></li>
+                <li>✔ <span class="lang-en">Modern Construction Techniques</span><span class="lang-hi">आधुनिक निर्माण तकनीकें</span></li>
+                <li>✔ <span class="lang-en">Timely Project Delivery</span><span class="lang-hi">समय पर परियोजना की डिलीवरी</span></li>
+                <li>✔ <span class="lang-en">Customer-Centric Approach</span><span class="lang-hi">ग्राहक-केंद्रित दृष्टिकोण</span></li>
+                <li>✔ <span class="lang-en">Competitive Pricing</span><span class="lang-hi">प्रतिस्पर्धी मूल्य निर्धारण</span></li>
+                <li>✔ <span class="lang-en">Long-Term Reliability &amp; Trust</span><span class="lang-hi">दीर्घकालिक विश्वसनीयता और विश्वास</span></li>
+                <li>✔ <span class="lang-en">Commitment To Excellence</span><span class="lang-hi">उत्कृष्टता के प्रति प्रतिबद्धता</span></li>
             </ul>
         </section>
 
@@ -580,30 +669,60 @@
                 <span class="lang-hi">हमारा दृष्टिकोण</span>
             </h2>
             <p>
-                <span class="lang-en">To become a leading construction and real estate development company by delivering exceptional projects that redefine quality, innovation, and customer satisfaction.</span>
-                <span class="lang-hi">असाधारण परियोजनाओं को वितरित करके एक अग्रणी निर्माण और रियल एस्टेट विकास कंपनी बनना जो गुणवत्ता, नवाचार और ग्राहक संतुष्टि को फिर से परिभाषित करती है।</span>
+                <span class="lang-en">To be recognized as a leading construction and real estate development company known for delivering top-quality projects, uncompromising standards, and outstanding customer satisfaction. Our vision is to continuously provide the best quality construction services, build lasting relationships with our clients, and create developments that stand as symbols of trust, excellence, and long-term value for generations to come.</span>
+                <span class="lang-hi">एक अग्रणी निर्माण और रियल एस्टेट विकास कंपनी के रूप में पहचाने जाना जो शीर्ष गुणवत्ता वाली परियोजनाओं, समझौता न करने वाले मानकों और उत्कृष्ट ग्राहक संतुष्टि के लिए जानी जाती है। हमारा दृष्टिकोण लगातार सर्वोत्तम गुणवत्ता वाली निर्माण सेवाएं प्रदान करना, अपनेकों के साथ स्थायी संबंध बनाना और ऐसे विकास तैयार करना है जो आने वाली पीढ़ियों के लिए विश्वास, उत्कृष्टता और दीर्घकालिक मूल्य के प्रतीक के रूप में खड़े रहें।</span>
             </p>
         </section>
 
         <section class="scroll-reveal reveal-right">
             <h2>
-                <span class="lang-en">CONTACT US</span>
-                <span class="lang-hi">हमसे संपर्क करें</span>
+                <span class="lang-en">OUR COMMITMENT</span>
+                <span class="lang-hi">हमारी प्रतिबद्धता</span>
             </h2>
-            <address>
-                📍 
-                <span class="lang-en">Office Address: [Write Your Address Here]</span>
-                <span class="lang-hi">कार्यालय का पता: [आपका पता यहाँ लिखें]</span>
-                <br>
-                📞 
-                <span class="lang-en">Mobile Number: [Your Mobile Number]</span>
-                <span class="lang-hi">मोबाइल नंबर: [आपका मोबाइल नंबर]</span>
-                <br>
-                ✉ Email Address: [Aapki Email ID]<br>
-                🕒 
-                <span class="lang-en">Office Hours: 10:00 AM – 10:00 PM</span>
-                <span class="lang-hi">कार्यालय का समय: सुबह 10:00 बजे से रात 10:00 बजे तक</span>
-            </address>
+            <p>
+                <span class="lang-en">At <span class="brand-name-inline">Arvind Construction &amp; Developers</span>, we are dedicated to providing exceptional construction and real estate solutions with an unwavering focus on quality, safety, and professionalism. Our commitment is to consistently deliver durable, innovative, and high-quality projects while upholding the highest standards of integrity, transparency, and customer service. We believe in building not only structures, but also trust, confidence, and long-lasting relationships that stand the test of time.</span>
+                <span class="lang-hi"><span class="brand-name-inline">अरविन्द कंस्ट्रक्शन &amp; डेवलपर्स</span> में, हम गुणवत्ता, सुरक्षा और व्यावसायिकता पर अटूट ध्यान देने के साथ असाधारण निर्माण और रियल एस्टेट समाधान प्रदान करने के लिए समर्पित हैं। हमारी प्रतिबद्धता ईमानदारी, पारदर्शिता और ग्राहक सेवा के उच्चतम मानकों को बनाए रखते हुए लगातार टिकाऊ, अभिनव और उच्च गुणवत्ता वाली परियोजनाओं को वितरित करना है। हमारा मानना है कि हम न केवल संरचनाओं का निर्माण करते हैं, बल्कि विश्वास, आत्मविश्वास और दीर्घकालिक संबंधों का भी निर्माण करते हैं जो समय की कसौटी पर खरे उतरते हैं।</span>
+            </p>
+        </section>
+
+        <section class="scroll-reveal reveal-left">
+            <h2>
+                <span class="lang-en">📍 OUR LOCATION</span>
+                <span class="lang-hi">📍 हमारा स्थान</span>
+            </h2>
+            <div class="map-wrapper">
+                
+                <div class="map-left-panel">
+                    <h3 class="panel-title">
+                        📍 <span class="lang-en">Find a location near you</span>
+                        <span class="lang-hi">नज़दीकी कार्यालय ढूंढें</span>
+                    </h3>
+                    <div class="panel-search-box">
+                        <span class="lang-en">Patna, Bihar, India</span>
+                        <span class="lang-hi">पटना, बिहार, भारत</span>
+                    </div>
+                    <div class="panel-subhead">
+                        <span class="lang-en">All locations (1)</span>
+                        <span class="lang-hi">कुल स्थान (1)</span>
+                    </div>
+                    
+                    <div class="location-card">
+                        <h4 class="card-name">Arvind Construction &amp; Developers</h4>
+                        <p class="card-address">
+                            Arvind Construction in Sai Sanchay Enclave In front of A-137, PC Colony, Patna, Bihar, India
+                        </p>
+                        <a href="https://maps.google.com/?q=Arvind+Construction+Sai+Sanchay+Enclave+Patna" target="_blank" class="card-btn">
+                            <span class="lang-en">View details</span>
+                            <span class="lang-hi">विवरण देखें</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="map-right-panel">
+                    <iframe src="https://maps.google.com/maps?q=25.6017385,85.1518578&z=16&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+
+            </div>
         </section>
 
         <footer>
@@ -692,7 +811,7 @@
             });
         }
 
-        /* 🎬 STRICT ONE-WAY SCROLL ENGINE */
+        /* 🎬 SCROLL REVEAL ENGINE */
         function initScrollReveal() {
             const options = {
                 root: null,
